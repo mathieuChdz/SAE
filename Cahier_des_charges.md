@@ -15,8 +15,10 @@ réaliser dans des délais précisés.
 
 L’objectif du projet est de construire un site web\* permettant d’effectuer à terme,
 une simulation de différents calculs concernant au moins 3 domaines différents, et
-d’en afficher les résultats. Dans un premier temps, on réalise une maquette du site
-web qui sera composé de quatre pages statiques reliées entre elles. Ces pages seront :
+d’en afficher les résultats. Dans un premier temps, nous allons concevoir le site web
+qui accueillera les outils de simulations et les utilisateurs, cela constituera un
+premier livrable complet. Le site web sera composé de quatre pages statiques reliées
+entre elles. Ces pages seront :
 
 
 - Une page de présentation qui contiendra un texte explicatif sur les
@@ -30,9 +32,9 @@ disponibles.
 
 - Une page contenant les outils de simulation.
 
-La maquette sera accompagnée d’une documentation décrivant la finalité du logo
-ainsi que la charte graphique proposée. Cette documentation sera un document
-markdown qui sera exporté en pdf.
+Ce premier livrable contiendra un recueil des besoins, ce cahier des charges ainsi
+que deux propositions de maquettes documentées pour le site web, accompagnées par une
+proposition de logo documentée ,et d'un dossier de conception.
 
 ### III/ Pré-requis
 
