@@ -1,0 +1,86 @@
+header{
+    background: linear-gradient(90deg, rgb(65, 180, 220), rgb(199, 252, 240));
+}
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 5px solid lightslategray;
+}
+nav img{
+    width: 200px;
+    margin-right: 600px;
+}
+nav h1{
+    margin-right: 200px;
+    font-size: 50px;
+    font-family:fantasy;
+}
+nav input{
+    margin-left: 400px;
+    font-size: 25px;
+}
+
+
+section{
+    display: flex;;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    justify-content: center;
+    margin-bottom: 30px;
+    border-bottom: 5px solid  lightslategray;
+
+
+}
+
+section .text {
+    margin: 10px;
+    padding: 100px;
+    border: 2px solid black;
+}
+section .video{
+    margin-left: 200px;
+    padding: 10px;
+}
+
+article .simulation1 p{
+    margin: 10px;
+    padding: 50px;
+    border: 2px solid black;
+}
+article .simulation1{
+    border: 2px solid black;
+    margin-right: 300px;
+    padding: 50px;
+}
+article .simulation2 p{
+    margin: 10px;
+    padding: 50px;
+    border: 2px solid black;
+}
+article .simulation2{
+    border: 2px solid black;
+    margin-right: 300px;
+    padding: 50px;
+}
+article .simulation3 p{
+    margin: 10px;
+    padding: 50px;
+    border: 2px solid black;
+}
+article .simulation3{
+    border: 2px solid black;
+    margin-right: 300px;
+    padding: 50px;
+}
+article{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+

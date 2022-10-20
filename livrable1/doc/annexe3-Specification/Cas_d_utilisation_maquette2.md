@@ -1,0 +1,27 @@
+﻿Cas d'utilisation
+
+Cas d’utilisation 1 : naviguer sur le site
+
+|<p>**Nom**: Naviguer sur le site</p><p>**Contexte d’utilisation**: Un visiteur ayant accès au site doit pouvoir naviguer entre les différentes pages. </p><p>**Portée**: </p><p>**Niveau**: stratégique</p><p>**Acteur principal**: l’utilisateur</p><p>**Intervenants et intérêts**: les intervenants sont l'utilisateur et son intérêt est de pouvoir avoir accès au différentes pages du site</p><p>**Précondition**: aucun</p><p>**Garantie minimale**: aucune</p><p>**Garantie en cas de succès**: Visualisation des différentes pages du site</p><p>**Déclencheur**: aucun</p><p>**Scénario nominal**:</p><p>1. L’utilisateur saisi l’adresse ip du site dans le navigateur de recherche</p><p>2. L’utilisateur navigue sur le site</p><p>**Extension**:</p><p></p><p>**Liste des variantes**:</p><p>**Informations connexes**:</p>|
+| :- |
+
+Cas d’utilisation 2 : accéder à la page d’accueil
+
+|<p>**Nom**: accéder à la page d'accueil </p><p>**Contexte d’utilisation**: Quand l’utilisateur veut utiliser notre logiciel il faut que quand il clique sur le lien du site web il puisse accéder à une page d’accueil qui lui explique les fonctionnalités de nôtre site. </p><p>**Portée**: </p><p>**Niveau**: utilisateur</p><p>**Acteur principal**: l’utilisateur</p><p>**Intervenants et intérêts**: les intervenants sont l'utilisateur et son intérêt est de pouvoir avoir accès à la page d’accueil du site</p><p>**Précondition**: aucun</p><p>**Garantie minimale**: aucune</p><p>**Garantie en cas de succès**: Visualisation de la page d’accueil avec les différents composants.</p><p>**Déclencheur**: aucun</p><p>**Scénario nominal**:</p><p>1. L’utilisateur saisi l’adresse ip du site dans le navigateur de recherche</p><p>2. L’utilisateur navigue sur le site</p><p>**Extension**:</p><p></p><p>**Liste des variantes**:</p><p>**Informations connexes**:</p>|
+| :- |
+
+Cas d’utilisation 3 : accéder à la page de connexion
+
+|<p>**Nom**: accéder à la page de connexion </p><p>**Contexte d’utilisation**: Quand l’utilisateur veut se connecter sur le site pour avoir accès aux simulations proposées.</p><p>**Portée**: Utilisateur</p><p>**Niveau**: Utilisateur</p><p>**Acteur principal**: L’utilisateur</p><p>**Intervenants et Intérêts**: les intervenants sont l'utilisateur et son intérêt est de pouvoir se connecter.</p><p>**Précondition**: avoir accès à la page de choix de connexion.</p><p>**Garantie minimale**: aucune</p><p>**Garantie en cas de succès**: l’utilisateur à accès à la page de connexion et peut rentrer ses identifiants, ou aller s’inscrire</p><p>**Déclencheur**: appui sur le bouton se connecter </p><p>**Scénario nominal**:</p><p>1.L’utilisateur saisit l’adresse ip du site dans le navigateur de recherche</p><p>2.L’utilisateur navigue sur le site</p><p>3.L’utilisateur sélectionne le bouton de connexion sur la page d'accueil.</p><p>4.L’utilisateur choisit le bouton connexion.</p><p>5.L’utilisateur arrive sur la page de connexion</p><p>**Extension**:</p><p>**Liste des variantes**:</p><p>**Informations connexes**:</p>|
+| :- |
+
+Cas d’utilisation 4 : accéder à la page d’inscription
+
+|<p>**Nom**: accéder à la page d’inscription</p><p>**Contexte d’utilisation**: Quand l’utilisateur veut utiliser le simulations de notre logiciel et qu’il n’a pas de compte, il peut en créer un en rentrant ses informations </p><p>Portée: </p><p>**Niveau**: utilisateur</p><p>**Acteur principal**: l’utilisateur</p><p>**Intervenants et intérêts**: les intervenants sont l'utilisateur et son intérêt est de pouvoir se créer un compte et avoir accès aux différentes fonctionnalités de nôtre site.</p><p>**Précondition**:  appuyer sur le bouton ’créer un compte’</p><p>**Garantie minimale**: aucune</p><p>**Garantie en cas de succès**: Le visiteur peut remplir son formulaire d’inscription </p><p>**Déclencheur**: bouton création</p><p>**Scénario nominal**:</p><p>1. L’utilisateur saisi l’adresse ip du site dans le navigateur de recherche</p><p>2. L’utilisateur navigue sur le site</p><p>3. L’utilisateur entre sur la page de choix de connexion</p><p>4. L’utilisateur choisi de créer un compte </p><p>5. L’utilisateur rempli le formulaire</p><p>**Extension**:</p><p>**Liste des variantes**:</p><p>**Informations connexes**:</p>|
+| :- |
+
+Cas d’utilisation 5 : accéder à la page d’erreur
+
+|<p>**Nom**: accéder à la page d’erreur</p><p>**Contexte d’utilisation**: Quand l’utilisateur a oublié son mot de passe il doit cliquer sur mot de passe oublié qui lui renvoie une page en construction.</p><p>**Portée**: Utilisateur</p><p>**Niveau**: Utilisateur</p><p>**Acteur principal**: L’utilisateur</p><p>**Intervenants et intérêts**: les intervenants sont l'utilisateur et son intérêt est de pouvoir être redirigé vers une page en construction en cas d’oubli de mot de passe</p><p>**Précondition**: avoir accès à la page d'accueil, avoir accès à la page de choix, avoir accès à la page de connexion.</p><p>**Garantie minimale**: aucune</p><p>**Garantie en cas de succès**: Le visiteur est redirigé vers une page en construction </p><p>**Scénario nominal**:</p><p>1.L’utilisateur saisit l’adresse ip du site dans le navigateur de recherche</p><p>2.L’utilisateur navigue sur le site</p><p>3.L’utilisateur entre sur la page de choix de connexion</p><p>4.L’utilisateur choisi mot de passe oublié</p><p>5.L’utilisateur est redirigé vers la page en construction </p><p>**Extension**:</p><p>**Liste des variantes**:</p><p>**Informations connexes**:</p>|
+| :- |
+
