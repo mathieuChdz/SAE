@@ -16,7 +16,7 @@ echo "<div class='display'>
 </div>
 
 <div class='button'>
-  <a href='page_accueil.php'><input  type='submit' name='page_connexion' id='page_connexion' value='Retour'></a>
+  <a href='index.php'><input  type='submit' name='page_connexion' id='page_connexion' value='Retour'></a>
 </div>";
 
 echo "<style>

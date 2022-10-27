@@ -1,6 +1,6 @@
 <?php
 
-echo "<form action='page_accueil.php' method='post'>
+echo "<form action='' method='post'>
     <fieldset>
         <h1>Inscription</h1>
         <label for='nom'>Nom :</label>
@@ -25,9 +25,11 @@ if (isset($_POST["Créer un compte"])){
         $bd=mysqli_select_db($connexion,"Utilisateurs");
         $ins="INSERT into Utilisateur_inscrit(login,password,nom,prenom) values(?,?,?,?)";
         $insp=mysqli_prepare($connexion,$ins);
-        mysqli_stmt_bind_param($insp,'ssss',$email,$mdp,$nom,$prenom);
+        $mdp_md5 = md5($mdp);
+        mysqli_stmt_bind_param($insp,'ssss',$email,$mdp_md5,$nom,$prenom);
         mysqli_stmt_execute($insp);
         mysqli_close($connexion);
+        header("Location: index.php");
     }
     else {
         echo "Veuillez remplir tous les champs !";

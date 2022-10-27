@@ -1,7 +1,7 @@
 <?php
 
 
-echo "<form action='page_accueil.php'method='post'>
+echo "<form action='index.php'method='post'>
         <fieldset>
             <h1>Connexion</h1>
             <label for='email'>email :</label>
