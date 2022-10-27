@@ -8,11 +8,31 @@ echo "<form action='index.php'method='post'>
             <input type='text' id='email' name='email' value=''><br>
             <label for='mdp'>Mot de passe :</label>
             <input type='password' id='mdp' name='mdp' value=''><br><br>
-            <input type='submit'value='Se connecter'><br><br>
+            <input type='submit' id='connecte' value='Se connecter'><br><br>
             <a href='error_page.php'>mot de passe oublié</a><br><br>
             <a href='page_inscription.php'>Créer un compte</a><br><br>
         </fieldset>
 </form>";
+
+if (isset($_POST['connecte'])){
+    if (isset($_POST['email'], $_POST['mdp'])){
+
+        $connexion = mysqli_connect("localhost", "root", "01r1173");
+        $bd = mysqli_select_db($connexion,"Utilisateurs");
+        $table = "Utilisateur_inscrit";
+
+        $email = $_POST['email'];
+        $mdp = md5($_POST['mdp']);
+
+        $sql = "SELECT login,password from $table where login like $email and password like $mdp";
+        $res = mysqli_query($connexion,$sql);
+
+    }
+    else{
+        echo "Veuillez remplir tousles champs svp";
+    }
+}
+
 
 echo "<style>
    html{
