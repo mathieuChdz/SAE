@@ -15,6 +15,26 @@ echo "<form action='page_accueil.php' method='post'>
     </fieldset>
 </form>";
 
+if (isset($_POST["Créer un compte"])){
+    if (isset($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['mdp'])){
+        foreach ($_POST as $k => $v){
+            $$k=$v;
+        }
+
+        $connexion=mysqli_connect("localhost","root","01r1173");
+        $bd=mysqli_select_db($connexion,"Utilisateurs");
+        $ins="INSERT into Utilisateur_inscrit(login,password,nom,prenom) values(?,?,?,?)";
+        $insp=mysqli_prepare($connexion,$ins);
+        mysqli_stmt_bind_param($insp,'ssss',$email,$mdp,$nom,$prenom);
+        mysqli_stmt_execute($insp);
+        mysqli_close($connexion);
+    }
+    else {
+        echo "Veuillez remplir tous les champs !";
+    }
+}
+
+
 echo "<style>
    html{
     background: linear-gradient(90deg, rgb(65, 180, 220), rgb(199, 252, 240));
