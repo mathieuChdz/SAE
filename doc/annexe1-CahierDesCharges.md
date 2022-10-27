@@ -6,7 +6,7 @@ Ce document est le cahier des charges relatif au développement d'un site web
 permettant la simulation de calcul, dans différents domaines. Il sera alimenté
 régulièrement avec de nouvelles fonctions à développer, jusqu'à atteindre sa version
 finale qui correspondra alors à la version complète du site web.
-Contexte :Site web permettant la simulation de calcule dans plusieurs domaines
+Contexte : Site web permettant la simulation de calcule dans plusieurs domaines
 Les documents principaux concernés par ce cahier des charges est d’une part un
 premier cahier des charges fourni par le client ainsi qu’un planning des objectifs à
 réaliser dans des délais précisés.
@@ -34,7 +34,16 @@ disponibles.
 
 Ce premier livrable contiendra un recueil des besoins, ce cahier des charges ainsi
 que deux propositions de maquettes documentées pour le site web, accompagnées par une
-proposition de logo documentée ,et d'un dossier de conception.
+proposition de logo documentée et d'un dossier de conception. Il contiendra aussi 
+les codes des 2 maquettes ainsi qu'un dossier de test.
+
+Dans un second temps, puis nous installerons un serveur web Apache avec une base de 
+données MySQL porté par un RPi4. Ensuite, nous déploierons les page web réalisées sur
+le serveur web.
+
+Ce deuxième livrable contiendra un recueil des besoins, ce cahier des charges, un
+dossier de spécification, un dossier de conception, un dossier de test ainsi que
+les rapports concernant les installations et le déploiement.
 
 ### III/ Pré-requis
 
@@ -45,8 +54,9 @@ Les connaissances acquises en programmation web (PHP) et développement web
 
 ### IV/ Priorités
 
-L’objectif principal est donc de créer une maquette de l’application à réaliser.
-Une fois celle-ci confirmée, il faudra commencer à coder en HTML cette page web.
+Les objectifs principaux sont donc :
+- de créer une maquette de l’application à réaliser. Une fois celle-ci confirmée, il faudra commencer à coder en HTML cette page web.
+- de déployer les pages web sur le serveur web porté sur le RPi4.
 
 *\*Les éléments marqués par ce symbole sont définies dans le glossaire.*
 
