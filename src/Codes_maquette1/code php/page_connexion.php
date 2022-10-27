@@ -1,7 +1,7 @@
 <?php
 
 
-echo "<form action='index.php'method='post'>
+echo "<form action=''method='post'>
         <fieldset>
             <h1>Connexion</h1>
             <label for='email'>email :</label>
@@ -26,6 +26,8 @@ if (isset($_POST['connecte'])){
 
         $sql = "SELECT login,password from $table where login like $email and password like $mdp";
         $res = mysqli_query($connexion,$sql);
+
+        header("Location: index.php");
 
     }
     else{
