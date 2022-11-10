@@ -11,30 +11,29 @@ echo "<form action='' method='post'>
         <input type='text' id='email' name='email' value=''><br>
         <label for='mdp'>Mot de passe :</label>
         <input type='password' id='mdp' name='mdp' value=''><br><br>
-        <input type='submit' value='Créer un compte'>
+        <input type='submit' id='ok' name='ok' value='Creer un compte'>
     </fieldset>
 </form>";
 
-if (isset($_POST["Créer un compte"])){
-    if (isset($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['mdp'])){
-        foreach ($_POST as $k => $v){
-            $$k=$v;
-        }
+if (isset($_POST['ok'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['mdp'])){
 
-        $connexion=mysqli_connect("localhost","root","01r1173");
-        $bd=mysqli_select_db($connexion,"Utilisateurs");
-        $ins="INSERT into Utilisateur_inscrit(login,password,nom,prenom) values(?,?,?,?)";
-        $insp=mysqli_prepare($connexion,$ins);
-        $mdp_md5 = md5($mdp);
-        mysqli_stmt_bind_param($insp,'ssss',$email,$mdp_md5,$nom,$prenom);
-        mysqli_stmt_execute($insp);
-        mysqli_close($connexion);
-        header("Location: index.php");
-    }
-    else {
-        echo "Veuillez remplir tous les champs !";
-    }
+	foreach ($_POST as $k => $v) {
+		    $$k = $v;
+		}
+	$connexion = mysqli_connect("localhost", "root", "01r1173");
+	$bd = mysqli_select_db($connexion, "Utilisateurs");
+	$ins = "INSERT into Utilisateur_inscrit(login,password,nom,prenom) values(?,?,?,?)";
+	$insp = mysqli_prepare($connexion, $ins);
+	$password_md5 = md5($mdp);
+	mysqli_stmt_bind_param($insp, 'ssss', $email, $password_md5, $nom, $prenom);
+	mysqli_stmt_execute($insp);
+
+	header("Location: index.php");
 }
+else {
+	echo "Veuillez remplir tous les champs !";
+}
+
 
 
 echo "<style>
