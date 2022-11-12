@@ -1,22 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="charte_page_connexion.css">
+</head>
+<body>
+
 <?php
+session_start();
+if (isset($_SESSION["login"], $_SESSION["access"])){
+	header("Location: index.php");
+}
+?>
 
-
-echo "<form action=''method='post'>
+<form action=''method='post'>
         <fieldset>
             <h1>Connexion</h1>
             <label for='email'>email :</label>
-            <input type='text' id='email' name='email' value=''><br>
+            <input type='text' id='email' name='email' placeholder="email" value=''><br>
             <label for='mdp'>Mot de passe :</label>
-            <input type='password' id='mdp' name='mdp' value=''><br><br>
+            <input type='password' id='mdp' name='mdp' placeholder="mot de passe" value=''><br><br>
             <input type='submit' id='ok' name='ok' value='se connecter'><br><br>
             <a href='error_page.php'>mot de passe oublié</a><br><br>
             <a href='page_inscription.php'>Créer un compte</a><br><br>
+	    <a href='index.php'>retour à l'accueil</a><br><br>
         </fieldset>
-</form>";
+</form>
 
+<?php
 if (isset($_POST["ok"],$_POST["email"],$_POST["mdp"])){
 
-	$connexion=mysqli_connect("localhost", "root", "01r1173");
+	$connexion=mysqli_connect("localhost", "root", "");
 	$bd=mysqli_select_db($connexion, "Utilisateurs");
 	$select="SELECT login, password FROM Utilisateur_inscrit";
 	$res=mysqli_query($connexion, $select);
@@ -28,67 +46,17 @@ if (isset($_POST["ok"],$_POST["email"],$_POST["mdp"])){
 	    }
 	}
 	if ($flag==true){
+	    session_start();
+	    $_SESSION["login"] = $_POST["email"];
+	    $_SESSION["access"] = "oui";
 	    header("Location: index.php");
 	}
 	else{
-	    header("Location: page_connexion.php");
+        echo 'ok';
+	    //header("Location: page_connexion.php");
 	}
 }
+?>
 
-echo "<style>
-   html{
-    background: linear-gradient(90deg, rgb(65, 180, 220), rgb(199, 252, 240));
-}
-form {
-    height: 900px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    padding: 10px;
-    text-align: center;
-    border-radius: 10%;
-}
-
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-input[type=submit] {
-    background-color: rgba(145,144,144,1);
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    font-size: 25px;
-}
-input[type=submit]:hover{
-    background: linear-gradient(90deg, rgb(147, 246, 224), rgb(199, 252, 240));
-    color: black;
-}
-
-form a {
-    color: blue;
-}
-form a:visited{
-    color: purple;
-}
-form a:hover{
-    color: lightskyblue;
-}
-fieldset{
-    border-color: rgba(145,144,144,1);
-    border-radius: 30px;
-    background-color: rgba(218,218,214,1);
-    font-family: 'Microsoft Sans Serif';
-    box-shadow: 10px 5px 5px lightskyblue;
-}
-
-</style>";
+</body>
+</html>
