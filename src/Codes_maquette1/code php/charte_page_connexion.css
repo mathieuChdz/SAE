@@ -1,19 +1,56 @@
 html{
     background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
 }
-form {
-    height: 900px;
+
+.form-structure {
+    margin-top: 20vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 25px;
-    padding: 10px;
+    font-size: 17px;
     text-align: center;
-    border-radius: 10%;
+    font-family: sans-serif;
+}
+
+form{
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 40px;
+}
+
+.form-text{
+    width: 30em;
+}
+
+
+.form-mail{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.form-mail input[type=text]{
+    width: 100%;
+}
+
+.form-mdp{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.form-mdp input[type=password]{
+    width: 100%;
+}
+
+.form-structure img{
+    width: 150px;
 }
 
 input[type=text], input[type=password] {
-    width: 100%;
+    width: 50%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -22,48 +59,30 @@ input[type=text], input[type=password] {
 }
 
 input[type=submit] {
-    background-color: rgba(145,144,144,1);
+    background-color: rgba(145, 144, 144, 0.5);
     color: white;
-    padding: 14px 20px;
+    padding: 10px 20px;
     margin: 8px 0;
-    border: none;
+    border-color: #b9cddaff;
     cursor: pointer;
     width: 100%;
     font-size: 25px;
-}
-input[type=submit]:hover{
-    background: linear-gradient(90deg, rgb(147, 246, 224), rgb(199, 252, 240));
-    color: black;
+    border-radius: 10px;
 }
 
-form button {
-    background-color: rgba(145,144,144,1);
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    font-size: 25px;
-}
-form button:hover{
-    background: linear-gradient(90deg, rgb(147, 246, 224), rgb(199, 252, 240));
+input[type=submit]:hover{
+    background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
     color: black;
+    transition: all 0.5s;
 }
 
 form a {
     text-decoration: none;
-    color: black;
+    color: blue;
 }
-form a:visited{
-}
+form a:visited,
+
 form a:hover{
     border-bottom: solid 1px gray;
 }
-fieldset{
-    border-color: rgba(145,144,144,1);
-    border-radius: 30px;
-    background-color: rgba(218,218,214,1);
-    font-family: 'Microsoft Sans Serif';
-    box-shadow: 10px 5px 5px lightskyblue;
-}
+

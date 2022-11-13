@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title></title>
     <link rel="stylesheet" href="charte_page_connexion.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
 
@@ -16,21 +17,25 @@ if (isset($_SESSION["login"], $_SESSION["access"])){
 	header("Location: index.php");
 }
 ?>
-
-<form action=''method='post'>
-        <fieldset>
-            <h1>Connexion</h1>
-            <label for='email'>email :</label>
-            <input type='text' id='email' name='email' placeholder="email" value=''><br>
-            <label for='mdp'>Mot de passe :</label>
-            <input type='password' id='mdp' name='mdp' placeholder="mot de passe" value=''><br><br>
-            <input type='submit' id='ok' name='ok' value='se connecter'><br><br>
-            <a href='error_page.php'>mot de passe oublié</a><br><br>
-            <a href='page_inscription.php'>Créer un compte</a><br><br>
-	    <a href='index.php'>retour à l'accueil</a><br><br>
-        </fieldset>
-</form>
-
+<div class="form-structure">
+	<form action=''method='post'>
+			<h1>Connexion</h1>
+			<div class="form-mail">
+				<span class="material-symbols-rounded">mail</span>
+				<input type='text' id='email' name='email' placeholder="email" value=''>
+			</div>
+			<div class="form-mdp">
+			<span class="material-symbols-rounded">lock</span>
+				<input type='password' id='mdp' name='mdp' placeholder="mot de passe" value=''>
+			</div>
+			<a href='error_page.php'>mot de passe oublié</a>
+			<div class="form-submit">
+				<input type='submit' id='ok' name='ok' value='se connecter'>
+			</div>
+			<p>Pas de compte ? <a href='page_inscription.php'>Créer un compte</a></p>
+			<a href='index.php'>retour à l'accueil</a>
+	</form>
+</div>
 <?php
 if (isset($_POST["ok"],$_POST["email"],$_POST["mdp"])){
 

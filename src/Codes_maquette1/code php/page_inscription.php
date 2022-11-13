@@ -5,8 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>Page Inscription</title>
     <link rel="stylesheet" href="charte_page_inscription.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
 </head>
 <body>
 
@@ -17,20 +19,28 @@ if (isset($_SESSION["login"], $_SESSION["access"])){
 }
 ?>
 
-<form action='' method='post'>
-    <fieldset>
-        <h1>Inscription</h1>
-        <label for='nom'>Nom :</label>
-        <input type='text' id='nom' name='nom' value=''><br>
-        <label for='prenom'>Prenom :</label>
-        <input type='text' id='prenom' name='prenom' value=''><br>
-        <label for='email'>email :</label>
-        <input type='text' id='email' name='email' value=''><br>
-        <label for='mdp'>Mot de passe :</label>
-        <input type='password' id='mdp' name='mdp' value=''><br><br>
-        <input type='submit' id='ok' name='ok' value='Creer un compte'>
-    </fieldset>
-</form>
+<div class="form-structure">
+	<form action=''method='post'>
+			<h1>Inscription</h1>
+			<div class="form-nom">
+				<span class="material-symbols-rounded">badge</span>
+				<input type='text' id='nom' name='nom' placeholder="nom" value=''>
+			</div>
+			<div class="form-prenom">
+				<span class="material-symbols-rounded">badge</span>
+				<input type='text' id='prenom' name='prenom' placeholder="prénom" value=''>
+			</div>
+			<div class="form-mail">
+				<span class="material-symbols-rounded">mail</span>
+				<input type='text' id='email' name='email' placeholder="email" value=''>
+			</div>
+			<div class="form-mdp">
+			<span class="material-symbols-rounded">lock</span>
+				<input type='password' id='mdp' name='mdp' placeholder="mot de passe" value=''>
+			</div>
+			<input type='submit' id='ok' name='ok' value='Créer un compte'>
+	</form>
+</div>
 
 <?php
 if (isset($_POST['ok'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['mdp'])){
