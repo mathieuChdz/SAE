@@ -22,7 +22,6 @@ form{
     width: 30em;
 }
 
-
 .form-mail{
     display: flex;
     flex-direction: row;
@@ -47,6 +46,10 @@ form{
 
 .form-structure img{
     width: 150px;
+}
+
+.material-symbols-rounded{
+    margin-right: 10px;
 }
 
 input[type=text], input[type=password] {

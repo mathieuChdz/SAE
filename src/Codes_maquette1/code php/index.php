@@ -44,15 +44,7 @@ session_start();
 <h4> Exemple de vidéo de démonstration du site : </h4>
 <div class='text'>
     <!-- text explicatif -->
-    <p>
-        <br>
-        <br>
-        <br>
-Text explicatif<br>
-        <br>
-        <br>
-        <br>
-
+    <p> test du texte 
     </p>
     <!-- video de démonstration -->
     <iframe width='560' height='315' src='https://www.youtube.com/embed/-Da8Mf5vg7o' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>

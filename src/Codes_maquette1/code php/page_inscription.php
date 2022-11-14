@@ -40,6 +40,7 @@ if (isset($_SESSION["login"], $_SESSION["access"])){
 			</div>
 			<input type='submit' id='ok' name='ok' value='Créer un compte'>
 	</form>
+	<a href='page_connexion.php'>retour page connexion</a>
 </div>
 
 <?php

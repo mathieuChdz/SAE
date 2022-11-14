@@ -10,6 +10,7 @@ html{
     font-size: 17px;
     text-align: center;
     font-family: sans-serif;
+    flex-direction: column;
 }
 
 form{
@@ -66,8 +67,20 @@ form{
     width: 100%;
 }
 
-.form-structure img{
-    width: 150px;
+
+.form-structure a{
+    position: absolute;
+    margin-top: 24em;
+    text-decoration: none;
+    color: blue;
+}
+
+.form-structure a:hover{
+    border-bottom: solid 1px gray;
+}
+
+.material-symbols-rounded{
+    margin-right: 10px;
 }
 
 input[type=text], input[type=password] {
@@ -97,13 +110,5 @@ input[type=submit]:hover{
     transition: all 0.5s;
 }
 
-form a {
-    text-decoration: none;
-    color: blue;
-}
-form a:visited,
 
-form a:hover{
-    border-bottom: solid 1px gray;
-}
 
