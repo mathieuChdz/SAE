@@ -30,3 +30,11 @@
 |7|appuyer sur le bouton “se connecter” de la page de connexion|retour à la page d’accueil|OK|
 |8|appuyer sur le bouton “retour” de la page d’erreur|renvoie à la page d’accueil|OK|
 
+
+
+|N°|Action|Attendu|Résultat|
+| - | - | - | - |
+|1|S’inscrire|Les informations sont inscrites dans la base de données|OK|
+|2|Se connecter|Arriver sur la page d’accueil avec une session ouverte|OK|
+|3|Se déconnecter|La session est fermée|OK|
+
