@@ -12,34 +12,38 @@ session_start();
 //print_r($_SESSION);
 ?>
 
-<header>
+<nav class="navBar">
+        <img class="logo" src="logo_sans_fond.png">
+        <h1>X Simulator</h1>
+        <div class="navBar-sim-sub">
+            <div class="nav-links">
+                <ul>
+                    <li><a href="simulation.html">Simulation 1</a></li>
+                    <li><a href="simulation.html">Simulation 2</a></li>
+                    <li><a href="simulation.html">Simulation 3</a></li>
+                    <li>
+                    <?php
+                        if (isset($_SESSION['login'])){
+                            echo "
+                            <form action='log_out.php'>
+                                    <input type='submit' id='button_connexion' value='Se déconnecter'>
+                                </form>";
+                        }
+                        else{
+                            echo "
+                            <form action='page_connexion.php'>
+                                    <input type='submit' id='button_connexion' value='Se connecter'>
+                                </form>";
+                        }
+                    ?>
+                    </li>
+                </ul>
+            </div>
+            <img src="Hamburger_icon.png" alt="menu hamburger" class="menu-hamburger">
+        </div>      
+    </nav>
+    <header></header>
 
-<!-- lien vers les simulations-->
-<nav>
-    <img src='logo_sans_fond.png'>
-    <h1>X Simulator</h1>
-    <a href='simulation.php'>Simulation 1</a>
-    <a href='simulation.php'>Simulation 2</a>
-    <a href='simulation.php'>Simulation 3</a>
-    <div id='button_form'>
-<?php
-	if (isset($_SESSION['login'])){
-		echo "
-		<form action='log_out.php'>
-        		<input type='submit' id='button_connexion' value='Se déconnecter'>
-    		</form>";
-	}
-	else{
-		echo "
-		<form action='page_connexion.php'>
-        		<input type='submit' id='button_connexion' value='Se connecter'>
-    		</form>";
-	}
-?>
-
-    </div>
-</nav>
-</header>
 <body>
 <h4> Exemple de vidéo de démonstration du site : </h4>
 <div class='text'>
@@ -52,4 +56,14 @@ session_start();
 
 </div>
 </body>
+
+<script>
+    const menuHamburger = document.querySelector(".menu-hamburger")
+    const navLinks = document.querySelector(".nav-links")
+
+    menuHamburger.addEventListener('click',()=>{
+        navLinks.classList.toggle('mobile-menu')
+    })
+</script>
+
 </html>
