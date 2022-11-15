@@ -1,4 +1,4 @@
-Conception détaillée
+## Conception détaillée
 
 ### Maquette 1:
 
@@ -107,3 +107,10 @@ La page est composée d’un formulaire d'inscription. Ce formulaire contient:
 **Page simulation:**
 
 La page simulation comporte un titre h1 “Cette page est en cours de développement”.
+
+### Serveur et Base de données
+
+Le serveur web utilisé est un serveur web Apache. La page par défaut du renvoyée par Apache, c'est-à-dire la page sur laquelle on arrive lorsqu'on accède au serveur web sur internet, se nomme index.php : c'est la page d'accueil du site.
+Ce serveur web est accompagné du système de gestion de base de données (abrégé SGBD) MySQL. Ce SGBD nous a permis de créer et gérer une base de données à l'aide de l'interface phpMyAdmin.
+La base de données que nous utilisons ce nomme "Utilisateurs" et contient une table nommée "Utilisateur_inscrit".
+Le serveur web Apache, le SGBD MySQL ainsi qu'un module PHP constitues une pile LAMP (Linux Apache MySQL PHP) qui est installée sur le RPi4 fourni par le client et qui fonctionne sous Linux.
