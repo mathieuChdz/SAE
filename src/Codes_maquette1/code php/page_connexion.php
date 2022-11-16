@@ -57,8 +57,7 @@ if (isset($_POST["ok"],$_POST["email"],$_POST["mdp"])){
 	    header("Location: index.php");
 	}
 	else{
-        echo 'ok';
-	    //header("Location: page_connexion.php");
+	    header("Location: page_connexion.php");
 	}
 }
 ?>
