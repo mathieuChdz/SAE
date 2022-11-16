@@ -60,7 +60,7 @@ if (isset($_POST['ok'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST
 		    $$k = $v;
 		}
 
-		$connexion = mysqli_connect("localhost", "root", "");
+		$connexion = mysqli_connect("localhost", "root", "01r1173");
 		$bd = mysqli_select_db($connexion, "Utilisateurs");
 		$ins = "INSERT into Utilisateur_inscrit(login,password,nom,prenom) values(?,?,?,?)";
 		$insp = mysqli_prepare($connexion, $ins);
