@@ -45,6 +45,19 @@ session_start();
     <header></header>
 
 <body>
+
+<div class="text-welcome">
+    <?php
+        if (isset($_SESSION['login'])){
+            $prenom=$_SESSION['login'];
+            echo "<h1>Bienvenue sur X Simulator $prenom !</h1>";
+        }
+        else{
+            echo "<h1>Bienvenue sur X Simulator</h1>";
+        }
+    ?>
+</div>
+
 <h4> Exemple de vidéo de démonstration du site : </h4>
 <div class='text'>
     <!-- text explicatif -->

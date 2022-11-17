@@ -6,7 +6,8 @@
 }
 
 html{
-    background-color: #d7dae5ff;
+    /*background-color: #d7dae5ff;*/
+    background: rgb(194, 210, 216);
     font-family: sans-serif;
 }
 
@@ -34,7 +35,7 @@ body {
 
 }
 .navBar h1 {
-    font-size: 30px;
+    font-size: 35px;
     margin-left: 0;
 }
 .navBar a {
@@ -130,6 +131,12 @@ body {
 
 
 
+}
+
+.text-welcome{
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 1em;
 }
 
 h4 {
