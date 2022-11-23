@@ -18,7 +18,7 @@ session_start();
         <div class="navBar-sim-sub">
             <div class="nav-links">
                 <ul>
-                    <li><a href="simulation.html">Simulation 1</a></li>
+                    <li><a href="simu_proba.php>Simulation 1</a></li>
                     <li><a href="simulation.html">Simulation 2</a></li>
                     <li><a href="simulation.html">Simulation 3</a></li>
                     <li>
@@ -46,13 +46,17 @@ session_start();
 
 <body>
 <h4> Exemple de vidéo de démonstration du site : </h4>
-<div class='text'>
-    <!-- text explicatif -->
-    <p> test du texte 
-    </p>
-    <!-- video de démonstration -->
-    <iframe width='560' height='315' src='https://www.youtube.com/embed/-Da8Mf5vg7o' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
 
+<div class="explication">
+    <div class='text'>
+        <!-- text explicatif -->
+        <p> test du texte
+        </p>
+    </div>
+    <!-- video de démonstration -->
+    <div class="video">
+        <iframe width='560' height='315' src='https://www.youtube.com/embed/-Da8Mf5vg7o' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+    </div>
 
 </div>
 </body>

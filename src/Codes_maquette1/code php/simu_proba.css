@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+html{
+    background-color: #d7dae5ff;
+    font-family: sans-serif;
+}
+
+header {
+    background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
+}
+
+body {
+    margin: 0;
+}
+
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
+    padding: 20px;
+    border-bottom: 2px solid #6b7d7dff;
+}
+
+.navBar .logo{
+    width: 80px;
+    margin-left: 50px;
+
+}
+.navBar h1 {
+    font-size: 30px;
+    margin-left: 0;
+}
+.navBar input{
+    font-size: 30px ;
+}
+.simulation{
+
+}
+.simulation h1 {
+    margin-top: 30px;
+    margin-bottom: 100px;
+
+}
+
+.simulation .graphique {
+    width: 500px;
+    height: 300px;
+    display: flex;
+
+}
+
+.form-structure{
+    display: flex;
+    flex-direction: row;
+}
+
+.methodes{
+    display: flex;
+    flex-direction: column;
+}
+
+.methodes-graphique{
+    display: flex;
+    flex-direction: row;
+}
+
+.methodes-param{
+    display: flex;
+    flex-direction: row;
+}
