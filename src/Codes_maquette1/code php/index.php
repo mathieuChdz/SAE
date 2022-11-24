@@ -46,13 +46,15 @@ session_start();
 
 <body>
 <h4> Exemple de vidéo de démonstration du site : </h4>
-<div class='text'>
+<div class='explication'>
     <!-- text explicatif -->
-    <p> test du texte 
-    </p>
+    <div class="texte">
+        <p> test du texte</p>
+    </div>
     <!-- video de démonstration -->
-    <iframe width='560' height='315' src='https://www.youtube.com/embed/-Da8Mf5vg7o' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
-
+    <div class="video">
+        <iframe width='560' height='315' src='https://www.youtube.com/embed/-Da8Mf5vg7o' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+    </div>
 
 </div>
 </body>
