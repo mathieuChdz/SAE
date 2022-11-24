@@ -45,18 +45,23 @@ Ce deuxième livrable contiendra un recueil des besoins, ce cahier des charges, 
 dossier de spécification, un dossier de conception, un dossier de test ainsi que
 les rapports concernant les installations et le déploiement.
 
+Dans un troisième temps, nous allons développer une des trois simulations. Cette simulation porte sur les statistiques et les probabilités où nous ferons du calcul d'intégrales. Ensuite nous déploierons la simulation sur le site et la testerons en condition réelle. 
+
+Ce troisième livrable contiendra donc un recueil des besoins, ce cahier des charges encore agrandi, un dossier de spécification, un dossier de conception, un dossier de test ainsi que les rapports concernant le déploiement de la simulation.
+
 ### III/ Pré-requis
 
 Du côté des ressources logicielles, nous utiliserons GitLab afin de partager,
 versioner, et visionner l'avancée du projet.
 Les connaissances acquises en programmation web (PHP) et développement web
-(HTML), seront impératives.
+(HTML), seront impératives, les connaissances acquises en première année en python seront indispensables pour développer ces simulations.
 
 ### IV/ Priorités
 
 Les objectifs principaux sont donc :
 - de créer une maquette de l’application à réaliser. Une fois celle-ci confirmée, il faudra commencer à coder en HTML cette page web.
 - de déployer les pages web sur le serveur web porté sur le RPi4.
+- créer la simulation, tester si elle fonctionne
 
 *\*Les éléments marqués par ce symbole sont définies dans le glossaire.*
 

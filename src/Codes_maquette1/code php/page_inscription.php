@@ -22,6 +22,15 @@ if (isset($_SESSION["login"], $_SESSION["access"])){
 <div class="form-structure">
 	<form action=''method='post'>
 			<h1>Inscription</h1>
+			<div class="text-erreur">
+				<?php
+				if (isset($_GET["msg_err"])){
+					if ($_GET["msg_err"]==1){
+						echo "<h4> Veillez remplir tous les champs !</h4>";
+					}
+				}
+				?>
+			</div>
 			<div class="form-nom">
 				<span class="material-symbols-rounded">badge</span>
 				<input type='text' id='nom' name='nom' placeholder="nom" value=''>
@@ -60,7 +69,7 @@ if (isset($_POST['ok'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST
 		    $$k = $v;
 		}
 
-		$connexion = mysqli_connect("localhost", "root", "01r1173");
+		$connexion = mysqli_connect("localhost", "root", "");
 		$bd = mysqli_select_db($connexion, "Utilisateurs");
 		$ins = "INSERT into Utilisateur_inscrit(login,password,nom,prenom) values(?,?,?,?)";
 		$insp = mysqli_prepare($connexion, $ins);
@@ -72,7 +81,7 @@ if (isset($_POST['ok'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST
 	}
 
 	else{
-		echo "Veuillez remplir tous les champs !";
+		header("Location: page_inscription.php?msg_err=1");
 	}
 
 }
