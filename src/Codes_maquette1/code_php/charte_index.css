@@ -133,33 +133,31 @@ body {
 
 }
 
+.explication{
+     display: flex;
+     flex-direction:row;
+     justify-content: space-evenly;
+     padding-top: 5em;
+}
+
 .text-welcome{
     text-align: center;
     padding-top: 2em;
     padding-bottom: 1em;
 }
 
-h4 {
-    margin-left: 1050px;
-    margin-top: 50px;
+.video{
+    display: flex;
+    flex-direction: column;
+}
+
+.video h4 {
+    margin-bottom: 3em;
     font-size: 25px;
-    margin-bottom: 0px;
     text-decoration: underline;
     color: black;
 }
 
-.text{
-    display: flex;;
-    flex-wrap: wrap;
-    padding-top: 50px;
-    justify-content: center;
-}
-
-.text p{
-    margin: 10px;
-    padding: 100px;
-    border: 2px solid black;
-}
 
 .text iframe{
     size: auto;

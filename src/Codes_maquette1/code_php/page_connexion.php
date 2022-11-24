@@ -51,7 +51,7 @@ if (isset($_SESSION["login"], $_SESSION["access"])){
 <?php
 if (isset($_POST["ok"],$_POST["email"],$_POST["mdp"])){
 
-	$connexion=mysqli_connect("localhost", "root", "");
+	$connexion=mysqli_connect("localhost", "root", "01r1173");
 	$bd=mysqli_select_db($connexion, "Utilisateurs");
 	$select="SELECT login, password FROM Utilisateur_inscrit";
 	$res=mysqli_query($connexion, $select);
