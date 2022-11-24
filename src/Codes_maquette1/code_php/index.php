@@ -59,12 +59,19 @@ session_start();
 </div>
 
 <h4> Exemple de vidéo de démonstration du site : </h4>
+<<<<<<< HEAD
+<div class='explication'>
+    <!-- text explicatif -->
+    <div class="texte">
+        <p> test du texte</p>
+=======
 
 <div class="explication">
     <div class='text'>
         <!-- text explicatif -->
         <p> test du texte
         </p>
+>>>>>>> 50585af242a2bfcd24034e54c3e7127d180b7945
     </div>
     <!-- video de démonstration -->
     <div class="video">
