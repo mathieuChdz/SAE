@@ -20,6 +20,18 @@ if (isset($_SESSION["login"], $_SESSION["access"])){
 <div class="form-structure">
 	<form action=''method='post'>
 			<h1>Connexion</h1>
+			<div class="text-erreur">
+				<?php
+				if (isset($_GET["msg_err"])){
+					if ($_GET["msg_err"]==1){
+						echo "<h4> email ou mot de passe incorrect !</h4>";
+					}
+					elseif ($_GET["msg_err"]==2){
+						echo "<h4> Veillez remplir tous les champs !</h4>";
+					}
+				}
+				?>
+			</div>
 			<div class="form-mail">
 				<span class="material-symbols-rounded">mail</span>
 				<input type='text' id='email' name='email' placeholder="email" value=''>
@@ -39,7 +51,7 @@ if (isset($_SESSION["login"], $_SESSION["access"])){
 <?php
 if (isset($_POST["ok"],$_POST["email"],$_POST["mdp"])){
 
-	$connexion=mysqli_connect("localhost", "root", "01r1173");
+	$connexion=mysqli_connect("localhost", "root", "");
 	$bd=mysqli_select_db($connexion, "Utilisateurs");
 	$select="SELECT login, password FROM Utilisateur_inscrit";
 	$res=mysqli_query($connexion, $select);
@@ -57,7 +69,12 @@ if (isset($_POST["ok"],$_POST["email"],$_POST["mdp"])){
 	    header("Location: index.php");
 	}
 	else{
-	    header("Location: page_connexion.php");
+		if ($_POST["email"]!=null or $_POST["mdp"]!=null){
+			header("Location: page_connexion.php?msg_err=1");
+		}
+		else{
+			header("Location: page_connexion.php?msg_err=2");
+		}
 	}
 }
 ?>

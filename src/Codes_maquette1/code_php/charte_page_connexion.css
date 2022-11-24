@@ -2,6 +2,11 @@ html{
     background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
 }
 
+.text-erreur{
+    color: red;
+    font-size: 15px;
+}
+
 .form-structure {
     margin-top: 20vh;
     display: flex;
@@ -83,7 +88,9 @@ form a {
     text-decoration: none;
     color: blue;
 }
-form a:visited,
+form a:visited{
+    color: purple;
+}
 
 form a:hover{
     border-bottom: solid 1px gray;

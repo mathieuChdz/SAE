@@ -2,6 +2,13 @@ html{
     background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
 }
 
+.text-erreur{
+    color: red;
+    font-size: 15px;
+    margin-top: -15px;
+    margin-bottom: -10px;
+}
+
 .form-structure {
     margin-top: 20vh;
     display: flex;

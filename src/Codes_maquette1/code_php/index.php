@@ -18,7 +18,7 @@ session_start();
         <div class="navBar-sim-sub">
             <div class="nav-links">
                 <ul>
-                    <li><a href="simulation.html">Simulation 1</a></li>
+                    <li><a href="simu_proba.php>Simulation 1</a></li>
                     <li><a href="simulation.html">Simulation 2</a></li>
                     <li><a href="simulation.html">Simulation 3</a></li>
                     <li>
@@ -45,11 +45,33 @@ session_start();
     <header></header>
 
 <body>
+
+<div class="text-welcome">
+    <?php
+        if (isset($_SESSION['login'])){
+            $prenom=$_SESSION['login'];
+            echo "<h1>Bienvenue sur X Simulator $prenom !</h1>";
+        }
+        else{
+            echo "<h1>Bienvenue sur X Simulator</h1>";
+        }
+    ?>
+</div>
+
 <h4> Exemple de vidéo de démonstration du site : </h4>
+<<<<<<< HEAD
 <div class='explication'>
     <!-- text explicatif -->
     <div class="texte">
         <p> test du texte</p>
+=======
+
+<div class="explication">
+    <div class='text'>
+        <!-- text explicatif -->
+        <p> test du texte
+        </p>
+>>>>>>> 50585af242a2bfcd24034e54c3e7127d180b7945
     </div>
     <!-- video de démonstration -->
     <div class="video">
