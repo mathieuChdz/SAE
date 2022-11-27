@@ -39,34 +39,64 @@
     <div class="form-structure">
       <div class="methodes-param">
         <label for="methodes_selection">Saisisez la méthodes: </label>
-        <select name="méthodes" id="methodes_selection">
+        <select name="methodes" id="methodes_selection">
           <option value="">--Choississez une méthode--</option>
-          <option value="méthode rectangles gauche" >méthode des rectangles gauche</option>
-          <option value="méthode rectangles droit">méthode des rectangles droit</option>
-          <option value="méthode rectangles médians">méthode des rectangles médians</option>
-          <option value="méthode des trapèzes">méthode des trapèzes</option>
-          <option value="méthode de Simpson">méthode de Simpson</option>
+          <option value="mrg" >méthode des rectangles gauche</option>
+          <option value="mrd">méthode des rectangles droit</option>
+          <option value="mrm">méthode des rectangles médians</option>
+          <option value="mdt">méthode des trapèzes</option>
+          <option value="mds">méthode de Simpson</option>
 
         </select>
       </div>
       <div class="methodes-param">
         <label for="m">Saisisez la valeur de m : </label>
-        <input type="text" id="m">
+        <input type="text" id="m" name="m">
       </div>
       <div class="methodes-param">
-        <label for="σ">Saisisez la valeur de σ : </label>
-        <input type="text" id="σ" >
+        <label for="e_t">Saisisez la valeur de σ : </label>
+        <input type="text" id="e_t" name="e_t">
       </div>
       <div class="methodes-param">
         <label for="t">Saisisez la valeur de t : </label>
-        <input type="text" id="t">
+        <input type="text" id="t" name="t">
       </div>
 
-      <input type="submit" value="Lancer">
+      <input type="submit" id="ok" name="ok" value="Lancer">
     </div>
   </form>
 </div>
 
+<?php
+if (isset($_POST['ok'], $_POST['e_t'], $_POST['t'], $_POST['m'], $_POST['methodes'])){
+  if ($_POST['ok']!=null and $_POST['e_t']!=null and $_POST['t']!=null and $_POST['m']!=null and $_POST['methodes']!=null){
+    $arg1 = $_POST['t'];
+    $arg2 = $_POST['m'];
+    $arg3 = $_POST['e_t'];
+    if ($_POST['methodes'] == "mrg"){
+      $res = exec("python rectangle_gauche.py $arg1 $arg2 $arg3");
+      print($res);
+    }
+    if ($_POST['methodes'] == "mrd"){
+      $res = exec("python rectangle_droit.py $arg1 $arg2 $arg3");
+      print($res);
+    }
+    if ($_POST['methodes'] == "mrm"){
+      $res = exec("python rectangle_medians.py $arg1 $arg2 $arg3");
+      print($res);
+    }
+    if ($_POST['methodes'] == "mdt"){
+      $res = exec("python trapeze.py $arg1 $arg2 $arg3");
+      print($res);
+    }
+    if ($_POST['methodes'] == "mds"){
+      $res = exec("python simpson.py $arg1 $arg2 $arg3");
+      print($res);
+    }
+    unset($_POST);
+  }
+}
+?>
 
 </body>
 </html>
