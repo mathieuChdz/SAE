@@ -1,4 +1,4 @@
-﻿Conception détaillée
+Conception détaillée
 
 **Maquette 1:**
 
@@ -50,11 +50,20 @@ La page est composée d’un formulaire d'inscription. Ce formulaire contient:
 - Un submit pour créer un compte
 - Un lien pour retourner à la page d’accueil
 
-**Page simulation:**
+**Page simulation intégrale:**
 
-La page simulation comporte un titre h1 “Cette page est en cours de développement”.
+La page possède une barre de navigation avec le logo le titre et un bouton pour retourner à l'accueil.
+Le contenu de la page est divisé en deux parties. La première est une représentation graphique des trois méthodes proposées.
+Il y a cinq boutons et une image qui se met à jour en fonction du bouton sélectionné.
+La deuxième partie est un formulaire pour lancer la simulation. Ce formulaire contient :
 
-- Un div qui contient un lien qui permet de retourner sur la page de connexion
+- Une liste déroulante pour choisir la méthode que l'on souhaite utiliser
+- un label et un texte pour le paramètre m (l'espérence)
+- un label et un texte pour le paramètre σ (l'écart-type)
+- un label et un texte pour le paramètre t
+- Un submit pour lancer la simulation
+
+Le résultat de la simulation est affiché en bas de la page.
 
 **Maquette 2:**
 
@@ -113,10 +122,6 @@ La page est composée d’un formulaire d'inscription. Ce formulaire contient:
 - Un label et un texte pour l’adresse email
 - Un label et un texte pour le mot de passe
 - Un submit pour créer un compte
-
-**Page simulation:**
-
-La page simulation comporte un titre h1 “Cette page est en cours de développement”.
 
 **Serveur et Base de données**
 
