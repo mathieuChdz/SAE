@@ -8,11 +8,11 @@ Ce module à pour objectif de calculer une probabilité suivant une **loi normal
 - **loi_normale (*m,s,x*):** calcul une loi de probabilité avec des paramètres (m,s,x) donnés
 - **rectangle_droit (*n,a,b,m,s*):**  calcul une probabilité suivant une loi normale grâce à la méthode des rectangles droits
 - **rectangle gauche (*n,a,b,m,s*):** calcul une probabilité suivant une loi normale grâce à la méthode des rectangles gauche
-- **rectangle médian (*n,a,b,m,s*):** calcul une probabilité suivant une loi normale grâce à la méthode des rectangles médian
+- **rectangle médian (*n,a,b,m,s*):** calcul une probabilité suivant une loi normale grâce à la méthode des rectangles médians
 - **trapèze (*n,a,b,m,s*):** calcul une probabilité suivant une loi normale grâce à la méthode des trapèzes
 - **simpson (*n,a,b,m,s*):** calcul une probabilité suivant une loi normale grâce à la méthode de Simpson
 
-> *n:nombre rectangle/m:espérence/s:écart type/x:valeur cherchée/a:borne inférieure/b:borne supérieur*
+> *n:nombre rectangle/m:espérence/s:écart type/x:valeur cherchée/a:borne inférieure/b:borne supérieure*
 	
 
 
@@ -22,9 +22,9 @@ $\frac{1}{\sigma\sqrt{2\pi}}\mathrm{e}^{\frac{(x-\mu)^2}{2\sigma^2}}$
 
 `` def norm(m,s,x):``
 
-    ``quotient=(1/(s\*sqrt(2*pi)))``
+``quotient=(1/(s\*sqrt(2*pi)))``
 	
-	``ex=exp(-1/2\*((x-m)/s)**2)``
+``ex=exp(-1/2\*((x-m)/s)**2)``
 	
 ``return (quotient*ex)``
 
