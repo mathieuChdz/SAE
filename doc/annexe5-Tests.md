@@ -1,4 +1,4 @@
-﻿**Maquette 2 :**
+**Maquette 2 :**
 
 
 
@@ -38,3 +38,17 @@
 |2|Se connecter|Arriver sur la page d’accueil avec une session ouverte|OK|
 |3|Se déconnecter|La session est fermée|OK|
 
+
+**Dossier de test**
+
+|classe|m|σ|t|résultat attendu|résultat obtenu|
+ | - | - | - | - | - | - |
+|p1|90|3|87|0.1586|0.1586|
+|p2|-90|3|-87|0.8413|0.8413|
+|p3|90|3|-87|0|0|
+|p4|-90|3|87|1|0.9999|
+|p5|0|3|87|1|0.9999|
+|p6|90|0|87|impossible|impossible|
+|p7|0|3|0|0.5|0.5|
+|p8|0|0|0|impossible|impossible|
+|p9|90|-3|87|impossible|impossible
