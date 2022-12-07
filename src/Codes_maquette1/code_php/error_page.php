@@ -5,8 +5,9 @@
     <title></title>
     <link rel="stylesheet" href="charte_error_page.css">
 </head>
-<body>
 
+
+<body>
 <?php
 session_start();
 ?>

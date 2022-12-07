@@ -63,6 +63,8 @@ body {
 .form-structure{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    margin-right: 70em;
 }
 
 .methodes{
@@ -92,7 +94,24 @@ body {
     justify-content: center;
 }
 
-.methodes-param{
+.methodes-param-submit{
     display: flex;
     flex-direction: row;
 }
+
+.methodes-param{
+    display: flex;
+    flex-direction: column;
+}
+
+.methodes-submit input{
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+

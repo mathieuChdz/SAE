@@ -6,11 +6,21 @@
     <link rel="stylesheet" href="simu_proba.css">
     <script src="graphe.js"></script>
 </head>
+
+<?php
+session_start();
+if (!isset($_SESSION["login"], $_SESSION["admin"])){
+	header("Location: page_connexion.php");
+}
+?>
+
 <body>
 <nav class="navBar">
   <img class="logo" src="logo_sans_fond.png">
   <h1>X Simulator</h1>
-  <input type="button" value="Retour">
+  <form action="index.php">
+  	<input type="submit" value="Accueil">
+  </form>
 </nav>
 
 <div class="simulation">
@@ -33,7 +43,7 @@
     </div>
   </div>
 </div>
-
+<hr>
 <div class="Saisie">
   <form action="" method="post">
     <div class="form-structure">
@@ -41,29 +51,28 @@
         <label for="methodes_selection">Saisisez la méthodes: </label>
         <select name="methodes" id="methodes_selection">
           <option value="">--Choississez une méthode--</option>
-          <option value="mrg" >méthode des rectangles gauche</option>
-          <option value="mrd">méthode des rectangles droit</option>
           <option value="mrm">méthode des rectangles médians</option>
           <option value="mdt">méthode des trapèzes</option>
           <option value="mds">méthode de Simpson</option>
 
         </select>
       </div>
-      <div class="methodes-param">
-        <label for="m">Saisisez la valeur de m : </label>
-        <input type="text" id="m" name="m">
-      </div>
-      <div class="methodes-param">
-        <label for="e_t">Saisisez la valeur de σ : </label>
-        <input type="text" id="e_t" name="e_t">
-      </div>
-      <div class="methodes-param">
-        <label for="t">Saisisez la valeur de t : </label>
-        <input type="text" id="t" name="t">
+      <div class="methodes-param-submit">
+	      <div class="methodes-param">
+		<label for="m">Saisisez la valeur de m : </label>
+		<input type="text" id="m" name="m">
+
+		<label for="e_t">Saisisez la valeur de σ : </label>
+		<input type="text" id="e_t" name="e_t">
+
+		<label for="t">Saisisez la valeur de t : </label>
+		<input type="text" id="t" name="t">
+	    </div>
+	    <div class="methodes-submit">
+	      <input type="submit" id="ok" name="ok" value="Lancer">
+	    </div>
       </div>
 
-      <input type="submit" id="ok" name="ok" value="Lancer">
-    </div>
   </form>
 </div>
 

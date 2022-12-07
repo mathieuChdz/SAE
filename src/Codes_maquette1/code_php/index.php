@@ -18,6 +18,13 @@ session_start();
         <div class="navBar-sim-sub">
             <div class="nav-links">
                 <ul>
+                    <?php
+                        if (isset($_SESSION['login'])){
+                            if ($_SESSION["admin"]=="oui"){
+                                echo "<li><a href='admin_page.php'>admin page</a></li>";
+                            }
+                        }
+                    ?>
                     <li><a href="simu_proba.php">Simulation 1</a></li>
                     <li><a href="simulation.html">Simulation 2</a></li>
                     <li><a href="simulation.html">Simulation 3</a></li>

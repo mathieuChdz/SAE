@@ -1,8 +1,8 @@
 <?php
 session_start();
-if (isset($_SESSION['login'], $_SESSION['access'])){
+if (isset($_SESSION['login'], $_SESSION['admin'])){
     unset($_SESSION['login']);
-    unset($_SESSION['access']);
+    unset($_SESSION['admin']);
     header("Location: index.php");
     session_destroy();
 }
