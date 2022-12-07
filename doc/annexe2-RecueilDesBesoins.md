@@ -34,11 +34,11 @@ Les participants au projet sont, d'une part, le client qui est l'IUT de Vélizy 
 Les valeurs privilégiées sont les suivantes : disponibilité, efficacité, esprit d’équipe et coopération.
 1.3 Quels retours ou quelle visibilité sur le projet les utilisateurs et commanditaires
 souhaitent-ils ?
-Les commanditaires souhaitent avoir une documentation complète sur le projet. Ils souhaitent notamment que les codes sources soient documentés.
+Les commanditaires souhaitent avoir une documentation complète sur le projet. Ils souhaitent notamment que les codes sources soient documentés. Les commanditaires ont demandé à avoir un planning des livrables prévues et des fonctionnalités de ceux-ci. Ils souhaitent aussi pouvoir tester les fonctionnalités promises après leur date de livraison prévue.
 1.4 Que peut-on acheter ? Que doit-on construire ? Qui sont nos concurrents ?
 Nos concurrents sont tous les groupes de SAE qui réalisent le même projet pour notre client.
 1.5 Quels sont les autres exigences du processus ? (exemple : tests, installation, etc...)
-Le processus nécessite l'installation de divers modules sur un RPi4, notamment l'installation d'un serveur Apache fonctionnel avec une base de données. Il est aussi nécessaire de développer des tests pour vérifier le bon fonctionnement des fonctionnalités et du système. 
+Le processus nécessite l'installation de divers modules sur un RPi4, notamment l'installation d'un serveur Apache fonctionnel avec une base de données. Il est aussi nécessaire de développer des tests pour vérifier le bon fonctionnement des fonctionnalités et du système. Les différentes phases de développement devront se terminer sans dépasser le temps prévu pour pouvoir livrer les fonctionnalités au client.
 1.6 À quelle dépendance le projet est-il soumis ?
 Aucune dépendance particulière n'a été mise en évidence.
 
