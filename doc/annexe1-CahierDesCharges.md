@@ -1,4 +1,4 @@
-## Cahier des Charges
+﻿## Cahier des Charges
 
 ### I/ Introduction
 
@@ -49,6 +49,10 @@ Dans un troisième temps, nous allons développer une des trois simulations. Cet
 
 Ce troisième livrable contiendra donc un recueil des besoins, ce cahier des charges encore agrandi, un dossier de spécification, un dossier de conception, un dossier de test ainsi que les rapports concernant le déploiement de la simulation.
 
+Dans un quatrième temps, nous allons développer un deuxième module. Ce dernier concernera la cryptographie, et permettra le cryptage ou décryptage de messages. Il sera comme le précédent, testé et déployé sur le site.
+
+Le quatrième livrable contiendra alors un recueil des besoins et un cahier des charges incrémentés, un dossier de conception, un dossier de spécification, un  dossier de test ainsi qu'un nouveau rapport de déploiement du module.
+
 ### III/ Pré-requis
 
 Du côté des ressources logicielles, nous utiliserons GitLab afin de partager,
@@ -61,7 +65,7 @@ Les connaissances acquises en programmation web (PHP) et développement web
 Les objectifs principaux sont donc :
 - de créer une maquette de l’application à réaliser. Une fois celle-ci confirmée, il faudra commencer à coder en HTML cette page web.
 - de déployer les pages web sur le serveur web porté sur le RPi4.
-- créer la simulation, tester si elle fonctionne
+- créer les simulations, tester si elles fonctionnent
 
 *\*Les éléments marqués par ce symbole sont définies dans le glossaire.*
 
