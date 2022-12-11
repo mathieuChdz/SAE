@@ -146,6 +146,16 @@ body {
     justify-content: space-evenly;
 }
 
+.choix-tuple form{
+    display: flex;
+    flex-direction: row;    
+    padding-bottom: 1em;
+}
+
+.choix-tuple input[type=text]{
+    flex-grow: 1;
+}
+
 table{
     border-collapse: collapse ;
     width: 100%;

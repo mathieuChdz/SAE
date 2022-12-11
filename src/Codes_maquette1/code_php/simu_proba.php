@@ -31,12 +31,14 @@ if (!isset($_SESSION["login"], $_SESSION["admin"])){
     <div class="methodes">
       <label for="méthodes">Representation graphique des méthodes :</label>
       <div class="methodes-button">
-        <input type="button" onclick="grapheGauche()" value="méthode des rectangles gauches">
-        <input type="button" onclick="grapheDroit()" value="méthode des rectangles droit">
-        <input type="button" onclick="grapheMedians()" value="méthode des rectangles médians">
-        <input type="button" onclick="grapheTrapeze()" value="methode des trapèzes">
-        <input type="button" onclick="grapheSimpson()" value="methode de Simpson">
+        <input type="button" id="mybutton" onclick="grapheGauche()" value="méthode des rectangles gauches">
+        <input type="button" id="mybutton" onclick="grapheDroit()" value="méthode des rectangles droit">
+        <input type="button" id="mybutton" onclick="grapheMedians()" value="méthode des rectangles médians">
+        <input type="button" id="mybutton" onclick="grapheTrapeze()" value="methode des trapèzes">
+        <input type="button" id="mybutton" onclick="grapheSimpson()" value="methode de Simpson">
       </div>
+
+
     </div>
     <div id="graph" class="graphique">
       <img  src="methode_rec_gauche.png">
@@ -103,6 +105,20 @@ if (isset($_POST['ok'], $_POST['e_t'], $_POST['t'], $_POST['m'], $_POST['methode
       print($res);
     }
     unset($_POST);
+
+
+    $connexion=mysqli_connect("localhost", "root", "01r1173");
+    $bd=mysqli_select_db($connexion, "Utilisateurs");
+    $select="SELECT module_1 FROM users_stats WHERE login='".$_SESSION['login']."'";
+    $res=mysqli_query($connexion, $select);
+
+    $ligne = mysqli_fetch_assoc($res);
+
+    $ins2 = "UPDATE users_stats SET module_1 = ? WHERE login='".$_SESSION['login']."'";
+		$insp2 = mysqli_prepare($connexion, $ins2);
+    $nb = $ligne['module_1'] + 1;
+    mysqli_stmt_bind_param($insp2, 'i', $nb);
+		mysqli_stmt_execute($insp2);
   }
 }
 ?>

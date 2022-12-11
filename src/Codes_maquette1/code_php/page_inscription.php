@@ -77,6 +77,12 @@ if (isset($_POST['ok'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST
 		mysqli_stmt_bind_param($insp, 'ssss', $email, $password_md5, $nom, $prenom);
 		mysqli_stmt_execute($insp);
 
+		$ins2 = "INSERT into users_stats(login,module_1,module_2,module_3) values(?,?,?,?)";
+		$insp2 = mysqli_prepare($connexion, $ins2);
+		$modules_init = 0;
+		mysqli_stmt_bind_param($insp2, 'siii', $email, $modules_init, $modules_init, $modules_init);
+		mysqli_stmt_execute($insp2);
+
 		header("Location: page_connexion.php");
 	}
 

@@ -76,9 +76,9 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
                 $first_line = '<th>id</th><th>login</th><th>nom</th><th>prenom</th><th>supprimer</th>';
             }
             elseif ($_GET["table"]==2){
-                $table = 'Utilisateur_inscrit';
+                $table = 'users_stats';
                 $titre = 'liste des statistiques';
-                $first_line = '<th>id</th><th>login</th><th>nom</th><th>prenom</th>';
+                $first_line = '<th>id</th><th>login</th><th>module 1</th><th>module 2</th><th>module 3</th>';
 
             }
             elseif ($_GET["table"]==3){
@@ -109,6 +109,12 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
                     #display($res);
                     echo "<div class='table-aff'>";
                     echo "<h2>".$titre."</h2>";
+                    echo "
+                    <div class='choix-tuple'>
+                        <form action='traitement_table.php' method='post'>
+                            <input type='text' id='mot' name='mot' placeholder='mot de recherche'>
+                            <input type='submit' id='send' name='send' value='rechercher'>
+                    </div>";
                     echo "<table>";
                     echo "<tr id='first-line'>".$first_line."</tr>";
                     while ($ligne=mysqli_fetch_row($res)){
@@ -122,7 +128,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
                             }
                             elseif ($cpt_mdp == 3){
                                 if (isset($_GET["table"])){
-                                    if ($_GET["table"]==3){
+                                    if ($_GET["table"]!=1){
                                         echo "<td>".$v."</td>";
                                     }
                                 }                            }
