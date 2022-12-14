@@ -31,6 +31,13 @@ session_start();
                     <li>
                     <?php
                         if (isset($_SESSION['login'])){
+                            echo "<a href='profil_page.php'>profil</a>";
+                        }
+                    ?>
+                    </li>
+                    <li>
+                    <?php
+                        if (isset($_SESSION['login'])){
                             echo "
                             <form action='log_out.php'>
                                     <input type='submit' id='button_connexion' value='Se déconnecter'>
@@ -79,6 +86,8 @@ session_start();
     </div>
 
 </div>
+
+
 </body>
 
 <script>
