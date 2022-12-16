@@ -11,10 +11,19 @@ def ascii(message: str) -> list:
     for i in message:
         tab.append(ord(i))
     return tab
+<<<<<<< HEAD
 
 
 
 
+=======
+
+
+print(ascii('Secret'))
+
+
+
+>>>>>>> f0db84e47c5fe2dac5b7a11dde1472d9174d3e59
 def perm(key: str) -> list:
     """Genere une chaine sous forme de tableau a partir d'une permutation d'une clef entree en parametre.
     Entree :
@@ -33,9 +42,16 @@ def perm(key: str) -> list:
         
     return S
     
+<<<<<<< HEAD
 
 
 
+=======
+
+print(perm('Secret'))
+
+
+>>>>>>> f0db84e47c5fe2dac5b7a11dde1472d9174d3e59
 def codage(key: str, message: str) -> list:
     """Chiffre un message a l'aide d'une clef en utilisant le principe du chiffrement RC4.
     Entrees :
@@ -63,6 +79,10 @@ def codage(key: str, message: str) -> list:
     return code
 
 
+<<<<<<< HEAD
+=======
+print(codage('Secret', 'Attack at dawn'))
+>>>>>>> f0db84e47c5fe2dac5b7a11dde1472d9174d3e59
 
 
 def decodage(key: str, message: list) -> str:
@@ -91,6 +111,7 @@ def decodage(key: str, message: list) -> str:
     return ''.join(code)
 
 
+<<<<<<< HEAD
 
 def affiche_message(message : list):
     """Affiche un message chiffre ou dechiffre avec le chiffrement RC4.
@@ -105,3 +126,6 @@ def affiche_message(message : list):
         message_code += message[i]
     print(message_code)
 
+=======
+print(decodage('Secret', codage('Secret', 'Attack at dawn')))
+>>>>>>> f0db84e47c5fe2dac5b7a11dde1472d9174d3e59
