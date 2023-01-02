@@ -2,7 +2,7 @@
 session_start();
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -11,7 +11,7 @@ session_start();
 </head>
 
 <nav class="navBar">
-    <img class="logo" src="logo_sans_fond.png">
+    <img class="logo" src="images/logo_sans_fond.png">
     <h1>X Simulator</h1>
     <div class="navBar-sim-sub">
         <div class="nav-links">
@@ -44,7 +44,7 @@ session_start();
                 </li>
             </ul>
         </div>
-        <img src="Hamburger_icon.png" alt="menu hamburger" class="menu-hamburger">
+        <img src="images/Hamburger_icon.png" alt="menu hamburger" class="menu-hamburger">
     </div>      
 </nav>
 <header></header>
@@ -57,6 +57,17 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
     if ($_SESSION['admin'] == "oui"){
 
         ?>
+        <?php
+            $connexion = mysqli_connect("localhost", "root", "01r1173");
+            $bd=mysqli_select_db($connexion,"Utilisateurs");
+            $select = 'SELECT * FROM utilisateur_inscrit';
+            $recupUsers = mysqli_query($connexion,$select);
+            while($user = mysqli_fetch_row($recupUsers)){
+                ?>
+                <p><?= $user['login']; ?> <a href="supprimer_user_2.php?id=<?= $user['id']; ?>" style="text-decoration: none">Suppprimer</a></p>
+                <?php
+            }
+        ?>
         <div class="choix-table">
             <h2>Quelle table voulez-vous afficher ?</h2>
             <form action="traitement_table.php" method="post">
@@ -67,6 +78,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
         </div>
         <?php
 
+
         echo "<link rel='stylesheet' href='charte_admin_page.css'>";
     
         if (isset($_GET["table"])){
@@ -76,9 +88,9 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
                 $first_line = '<th>id</th><th>login</th><th>nom</th><th>prenom</th><th>supprimer</th>';
             }
             elseif ($_GET["table"]==2){
-                $table = 'users_stats';
+                $table = 'Utilisateur_inscrit';
                 $titre = 'liste des statistiques';
-                $first_line = '<th>id</th><th>login</th><th>module 1</th><th>module 2</th><th>module 3</th>';
+                $first_line = '<th>id</th><th>login</th><th>nom</th><th>prenom</th>';
 
             }
             elseif ($_GET["table"]==3){
@@ -109,12 +121,6 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
                     #display($res);
                     echo "<div class='table-aff'>";
                     echo "<h2>".$titre."</h2>";
-                    echo "
-                    <div class='choix-tuple'>
-                        <form action='traitement_table.php' method='post'>
-                            <input type='text' id='mot' name='mot' placeholder='mot de recherche'>
-                            <input type='submit' id='send' name='send' value='rechercher'>
-                    </div>";
                     echo "<table>";
                     echo "<tr id='first-line'>".$first_line."</tr>";
                     while ($ligne=mysqli_fetch_row($res)){
@@ -128,7 +134,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
                             }
                             elseif ($cpt_mdp == 3){
                                 if (isset($_GET["table"])){
-                                    if ($_GET["table"]!=1){
+                                    if ($_GET["table"]==3){
                                         echo "<td>".$v."</td>";
                                     }
                                 }                            }
@@ -137,7 +143,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
                                     if ($_GET["table"]==1){
                                         ?>
                                         <td>                                        
-                                            <form action="traitement_table.php" method="post">
+                                            <form action="supprimer_user_2.php" method="post">
                                                 <input type="submit" id="<?php echo $ligne[0]?>" name="send" value="supprimer">
                                             </form>
                                         </td>
@@ -147,7 +153,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
                                 else{
                                     ?>
                                     <td>                                        
-                                        <form action="traitement_table.php" method="post">
+                                        <form action="supprimer_user_2.php" method="post">
                                            <input type="submit" id="<?php echo $ligne[0]?>" name="send" value="supprimer">
                                         </form>
                                     </td>

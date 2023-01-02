@@ -6,7 +6,7 @@ function grapheDroit() {
 		graphe.removeChild(graphe.firstChild);
 	}
 	new_graphe = document.createElement("img");
-	new_graphe.setAttribute("src", "methode_rec_droit2.png")
+	new_graphe.setAttribute("src", "../images/methode_rec_droit2.png")
 	graphe.appendChild(new_graphe);
 }
 
@@ -16,7 +16,7 @@ function grapheGauche() {
 		graphe.removeChild(graphe.firstChild);
 	}
 	new_graphe = document.createElement("img");
-	new_graphe.setAttribute("src", "methode_rec_gauche.png")
+	new_graphe.setAttribute("src", "../images/methode_rec_gauche.png")
 	graphe.appendChild(new_graphe);
 }
 
@@ -26,7 +26,7 @@ function grapheMedians() {
 		graphe.removeChild(graphe.firstChild);
 	}
 	new_graphe = document.createElement("img");
-	new_graphe.setAttribute("src", "methode_rec_medians2.png")
+	new_graphe.setAttribute("src", "../images/methode_rec_medians2.png")
 	graphe.appendChild(new_graphe);
 }
 
@@ -36,7 +36,7 @@ function grapheTrapeze() {
 		graphe.removeChild(graphe.firstChild);
 	}
 	new_graphe = document.createElement("img");
-	new_graphe.setAttribute("src", "methode_trapeze2.png")
+	new_graphe.setAttribute("src", "../images/methode_trapeze2.png")
 	graphe.appendChild(new_graphe);
 }
 
@@ -46,6 +46,6 @@ function grapheSimpson() {
 		graphe.removeChild(graphe.firstChild);
 	}
 	new_graphe = document.createElement("img");
-	new_graphe.setAttribute("src", "methode_simpson2.png")
+	new_graphe.setAttribute("src", "../images/methode_simpson2.png")
 	graphe.appendChild(new_graphe);
 }

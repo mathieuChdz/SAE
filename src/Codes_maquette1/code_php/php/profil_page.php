@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="charte_profil_page.css">
+    <link rel="stylesheet" href="../css/charte_profil_page.css">
 </head>
 
 
@@ -14,7 +14,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
     ?>
 
     <nav class="navBar">
-            <img class="logo" src="logo_sans_fond.png">
+            <img class="logo" src="../images/logo_sans_fond.png">
             <h1>X Simulator</h1>
             <div class="navBar-sim-sub">
                 <div class="nav-links">
@@ -47,7 +47,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
                         </li>
                     </ul>
                 </div>
-                <img src="Hamburger_icon.png" alt="menu hamburger" class="menu-hamburger">
+                <img src="../images/Hamburger_icon.png" alt="menu hamburger" class="menu-hamburger">
             </div>      
         </nav>
         <header></header>
@@ -128,7 +128,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
 <?php
 }
 else{
-    header("Location: index.php");
+    header("Location: ../index.php");
 }
 
 if (isset($_POST["send"],$_POST["mdp_actu"],$_POST["new_mdp"],$_POST["new_mdp_verif"])){
@@ -153,7 +153,7 @@ if (isset($_POST["send"],$_POST["mdp_actu"],$_POST["new_mdp"],$_POST["new_mdp_ve
                 $login = $_SESSION['login'];
                 mysqli_stmt_bind_param($insp2, 'ss', $login, $new_password);
                 mysqli_stmt_execute($insp2);
-                header("Location: index.php");
+                header("Location: ../index.php");
             }
             else{
                 header("Location: profil_page.php");

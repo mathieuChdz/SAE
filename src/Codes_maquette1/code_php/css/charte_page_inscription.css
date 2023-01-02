@@ -1,0 +1,121 @@
+html{
+    background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
+}
+
+.text-erreur{
+    color: red;
+    font-size: 15px;
+    margin-top: -15px;
+    margin-bottom: -10px;
+}
+
+.form-structure {
+    margin-top: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    text-align: center;
+    font-family: sans-serif;
+    flex-direction: column;
+}
+
+form{
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 40px;
+}
+
+.form-text{
+    width: 30em;
+}
+
+.form-nom{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.form-nom input[type=text]{
+    width: 100%;
+}
+
+.form-prenom{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.form-prenom input[type=text]{
+    width: 100%;
+}
+
+.form-mail{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.form-mail input[type=text]{
+    width: 100%;
+}
+
+.form-mdp{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.form-mdp input[type=password]{
+    width: 100%;
+}
+
+
+.form-structure a{
+    position: absolute;
+    margin-top: 24em;
+    text-decoration: none;
+    color: blue;
+}
+
+.form-structure a:hover{
+    border-bottom: solid 1px gray;
+}
+
+.material-symbols-rounded{
+    margin-right: 10px;
+}
+
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    background-color: rgba(145, 144, 144, 0.5);
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border-color: #b9cddaff;
+    cursor: pointer;
+    width: 100%;
+    font-size: 25px;
+    border-radius: 10px;
+}
+
+input[type=submit]:hover{
+    background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
+    color: black;
+    transition: all 0.5s;
+}
+
+
+

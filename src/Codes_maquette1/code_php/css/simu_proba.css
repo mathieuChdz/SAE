@@ -60,13 +60,6 @@ body {
 
 }
 
-.form-structure{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-right: 70em;
-}
-
 .methodes{
     display: flex;
     flex-direction: column;
@@ -94,19 +87,54 @@ body {
     justify-content: center;
 }
 
-.methodes-param-submit{
+
+.saisie{
+    display: flex;
+    flex-direction: row;
+    padding: 1px;
+    justify-content: space-evenly;
+    margin-top: 1em;
+    margin-left: -10em;
+
+}
+
+.saisie fieldset{
+    border-radius: 5%;
+}
+
+.form-structure{
+    margin: 1em;
+}
+
+.saisie p{
+    margin-top: 3em;
+    text-align: center;
+}
+
+.methodes-param_1{
     display: flex;
     flex-direction: row;
 }
 
-.methodes-param{
+.methodes-param_2{
     display: flex;
     flex-direction: column;
 }
 
-.methodes-submit input{
-    font-size: 30px;
+.methodes-param_2_1, .methodes-param_2_2, .methodes-param_2_3{
+    margin-top: 1em;
 }
+
+.methodes-submit{
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.methodes-submit input{
+    font-size: 20px;
+}
+
 
 
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="charte_index.css">
+    <link rel="stylesheet" href="css/charte_index.css">
 </head>
 
 
@@ -13,7 +13,7 @@ session_start();
 ?>
 
 <nav class="navBar">
-        <img class="logo" src="logo_sans_fond.png">
+        <img class="logo" src="images/logo_sans_fond.png">
         <h1>X Simulator</h1>
         <div class="navBar-sim-sub">
             <div class="nav-links">
@@ -21,17 +21,17 @@ session_start();
                     <?php
                         if (isset($_SESSION['login'])){
                             if ($_SESSION["admin"]=="oui"){
-                                echo "<li><a href='admin_page.php'>admin page</a></li>";
+                                echo "<li><a href='php/admin_page.php'>admin page</a></li>";
                             }
                         }
                     ?>
-                    <li><a href="simu_proba.php">Simulation 1</a></li>
-                    <li><a href="simulation.html">Simulation 2</a></li>
+                    <li><a href="php/simu_proba.php">Probabilités</a></li>
+                    <li><a href="php/simu_crypto.php">Chiffrement</a></li>
                     <li><a href="simulation.html">Simulation 3</a></li>
                     <li>
                     <?php
                         if (isset($_SESSION['login'])){
-                            echo "<a href='profil_page.php'>profil</a>";
+                            echo "<a href='php/profil_page.php'>profil</a>";
                         }
                     ?>
                     </li>
@@ -39,13 +39,13 @@ session_start();
                     <?php
                         if (isset($_SESSION['login'])){
                             echo "
-                            <form action='log_out.php'>
+                            <form action='php/log_out.php'>
                                     <input type='submit' id='button_connexion' value='Se déconnecter'>
                                 </form>";
                         }
                         else{
                             echo "
-                            <form action='page_connexion.php'>
+                            <form action='php/page_connexion.php'>
                                     <input type='submit' id='button_connexion' value='Se connecter'>
                                 </form>";
                         }
@@ -53,7 +53,7 @@ session_start();
                     </li>
                 </ul>
             </div>
-            <img src="Hamburger_icon.png" alt="menu hamburger" class="menu-hamburger">
+            <img src="images/Hamburger_icon.png" alt="menu hamburger" class="menu-hamburger">
         </div>      
     </nav>
     <header></header>
