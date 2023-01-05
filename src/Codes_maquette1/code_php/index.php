@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="css/charte_index.css">
+    <link rel="stylesheet" href="css/charte_nav_bar.css">
 </head>
 
 
@@ -12,7 +13,7 @@ session_start();
 //print_r($_SESSION);
 ?>
 
-<nav class="navBar">
+    <nav class="navBar">
         <img class="logo" src="images/logo_sans_fond.png">
         <h1>X Simulator</h1>
         <div class="navBar-sim-sub">
@@ -90,14 +91,9 @@ session_start();
 
 </body>
 
-<script>
-    const menuHamburger = document.querySelector(".menu-hamburger")
-    const navLinks = document.querySelector(".nav-links")
-
-    menuHamburger.addEventListener('click',()=>{
-        navLinks.classList.toggle('mobile-menu')
-    })
-</script>
+<?php
+include 'html/script_nav_bar.html';
+?>
 
 </html>
 

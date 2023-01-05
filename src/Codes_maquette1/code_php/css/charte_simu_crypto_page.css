@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+html{
+    background: rgb(204, 205, 230);
+    font-family: sans-serif;
+}
+
+header {
+    background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
+}
+
+body {
+    margin: 0;
+}

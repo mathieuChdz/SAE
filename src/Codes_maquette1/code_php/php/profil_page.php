@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="../css/charte_profil_page.css">
+    <link rel="stylesheet" href="../css/charte_nav_bar.css">
 </head>
 
 
@@ -13,44 +14,10 @@ session_start();
 if (isset($_SESSION['login'], $_SESSION['admin'])){
     ?>
 
-    <nav class="navBar">
-            <img class="logo" src="../images/logo_sans_fond.png">
-            <h1>X Simulator</h1>
-            <div class="navBar-sim-sub">
-                <div class="nav-links">
-                    <ul>
-                        <?php
-                            if (isset($_SESSION['login'])){
-                                if ($_SESSION["admin"]=="oui"){
-                                    echo "<li><a href='admin_page.php'>admin page</a></li>";
-                                }
-                            }
-                        ?>
-                        <li><a href="simu_proba.php">Simulation 1</a></li>
-                        <li><a href="simulation.html">Simulation 2</a></li>
-                        <li><a href="simulation.html">Simulation 3</a></li>
-                        <li>
-                        <?php
-                            if (isset($_SESSION['login'])){
-                                echo "
-                                <form action='log_out.php'>
-                                        <input type='submit' id='button_connexion' value='Se déconnecter'>
-                                    </form>";
-                            }
-                            else{
-                                echo "
-                                <form action='page_connexion.php'>
-                                        <input type='submit' id='button_connexion' value='Se connecter'>
-                                    </form>";
-                            }
-                        ?>
-                        </li>
-                    </ul>
-                </div>
-                <img src="../images/Hamburger_icon.png" alt="menu hamburger" class="menu-hamburger">
-            </div>      
-        </nav>
-        <header></header>
+    <?php
+    include 'nav_bar.php';
+    ?>
+    <header></header>
     
     <body>
     <div class="form-table">
@@ -117,14 +84,9 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
     
     </body>
     
-    <script>
-        const menuHamburger = document.querySelector(".menu-hamburger")
-        const navLinks = document.querySelector(".nav-links")
-    
-        menuHamburger.addEventListener('click',()=>{
-            navLinks.classList.toggle('mobile-menu')
-        })
-    </script>
+    <?php
+    include '../html/script_nav_bar.html';
+    ?>
 <?php
 }
 else{
@@ -171,5 +133,6 @@ if (isset($_POST["send"],$_POST["mdp_actu"],$_POST["new_mdp"],$_POST["new_mdp_ve
 }
 
 ?>
+
 </html>
 

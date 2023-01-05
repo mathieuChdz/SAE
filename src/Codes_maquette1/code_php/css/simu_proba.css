@@ -6,7 +6,8 @@
 }
 
 html{
-    background-color: #d7dae5ff;
+    background-color: rgb(229, 230, 235);
+    /* background-color: #d7dae5ff; */
     font-family: sans-serif;
 }
 
@@ -18,39 +19,18 @@ body {
     margin: 0;
 }
 
-.navBar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.table table{
     width: 100%;
-    box-sizing: border-box;
-    background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
-    padding: 20px;
-    border-bottom: 2px solid #6b7d7dff;
-}
+}   
 
-.navBar .logo{
-    width: 80px;
-    margin-left: 50px;
-
-}
-.navBar h1 {
-    font-size: 30px;
-    margin-left: 0;
-}
-.navBar input{
-    font-size: 30px ;
-}
-
-.simulation h1{
+.simu-titre h1{
     margin-bottom: 1em;
     text-align: center;
 }
 
 .simulation{
     margin-top: 1em;
-    margin-bottom: 3em;
-
+    margin-bottom: 1em;
 }
 
 .simulation .graphique {
@@ -60,11 +40,14 @@ body {
 
 }
 
+/* .methodes-graphique{
+    display: flex;
+    justify-content: space-evenly;
+} */
+
 .methodes{
     display: flex;
     flex-direction: column;
-    margin-right: 15em;
-    margin-left: -15em;
 }
 
 .methodes-button{
@@ -84,7 +67,7 @@ body {
 .methodes-graphique{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 
@@ -100,15 +83,18 @@ body {
 
 .saisie fieldset{
     border-radius: 5%;
+    background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
 }
 
 .form-structure{
     margin: 1em;
 }
 
-.saisie p{
-    margin-top: 3em;
+.saisie .resultat{
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly
 }
 
 .methodes-param_1{
