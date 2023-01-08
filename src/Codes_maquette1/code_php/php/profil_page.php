@@ -56,18 +56,21 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
                     #display($connexion);
                     if ($token2){
                         #display($bd);
-                        $sql="SELECT id, password FROM users_mdp_historique WHERE login='".$_SESSION['login']."'";
+                        $sql="SELECT password FROM users_mdp_historique WHERE login='".$_SESSION['login']."'";
                         $token3=(bool)($res=mysqli_query($connexion,$sql));
                         if ($token3){
                             #display($res);
                             echo "<div class='table-aff'>";
                             echo "<table>";
                             echo "<tr id='first-line'><th>ordre de changement</th><th>mot de passe</th></tr>";
+                            
+                            $cpt_mdp=0;
                             while ($ligne=mysqli_fetch_row($res)){
-                                echo "<tr>";
                                 
-                                $cpt_mdp=0;
-                                foreach ($ligne as $v){ 
+                                echo "<tr>";
+                                foreach ($ligne as $v){
+                                    $cpt_mdp++;
+                                    echo "<td>".$cpt_mdp."</td>";
                                     echo "<td>".$v."</td>";
                                 }
                                 echo "</tr>";
