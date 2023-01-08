@@ -17,3 +17,73 @@ header {
 body {
     margin: 0;
 }
+
+fieldset{
+    border-radius: 5%;
+    background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
+    margin: 100px;
+    padding: 50px;
+}
+
+.simu-titre h1 {
+   text-align: center;
+   margin-top: 1em;
+}
+
+.saisie {
+    display: flex;
+    flex-direction: row;
+    padding: 1px;
+    justify-content: space-evenly;
+
+}
+
+.saisie label {
+    margin-bottom: 1em;
+    font-size: 20px;
+    font-weight: bold;
+}
+.titre {
+    margin-bottom: 1em;
+}
+
+
+.cle { 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.message { 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.bouton{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.bouton input {
+   font-size: 1.5em;
+}
+
+.bouton .bouton-chiffrer {
+   margin-bottom: 10px;
+}
+
+.resultat {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.resultat p{
+   margin-left: 20px;
+   font-size: 20px;
+} 
+
+
+

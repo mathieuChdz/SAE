@@ -22,32 +22,43 @@ else{
     <header></header>
     
     <body>
-
+      <div class="simu-titre">
+            <h1>Simulation 2 : Cryptographie</h1>
+	    </div>
+    <div class="saisie">  
+     <fieldset>
         <form action="traitement_crypto.php" method="post">
-            <h1>Simulation 2 : Cyptographie</h1>
-        
-            <label>Saisisez une clÃ© et un message : </label>
-
-            <label for="cle">Cle </label>
-            <input type="text" name="cle">
-            <label for="message">Message</label>
-            <input type="text" name="message">
-            
-
-            <input type="submit"  value="chiffrer" name="chiffrer">
-            <input type="submit"  value="dechiffrer" name="dechiffrer">
-            
+            <div class="titre">
+		    <label>Saisisez une clé et un message : </label>
+		    </div>
+            <div class="cle">
+               <label for="cle">Clé :</label>
+               <input type="text" name="cle">
+            </div>
+            <div class="message">
+               <label for="message">Message :</label>
+               <input type="text" name="message">
+            </div>
+            <div class="bouton">
+                <div class="bouton-chiffrer">
+                    <input type="submit"  value="Chiffrer" name="chiffrer">
+                </div>
+                <div class="bouton-dechiffrer">
+                    <input type="submit"  value="Déchiffrer" name="dechiffrer">
+                </div>
+            </div>
+            <div class="resultat">
+		   <h2>Résultat :</h2>
+		     <?php
+			if (isset($_GET["res"])){
+			    echo "<p>".$_GET["res"]."</p>";
+			}
+		      ?>
+	 	</div>
+		    
         </form>
-        
-
-        
-        
-        
-        <?php
-        if (isset($_GET["res"])){
-            echo "<p>".$_GET["res"]."</p>";
-        }
-        ?>
+     </fieldset>
+    </div>
     </body>
     
     <?php

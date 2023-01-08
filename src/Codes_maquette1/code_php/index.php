@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="css/charte_index.css">
-    <link rel="stylesheet" href="css/charte_nav_bar.css">
 </head>
 
 
@@ -13,7 +12,7 @@ session_start();
 //print_r($_SESSION);
 ?>
 
-    <nav class="navBar">
+<nav class="navBar">
         <img class="logo" src="images/logo_sans_fond.png">
         <h1>X Simulator</h1>
         <div class="navBar-sim-sub">
@@ -77,23 +76,43 @@ session_start();
 <div class="explication">
     <div class='text'>
         <!-- text explicatif -->
-        <p> test du texte
-        </p>
-    </div>
-    <!-- video de démonstration -->
-    <div class="video">
-	<h4> Exemple de vidéo de démonstration du site : </h4>
-        <iframe width='560' height='315' src='https://www.youtube.com/embed/-Da8Mf5vg7o' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
-    </div>
+        <div class="card">
+            <div class="circle"></div>
+            <div class="content">
+                <h2>Présentation</h2>
+                <p>Ce site web a pour but de présenter 3 modules de simulation : <br>
+                   - Le premier est un module de calcul de probabilité à l'aide de différentes méthodes d'intégrales.<br>
+                   - Le deuxième est un module de calcul de chiffrement et déchiffrement d'un message avec le RC4. <br>
+                   - Le troisième est un module de ...
 
+                </p>
+            </div>
+            <img src="images/cercle_explication.png">
+        </div>
+        
+        <div class="card">
+            <div class="circle"></div>
+            <div class="content">
+                <h2>Vidéo de présentation</h2>
+                <a target="_blank" href="https://www.youtube.com/embed/-Da8Mf5vg7o">Vidéo de présentation</a>
+            </div>
+            <img src="images/cercle_video.png">
+        </div>
+
+    </div>
 </div>
 
 
 </body>
 
-<?php
-include 'html/script_nav_bar.html';
-?>
+<script>
+    const menuHamburger = document.querySelector(".menu-hamburger")
+    const navLinks = document.querySelector(".nav-links")
+
+    menuHamburger.addEventListener('click',()=>{
+        navLinks.classList.toggle('mobile-menu')
+    })
+</script>
 
 </html>
 
