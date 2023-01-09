@@ -34,6 +34,12 @@ body {
     justify-content: space-evenly;
 }
 
+.choix-table form input[type="submit"]{
+    font-size: 20px;
+    border-radius: 3px;
+    border: solid 1px #6b7d7dff;
+}
+
 .choix-tuple form{
     display: flex;
     flex-direction: row;    
