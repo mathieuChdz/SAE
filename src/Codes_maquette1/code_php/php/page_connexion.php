@@ -41,8 +41,9 @@ include("ip_user.php");
 				<input type='text' id='email' name='email' placeholder="email" value=''>
 			</div>
 			<div class="form-mdp">
-			<span class="material-symbols-rounded">lock</span>
+				<span class="material-symbols-rounded">lock</span>
 				<input type='password' id='mdp' name='mdp' placeholder="mot de passe" value=''>
+				<img src="../images/close_eye.png" id="eye" class="eye" onClick="changer()"/>
 			</div>
 			<a href='error_page.php'>mot de passe oublié</a>
 			<div class="form-submit">
@@ -51,6 +52,36 @@ include("ip_user.php");
 			<p>Pas de compte ? <a href='page_inscription.php'>Créer un compte</a></p>
 			<a href='../index.php'>retour à l'accueil</a>
 	</form>
+
+	<script>
+		e=true;
+		function changer(){
+			if(e){
+				document.getElementById("mdp").setAttribute("type","text");
+				document.getElementById("eye").src="../images/open_eye.png"
+				e=false;
+			}
+			else{
+				document.getElementById("mdp").setAttribute("type","password");
+				document.getElementById("eye").src="../images/close_eye.png"
+				e=true;
+			}
+		}
+
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 <?php
 if (isset($_POST["ok"],$_POST["email"],$_POST["mdp"])){
