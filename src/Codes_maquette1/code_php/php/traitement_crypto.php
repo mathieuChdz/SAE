@@ -18,7 +18,7 @@ if (isset($_POST['message'])){
             $insp_chiffrer = mysqli_prepare($connexion, $ins_chiffrer);
             $login = $_SESSION['login'];
             $action = "chiffrer";
-            mysqli_stmt_bind_param($insp_chiffrer, 'sss', $login, $action, $arg1, $resultat);
+            mysqli_stmt_bind_param($insp_chiffrer, 'ssss', $login, $action, $arg1, $resultat);
             mysqli_stmt_execute($insp_chiffrer);
         }
     }
@@ -34,7 +34,7 @@ if (isset($_POST['message'])){
             $insp_dechiffrer = mysqli_prepare($connexion, $ins_dechiffrer);
             $login = $_SESSION['login'];
             $action = "déchiffrer";
-            mysqli_stmt_bind_param($insp_dechiffrer, 'sss', $login, $action, $arg1, $resultat);
+            mysqli_stmt_bind_param($insp_dechiffrer, 'ssss', $login, $action, $arg1, $resultat);
             mysqli_stmt_execute($insp_dechiffrer);
         }
     }
