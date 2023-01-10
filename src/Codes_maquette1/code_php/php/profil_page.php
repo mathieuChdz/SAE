@@ -26,19 +26,19 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
             <form action="" method="post">
                 <h3>Changer de mot de passe</h3>
                 <div class="form-mdp-mdp1">
-                    <label for="mdp_actu">mot de passe actuel</label>
+                    <label for="mdp_actu">Mot de passe actuel</label>
                     <input type="text" name="mdp_actu" id="mdp_actu">
                 </div>
                 <div class="form-mdp-mdp2">
-                    <label for="new_mdp">nouveau mot de passe</label>
+                    <label for="new_mdp">Nouveau mot de passe</label>
                     <input type="text" name="new_mdp" id="new_mdp">
                 </div>
                 <div class="form-mdp-mdp3">
-                    <label for="new_mdp_verif">confirmer le mot de passe</label>
+                    <label for="new_mdp_verif">Confirmer le mot de passe</label>
                     <input type="text" name="new_mdp_verif" id="new_mdp_verif">
                 </div>
                 <div class="form-submit">
-                    <input type="submit" name="send" id="send" value="confirmer">
+                    <input type="submit" name="send" id="send" value="Enregistrer">
                 </div>
                 
     
@@ -46,7 +46,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
         </div>
     
         <div class="table-mdp">
-            <h2>Mot de passe déja utilisés auparavant</h2>
+            <h2>Historique des mots de passe</h2>
 
             <?php
             $token=(bool)($connexion=mysqli_connect("localhost", "root", "01r1173"));

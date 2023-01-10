@@ -45,12 +45,12 @@ include("ip_user.php");
 				<input type='password' id='mdp' name='mdp' placeholder="mot de passe" value=''>
 				<img src="../images/close_eye.png" id="eye" class="eye" onClick="changer()"/>
 			</div>
-			<a href='error_page.php'>mot de passe oublié</a>
+			<a href='error_page.php'>Mot de passe oublié</a>
 			<div class="form-submit">
 				<input type='submit' id='ok' name='ok' value='se connecter'>
 			</div>
 			<p>Pas de compte ? <a href='page_inscription.php'>Créer un compte</a></p>
-			<a href='../index.php'>retour à l'accueil</a>
+			<a href='../index.php'>Retour à l'accueil</a>
 	</form>
 
 	<script>

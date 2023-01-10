@@ -82,9 +82,8 @@ session_start();
                 <h2>Présentation</h2>
                 <p>Ce site web a pour but de présenter 3 modules de simulation : <br>
                    - Le premier est un module de calcul de probabilité à l'aide de différentes méthodes d'intégrales.<br>
-                   - Le deuxième est un module de calcul de chiffrement et déchiffrement d'un message avec le RC4. <br>
+                   - Le deuxième est un module de calcul de chiffrement et déchiffrement d'un message selon l'algorithme RC4. <br>
                    - Le troisième est un module de ...
-
                 </p>
             </div>
             <img src="images/cercle_explication.png">
@@ -94,7 +93,7 @@ session_start();
             <div class="circle"></div>
             <div class="content">
                 <h2>Vidéo de présentation</h2>
-                <a target="_blank" href="https://www.youtube.com/embed/-Da8Mf5vg7o">Vidéo de présentation</a>
+                <a target="_blank" href="https://www.youtube.com/embed/-Da8Mf5vg7o">Lancer la vidéo</a>
             </div>
             <img src="images/cercle_video.png">
         </div>

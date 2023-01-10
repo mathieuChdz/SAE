@@ -37,13 +37,13 @@ if (!isset($_SESSION["login"], $_SESSION["admin"])){
         <td>
           <div class="methodes-graphique">
             <div class="methodes">
-              <label for="méthodes">Representation graphique des méthodes :</label>
+              <label for="méthodes">Représentation graphique des méthodes :</label>
               <div class="methodes-button">
-                <input type="button" id="mybutton" onclick="grapheGauche()" value="méthode des rectangles gauches">
-                <input type="button" id="mybutton" onclick="grapheDroit()" value="méthode des rectangles droit">
-                <input type="button" id="mybutton" onclick="grapheMedians()" value="méthode des rectangles médians">
-                <input type="button" id="mybutton" onclick="grapheTrapeze()" value="methode des trapèzes">
-                <input type="button" id="mybutton" onclick="grapheSimpson()" value="methode de Simpson">
+                <input type="button" id="mybutton" onclick="grapheGauche()" value="Méthode des rectangles gauches">
+                <input type="button" id="mybutton" onclick="grapheDroit()" value="Méthode des rectangles droits">
+                <input type="button" id="mybutton" onclick="grapheMedians()" value="Méthode des rectangles médians">
+                <input type="button" id="mybutton" onclick="grapheTrapeze()" value="Méthode des trapèzes">
+                <input type="button" id="mybutton" onclick="grapheSimpson()" value="Méthode de Simpson">
               </div>
             </div>
           
@@ -69,7 +69,7 @@ if (!isset($_SESSION["login"], $_SESSION["admin"])){
             <form action="traitement_proba.php" method="post">
               <div class="form-structure">
                 <div class="methodes-param_1">
-                  <label for="methodes_selection">Saisisez la méthodes: </label>
+                  <label for="methodes_selection">Saisisez la méthode : </label>
                   <select name="methodes" id="methodes_selection">
                     <option value="">--Choississez une méthode--</option>
                     <option value="mrm">méthode des rectangles médians</option>
