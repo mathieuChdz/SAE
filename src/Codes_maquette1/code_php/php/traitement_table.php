@@ -3,6 +3,7 @@ session_start();
 if (isset($_SESSION['login'], $_SESSION['admin'])){
     
     if ($_SESSION['admin'] == "oui"){
+
         if (isset($_POST["send"])){
             if ($_POST["send"] == 'utilisateurs') {
                 header("Location: admin_page.php?table=1");
@@ -17,7 +18,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
             }
 
             elseif ($_POST["send"] == 'rechercher') {
-                header("Location: admin_page.php?table=4&nom='".$_POST["mot"]."'");
+                header("Location: admin_page.php?table=4&nom='".$_POST["mot"]."'&table_nom='".$_POST["table"]."'");
             }
 
         else{

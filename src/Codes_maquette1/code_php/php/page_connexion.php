@@ -67,8 +67,6 @@ include("ip_user.php");
 				e=true;
 			}
 		}
-
-
 	</script>
 
 

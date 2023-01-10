@@ -49,6 +49,15 @@ form{
     width: 100%;
 }
 
+.form-mdp input[type=text]{
+    width: 100%;
+}
+
+.form-mdp img#eye{
+    width: 25px;
+    height: 25px;
+}
+
 .form-structure img{
     width: 150px;
 }
