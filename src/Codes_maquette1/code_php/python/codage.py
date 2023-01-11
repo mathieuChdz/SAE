@@ -81,8 +81,22 @@ def affiche_message(message : list):
     return message_code
 
 
-key=str(sys.argv[2])
-message=str(sys.argv[1])
+
+
+size=int(sys.argv[1])
+
+message=""
+for i in range(2,size+1):
+    message+=sys.argv[i]
+    if i<size:
+        message+=" "
+
+key=""
+for i in range(size+1,len(sys.argv)):
+    key+=sys.argv[i]
+    if i<size:
+        key+=" "
+        
 print(affiche_message(codage(key,message)))
 
 

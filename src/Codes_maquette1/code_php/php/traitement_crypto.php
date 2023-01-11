@@ -18,16 +18,32 @@ if (isset($_POST['message'])){
 
             // vérification que la variable 'cle' n'est pas nulle
             if ($_POST['cle']!=null){
-                $arg1 = $_POST['message'];
-                $arg2 = $_POST['cle'];
+                
+
+                $arg2 = $_POST['message'];
+            
+
+                while (($arg2[0]==' ')==1){
+                    $arg2=substr($arg2,1);
+                }
+                
+                
+                while (($arg2[-1]==' ')==1){
+                    $arg2=substr($arg2,0,strlen($arg2)-1);
+                }
+
+                $arg1 = sizeof(explode(" ",$arg2))+1;
+
+
+                $arg3 = $_POST['cle'];
     
-                $resultat = exec("python ../python/codage.py $arg1 $arg2"); 
+                $resultat = exec("python ../python/codage.py $arg1 $arg2 $arg3"); 
     
                 $ins_chiffrer = "INSERT into crypto_historique(login,action,message,resultat) values(?,?,?,?)";
                 $insp_chiffrer = mysqli_prepare($connexion, $ins_chiffrer);
                 $login = $_SESSION['login'];
                 $action = "chiffrer";
-                mysqli_stmt_bind_param($insp_chiffrer, 'ssss', $login, $action, $arg1, $resultat);
+                mysqli_stmt_bind_param($insp_chiffrer, 'ssss', $login, $action, $arg2, $resultat);
                 mysqli_stmt_execute($insp_chiffrer);
                 header("Location: simu_crypto.php?res=$resultat");
             }
