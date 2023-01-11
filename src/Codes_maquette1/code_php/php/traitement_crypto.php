@@ -29,6 +29,7 @@ if (isset($_POST['message'])){
                 $action = "chiffrer";
                 mysqli_stmt_bind_param($insp_chiffrer, 'ssss', $login, $action, $arg1, $resultat);
                 mysqli_stmt_execute($insp_chiffrer);
+                header("Location: simu_crypto.php?res=$resultat");
             }
             // la variable clé est nulle
             else{
@@ -60,6 +61,7 @@ if (isset($_POST['message'])){
                 $action = "déchiffrer";
                 mysqli_stmt_bind_param($insp_dechiffrer, 'ssss', $login, $action, $arg1, $resultat);
                 mysqli_stmt_execute($insp_dechiffrer);
+                header("Location: simu_crypto.php?res=$resultat");
             }
             // la variable clé est nulle
             else{

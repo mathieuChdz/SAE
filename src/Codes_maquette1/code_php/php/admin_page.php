@@ -20,9 +20,11 @@ include 'nav_bar.php';
 
 if (isset($_SESSION['login'], $_SESSION['admin'])){
 
+    // vérification que le traitement est effectué par un admin
     if ($_SESSION['admin'] == "oui"){
 
         ?>
+        <!-- formulaire des choix des tables -->
         <div class="choix-table">
             <h2>Quelle table voulez-vous afficher ?</h2>
             <form action="traitement_table.php" method="post">
@@ -35,6 +37,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
 
         echo "<link rel='stylesheet' href='../css/charte_admin_page.css'>";
         
+        // tableau qui permet la selection du bon tuple qui affiche les attributs de la table selectionnée
         $first_line = array(
             "Utilisateur_inscrit" => '<th>id</th><th>login</th><th>nom</th><th>prenom</th><th>supprimer</th>',
             "users_stats" => '<th>id</th><th>login</th><th>module 1</th><th>module 2</th><th>module 3</th>',
@@ -44,24 +47,29 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
 
         if (isset($_GET["table"])){
 
+            // selection de la table 1 (Utilisateurs_inscrits)
             if ($_GET["table"]==1){
-
                 $table = 'Utilisateur_inscrit';
                 $titre = 'liste des utilisateurs inscrits';
                 $requete = "SELECT * FROM $table";
             }
+
+            // selection de la table 2 (users_stats)
             elseif ($_GET["table"]==2){
                 $table = 'users_stats';
                 $titre = 'liste des statistiques';
                 $requete = "SELECT * FROM $table";
 
             }
+
+            // selection de la table 3 (error_log)
             elseif ($_GET["table"]==3){
                 $table = 'users_log';
                 $titre = 'liste des tentatives ratées';
                 $requete = "SELECT * FROM $table";
             }
 
+            // selection d'un table choisie avec un motif
             elseif ($_GET["table"]==4){
                 $table = str_replace("'", "", $_GET["table_nom"]);
                 $titre = $_GET["nom"];
@@ -69,12 +77,14 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
             }
         }
         else{
+            // selection par défaut
             $table = 'Utilisateur_inscrit';
             $titre = 'liste des utilisateurs inscrits';
             $requete = "SELECT * FROM $table";
 
         }
 
+        // connexion à la base de donnée
         $token=(bool)($connexion=mysqli_connect("localhost", "root", "01r1173"));
         
         if ($token){
@@ -83,10 +93,12 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
             if ($token2){
             
                 $sql=$requete;
+                // execution de la requete SQL
                 $token3=(bool)($res=mysqli_query($connexion,$sql));
                 if ($token3){
                     echo "<div class='table-aff'>";
                     echo "<h2>".$titre."</h2>";
+                    // création de la barre de recherche
                     echo "
                     <div class='choix-tuple'>
                         <form action='traitement_table.php' method='post'>
@@ -95,11 +107,15 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
                             <input type='submit' id='send' name='send' value='rechercher'>
                     </div>";
                     echo "<table>";
+                    // ici, la variable table et définie en fonction de la table choisie. Ensuite, on selectionne 
+                    // dans le tableau first-line la valeur de l'élement ayant pour clé $table.
                     echo "<tr id='first-line'>".$first_line[$table]."</tr>";
                     while ($ligne=mysqli_fetch_row($res)){
                         echo "<tr>";
                         
                         $cpt_mdp=0;
+                        
+                        // parcours des lignes et affichage des lignes
                         foreach ($ligne as $v){ 
                             $cpt_mdp ++;
                             if ($cpt_mdp != 3){
@@ -113,6 +129,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
                                 }                            }
                             if ($cpt_mdp == 5){
                                 if (isset($_GET["table"])){
+                                    // créer une cellule supprimer si la table est égale à 1
                                     if ($_GET["table"]==1){
                                         ?>
                                         <td>                                        
@@ -142,7 +159,6 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
             }
         }
     }
-
 }
 else{
     header("Location: ../index.php");
