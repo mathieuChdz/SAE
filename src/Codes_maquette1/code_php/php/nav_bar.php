@@ -1,11 +1,14 @@
+<!-- barre de navigation -->
 <nav class="navBar">
     <img class="logo" src="../images/logo_sans_fond.png">
     <a href="../index.php"><h1>X Simulator</h1></a>
     <div class="navBar-sim-sub">
         <div class="nav-links">
             <ul>
+                <!-- liste des liens visibles dans la nav bar -->
                 <?php
                     if (isset($_SESSION['login'])){
+                        // Ajout d'un lien vers la page admin si l'utilisateur est admin
                         if ($_SESSION["admin"]=="oui"){
                             echo "<li><a href='admin_page.php'>admin page</a></li>";
                         }
@@ -17,6 +20,7 @@
                 <li>
                     <?php
                         if (isset($_SESSION['login'])){
+                            // Ajout d'un lien vers la page profil si l'utilisateur est connecté
                             echo "<a href='../php/profil_page.php'>profil</a>";
                         }
                     ?>
@@ -24,6 +28,8 @@
                 <li>
                 <?php
                     if (isset($_SESSION['login'])){
+                        // Si l'utilisateur est connecté, on affiche le bouton pour se déconnecter,
+                        // sinon on affiche un bouton pour se connecter
                         echo "
                         <form action='log_out.php'>
                                 <input type='submit' id='button_connexion' value='Se déconnecter'>
