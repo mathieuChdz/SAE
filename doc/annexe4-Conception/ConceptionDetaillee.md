@@ -2,53 +2,53 @@ Conception détaillée
 
 **Maquette 1:**
 
-**Page d’accueil:**
+**Page d'accueil:**
 
-La page se constitue d’une balise nav qui permet d’accéder aux simulations. Le nav est constitué d’une image img du logo, d’un titre h1, de liens et d’un submit pour se connecter contenus dans une liste non ordonnée ul pour accéder aux simulations.
+La page se constitue d'une balise nav qui permet d'accéder aux simulations. Le nav est constitué d'une image img du logo, d'un titre h1, de liens et d'un submit pour se connecter contenus dans une liste non ordonnée ul pour accéder aux simulations.
 
 Lorsque la page est en fenêtré un menu hamburger apparaît contenant les liens vers les simulations et le bouton se connecter.
 
-Si un visiteur se connecte, celui-ci devient un utilisateur et le bouton “se connecter” devient un bouton “se déconnecter”.
+Si un visiteur se connecte, celui-ci devient un utilisateur et le bouton "se connecter" devient un bouton "se déconnecter".
 
-Ensuite, il y a une balise div qui regroupe un paragraphe qui correspond au texte explicatif ainsi qu’une balise iframe pour la vidéo de démonstration.
+Ensuite, il y a une balise div qui regroupe un paragraphe qui correspond au texte explicatif ainsi qu'une balise iframe pour la vidéo de démonstration.
 
-Un titre h4 est disposé au-dessus de la vidéo pour l’introduire. **Page de connexion:**
+Un titre h4 est disposé au-dessus de la vidéo pour l'introduire. **Page de connexion:**
 
 La page possède un formulaire qui permet à une personne de se connecter. Ce formulaire contient:
 
-- Un titre h1 ‘Connexion’
+- Un titre h1 'Connexion'
 - Une icône email
-- un texte pour l’adresse email
+- un texte pour l'adresse email
 - Une icône mot de passe
 - un texte pour le mot de passe
 - Un lien pour le cas où la personne à oublié son mot de passe
 - Un submit pour se connecter
 - Un lien pour créer un compte
-- Un lien pour retourner à l’accueil
+- Un lien pour retourner à l'accueil
 
-**Page d’erreur:**
+**Page d'erreur:**
 
-La page d’erreur se décompose en plusieurs parties distinguées par des balises div. Il y a:
+La page d'erreur se décompose en plusieurs parties distinguées par des balises div. Il y a:
 
-- Un titre h1 ‘ERROR’.
+- Un titre h1 'ERROR'.
 - Des images.
 - Un lien qui permet de retourner sur la page de connexion
 
-**Page d’inscription:**
+**Page d'inscription:**
 
-La page est composée d’un formulaire d'inscription. Ce formulaire contient:
+La page est composée d'un formulaire d'inscription. Ce formulaire contient:
 
-- Un titre h1 ‘Inscription’
+- Un titre h1 'Inscription'
 - Un texte pour le nom
 - Une icône pour le nom
 - Un texte pour le prénom
 - Une icône pour le prénom
-- Un texte pour l’adresse email
-- Une icône pour l’adresse email
+- Un texte pour l'adresse email
+- Une icône pour l'adresse email
 - Un texte pour le mot de passe
 - Une icône pour le mot de passe
 - Un submit pour créer un compte
-- Un lien pour retourner à la page d’accueil
+- Un lien pour retourner à la page d'accueil
 
 **Page simulation intégrale:**
 
@@ -65,20 +65,37 @@ La deuxième partie est un formulaire pour lancer la simulation. Ce formulaire c
 
 Le résultat de la simulation est affiché en bas de la page.
 
+**Module Chiffrement**
+
+Le module est découpé en 2 fichiers qui contiennent 6 fonctions différentes (9 au total), dont 2 fonctions majeures qui sont celles qui servent aux fonctionnalités du module. Ci-dessous les 6 fonctions différentes :
+
+La fonction **ascii** prend en paramètre un message sous forme de chaîne de caractères et renvoie un tableau dont chaque case est le code ascii (chaîne de caractères) de chaque caractère du message. Cette fonction est utilisée par les fonctions perm, codage et decodage.
+
+La fonction **perm**.
+
+
+La fonction **codage** est une fonction majeure. Elle prend en paramètre une clé et un message sous forme de chaînes de caractères et renvoie un tableau dont chaque case contient un caractère en hexadécimal du message codé, ces caractères hexadécimaux sont sous formes de chaînes de caractères. Cette fonction sert à chiffrer un message avec le chiffrement RC4.
+
+La fonction **decodage** est une fonction majeure. Cette fonction sert à déchiffrer un message qui a été codé avec le chiffrement RC4. Elle prend en paramètre un message qui a été codé à l’aide d’un chiffrement RC4, c’est un tableau dont les cases contiennent les caractères du message qui sont des chaînes de caractères, et la clé qui a été utilisée pour coder le message, sous forme de chaîne de caractères. La fonction renvoie le message décodé sous forme de chaîne de caractères.
+
+La fonction **affiche_message** prend en paramètre un message qui a été chiffré ou déchiffré à l'aide du chiffrement RC4, ce message est sous forme de tableau. La fonction affiche ce message dans son état actuel sous forme de chaîne de caractères.
+
+La fonction **toList**.
+
 **Maquette 2:**
 
-**Page d’accueil:**
+**Page d'accueil:**
 
-La page se constitue d’une balise nav qui permet d’accéder aux simulations. Le nav est constitué d’un logo, d’un titre h1 ainsi qu’un bouton pour se connecter.
+La page se constitue d'une balise nav qui permet d'accéder aux simulations. Le nav est constitué d'un logo, d'un titre h1 ainsi qu'un bouton pour se connecter.
 
-Ensuite, il y a une balise div qui regroupe un paragraphe qui correspond au texte explicatif ainsi qu’une balise iframe pour la vidéo de démonstration.
+Ensuite, il y a une balise div qui regroupe un paragraphe qui correspond au texte explicatif ainsi qu'une balise iframe pour la vidéo de démonstration.
 
-Un titre h4 est disposé au-dessus de la vidéo pour l’introduire.
+Un titre h4 est disposé au-dessus de la vidéo pour l'introduire.
 
 Il y a de plus une partie de type section qui comporte des div. Ces div sont composés de:
 
 - Un titre h2
-- Un paragraphe d’explication
+- Un paragraphe d'explication
 - un lien
 
 Il y a 3 div qui correspondent aux 3 simulations. **Page de choix de connection:**
@@ -87,39 +104,39 @@ La page contient un formulaire.
 
 Ce formulaire est composé de:
 
-- Un paragraphe 'Déjà un compte ?’
+- Un paragraphe 'Déjà un compte ?'
 - Un submit pour se connecter
-- Un paragraphe ‘nouvel utilisateur ?’
-- Un lien pour accéder à la page d’inscription
-- Un lien pour accéder à la page d’accueil en tant que non inscrit
+- Un paragraphe 'nouvel utilisateur ?'
+- Un lien pour accéder à la page d'inscription
+- Un lien pour accéder à la page d'accueil en tant que non inscrit
 
 **Page de connexion:**
 
 La page possède un formulaire qui permet à une personne de se connecter. Ce formulaire contient:
 
-- Un titre h1 ‘Connexion’
-- Un label et un texte pour l’adresse email
+- Un titre h1 'Connexion'
+- Un label et un texte pour l'adresse email
 - Un label et un texte pour le mot de passe
 - Un submit pour se connecter
 - Un lien pour le cas où la personne à oublié son mot de passe
 - Un lien pour créer un compte
 
-**Page d’erreur:**
+**Page d'erreur:**
 
-La page d’erreur se décompose en plusieurs parties distinguées par des balises div. Il y a:
+La page d'erreur se décompose en plusieurs parties distinguées par des balises div. Il y a:
 
-- Un div qui contient un titre h1 ‘ERROR’.
+- Un div qui contient un titre h1 'ERROR'.
 - Un div qui regroupe les images affichées. Chaque image possède un div.
 - Un div qui contient un lien qui permet de retourner sur la page de connexion
 
-**Page d’inscription:**
+**Page d'inscription:**
 
-La page est composée d’un formulaire d'inscription. Ce formulaire contient:
+La page est composée d'un formulaire d'inscription. Ce formulaire contient:
 
-- Un titre h1 ‘Inscription’
+- Un titre h1 'Inscription'
 - Un label et un texte pour le nom
 - Un label et un texte pour le prénom
-- Un label et un texte pour l’adresse email
+- Un label et un texte pour l'adresse email
 - Un label et un texte pour le mot de passe
 - Un submit pour créer un compte
 
