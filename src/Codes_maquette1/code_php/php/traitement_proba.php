@@ -1,16 +1,18 @@
 <?php
 
 session_start();
-if (!isset($_SESSION["login"], $_SESSION["admin"])){
-	header("Location: index.php");
+if (!isset($_SESSION["login"])){
+	header("Location: ../index.php");
 }
-
 if (isset($_POST['ok'], $_POST['e_t'], $_POST['t'], $_POST['m'], $_POST['methodes'])){
+
+  // vérification que les paramètres ne sont pas nulles
   if ($_POST['ok']!=null and $_POST['e_t']!=null and $_POST['t']!=null and $_POST['m']!=null and $_POST['methodes']!=null){
     $arg1 = $_POST['t'];
     $arg2 = $_POST['m'];
     $arg3 = $_POST['e_t'];
 
+    // selection de la méthode choisie, execution du script python et renvoie du résultat
     if ($_POST['methodes'] == "mrm"){
       $res = exec("python ../python/rectangle_medians.py $arg1 $arg2 $arg3");
       header("Location: simu_proba.php?res=$res");
@@ -26,11 +28,14 @@ if (isset($_POST['ok'], $_POST['e_t'], $_POST['t'], $_POST['m'], $_POST['methode
       header("Location: simu_proba.php?res=$res");
     }
 
+    // vide les valeurs du formulaire
     unset($_POST);
 
-
+    // connexion à la base de donnée
     $connexion=mysqli_connect("localhost", "root", "01r1173");
     $bd=mysqli_select_db($connexion, "Utilisateurs");
+
+    // Incrémente l'attribut 'module_1' de l'utilisateur dans la tables des statistiques
     $select="SELECT module_1 FROM users_stats WHERE login='".$_SESSION['login']."'";
     $res=mysqli_query($connexion, $select);
 
