@@ -20,7 +20,7 @@ if (isset($_SESSION["login"], $_SESSION["access"])){
 include("ip_user.php");
 
 ?>
-
+<!--formulaire de connexion-->
 <div class="form-structure">
 	<form action=''method='post'>
 			<h1>Connexion</h1>
@@ -28,10 +28,10 @@ include("ip_user.php");
 				<?php
 				if (isset($_GET["msg_err"])){
 					if ($_GET["msg_err"]==1){
-						echo "<h4> email ou mot de passe incorrect !</h4>";
+						echo "<h4> email ou mot de passe incorrect !</h4>"; //Affiche le message d'erreur si l'adresse email ou le mot de passe renseigné est incorrect
 					}
 					elseif ($_GET["msg_err"]==2){
-						echo "<h4> Veillez remplir tous les champs!</h4>";
+						echo "<h4> Veillez remplir tous les champs!</h4>"; //Affiche le message d'erreur si un ou plusieurs champs ne sont pas remplis
 					}
 				}
 				?>
@@ -52,7 +52,7 @@ include("ip_user.php");
 			<p>Pas de compte ? <a href='page_inscription.php'>Créer un compte</a></p>
 			<a href='../index.php'>Retour à l'accueil</a>
 	</form>
-
+<!--Script qui sert à utiliser l'œil du champ mot de passe pour rendre visible ou non le mot de passe-->
 	<script>
 		e=true;
 		function changer(){
@@ -68,22 +68,12 @@ include("ip_user.php");
 			}
 		}
 	</script>
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
+
+<!--Gestion de la connexion dans le formulaire -->
 <?php
 if (isset($_POST["ok"],$_POST["email"],$_POST["mdp"])){
-
+    //connexion à la base de données
 	$connexion=mysqli_connect("localhost", "root", "01r1173");
 	$bd=mysqli_select_db($connexion, "Utilisateurs");
 	$select="SELECT login, password FROM Utilisateur_inscrit";
@@ -97,6 +87,7 @@ if (isset($_POST["ok"],$_POST["email"],$_POST["mdp"])){
 	    }
 	}
 	if ($flag==true){
+        //Vérification si l'utilisateur se connecte en admin ou non
 		if ($_POST["mdp"] == "admin"){
 			session_start();
 			$_SESSION["login"] = $_POST["email"];
@@ -111,6 +102,7 @@ if (isset($_POST["ok"],$_POST["email"],$_POST["mdp"])){
 		}
 	}
 	else{
+        //Pour chaque connexion d'un utilisateur, on renseigne ces informations dans la table users_log : son login, son mot de passe, son adresse ip et la date de connexion
 		$ins = "INSERT into users_log(login,password,adresse_ip,date) values(?,?,?,?)";
 		$insp = mysqli_prepare($connexion, $ins);
 		$email = $_POST["email"];
@@ -121,10 +113,10 @@ if (isset($_POST["ok"],$_POST["email"],$_POST["mdp"])){
 		mysqli_stmt_execute($insp);
 
 		if ($_POST["email"]!=null or $_POST["mdp"]!=null){
-			header("Location: page_connexion.php?msg_err=1");
+			header("Location: page_connexion.php?msg_err=1"); //Si l'email ou le mot de passe n'est pas correct, on va afficher le message d'erreur : "email ou mot de passe incorrect"
 		}
 		else{
-			header("Location: page_connexion.php?msg_err=2");
+			header("Location: page_connexion.php?msg_err=2"); //Sinon c'est qu'un champ est manquant, on va donc affciher le message d'erreur : "Veillez remplir tous les champs!"
 		}
 	}
 }
