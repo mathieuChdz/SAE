@@ -16,17 +16,19 @@ def codage(key: str, message: str) -> list:
     
     
     for n in range(len(message)):
+        # On effectue différentes opérations sur le contenu du message
 
         i = (i+1) % 256
         j = (j + S[i]) % 256
 
         S[i], S[j] = S[j], S[i]
 
-        elt=f'{S[(S[i] + S[j]) % 256 ] ^(message[n]):x}'
-        if len(elt)<2:
-            elt='0'+elt
+        elt=f'{S[(S[i] + S[j]) % 256 ] ^(message[n]):x}' # On construit le nouveau message chiffré
+                                                            # int -> hexa
 
-        code[n] = elt
+        if len(elt)<2:
+            elt='0'+elt     # On le code hexadécimal exploitable, 
+        code[n] = elt       # en lui donnant une longueur de 2
     
     return code
 
@@ -39,11 +41,10 @@ def ascii(message: str) -> list:
         tab (list) -> un tableau contenant les codes ascii de chaque caractere du message entre en parametre."""
     
     tab = []
-    #On parcourt le message caractere par caractere et 
-    #on stocke dans un tableau le code ascii correspondant au caractere qu'on regarde
-    for i in message:
-        tab.append(ord(i))
-    return tab
+
+    for i in message:              # On parcourt le message caractere par caractere et 
+        tab.append(ord(i))        # on stocke dans un tableau le code ascii 
+    return tab                   # correspondant au caractere que l'on regarde
 
 
 
@@ -83,20 +84,21 @@ def affiche_message(message : list):
 
 
 
-size=int(sys.argv[1])
+size=int(sys.argv[1]) # nombre de mots du message
 
 message=""
 for i in range(2,size+1):
-    message+=sys.argv[i]
-    if i<size:
+    message+=sys.argv[i]                # Rassemblement des différentes                  
+    if i<size:                          # parties du message 
         message+=" "
 
 key=""
-for i in range(size+1,len(sys.argv)):
-    key+=sys.argv[i]
+for i in range(size+1,len(sys.argv)):   # Rassemblement des différentes      
+    key+=sys.argv[i]                    # parties de la clé
     if i<size:
         key+=" "
         
+
 print(affiche_message(codage(key,message)))
 
 

@@ -16,11 +16,13 @@ def decodage(key: str, message: list) -> str:
     key = ascii(key)
     
     for n in range(len(message)):
+        # On effectue les mêmes opérations que pour le codage, sur le contenu du message
         i = (i + 1) % 256
         j = (j + S[i]) % 256
 
         S[i], S[j] = S[j], S[i]
-        code[n] = chr(S[(S[i] + S[j]) % 256] ^ int(message[n], base=16))
+        code[n] = chr(S[(S[i] + S[j]) % 256] ^ int(message[n], base=16))  # On construit le nouveau message chiffré
+                                                                            # hexa -> int
     
     return ''.join(code)
 
@@ -78,9 +80,13 @@ def affiche_message(message : list):
 
 
 def toList(message: str):
+    """Transforme un STR de code hexadécimal en une liste de valeurs assemblées par paires.
+    Entree :
+        message (str) -> le message chiffre avec le chiffrement RC4, c'est une suite de valeurs héxadécimales
+    Sortie :
+        Une liste des STR (héxadécimal) par paires."""
 
     code=[]
-
     for i in range(0,len (message)-1,2):
 
         elt=message[i]+message[i+1]
@@ -91,9 +97,6 @@ def toList(message: str):
 
 key=str(sys.argv[2])
 message=toList(str(sys.argv[1]))
-
-
-
 
 
 print(decodage(key,message))
