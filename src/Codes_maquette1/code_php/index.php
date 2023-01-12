@@ -29,7 +29,7 @@ session_start();
                     ?>
                     <li><a href="php/simu_proba.php">Probabilités</a></li>
                     <li><a href="php/simu_crypto.php">Chiffrement</a></li>
-                    <li><a href="simulation.html">Simulation 3</a></li>
+                    <li><a href="simulation.php">Simulation 3</a></li>
                     <li>
                     <?php
                         if (isset($_SESSION['login'])){
@@ -88,10 +88,9 @@ session_start();
                 <div class="circle"></div>
                 <div class="content">
                     <h2>Présentation</h2>
-                    <p>Ce site web a pour but de présenter 3 modules de simulation : <br>
+                    <p>Ce site web a pour but de présenter 2 modules de simulation : <br>
                     - Le premier est un module de calcul de probabilité à l'aide de différentes méthodes d'intégrales.<br>
                     - Le deuxième est un module de calcul de chiffrement et déchiffrement d'un message selon l'algorithme RC4. <br>
-                    - Le troisième est un module de ...
                     </p>
                 </div>
                 <img src="images/cercle_explication.png">
@@ -102,7 +101,7 @@ session_start();
                 <div class="circle"></div>
                 <div class="content">
                     <h2>Vidéo de présentation</h2>
-                    <a target="_blank" href="https://www.youtube.com/embed/-Da8Mf5vg7o">Lancer la vidéo</a>
+                    <a target="_blank" href="https://youtu.be/Z67ZPRCBKlw">Lancer la vidéo</a>
                 </div>
                 <img src="images/cercle_video.png">
             </div>
