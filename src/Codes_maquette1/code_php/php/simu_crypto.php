@@ -16,17 +16,21 @@ if (!isset($_SESSION["login"], $_SESSION["admin"])){
 else{
 ?>
 
-    <?php
-    include 'nav_bar.php';
-    ?>
-    <header></header>
-    
-    <body>
-      <div class="simu-titre">
-            <h1>Simulation 2 : Cryptographie</h1>
-	    </div>
+<?php
+include 'nav_bar.php';
+?>
+<header></header>
+
+<body>
+
+    <!-- titre du module -->
+    <div class="simu-titre">
+        <h1>Simulation 2 : Cryptographie</h1>
+    </div>
 
     <div class="saisie-historique">
+        
+        <!-- formulaire de saisie  -->
         <div class="saisie">  
             <fieldset>
                 <form action="traitement_crypto.php" method="post">
@@ -61,27 +65,35 @@ else{
             </fieldset>
         </div>
 
+        <!-- historique des actions faites pour chaque utilisateurs -->
         <div class="historique">
             <div class="table-crypto">
                 <h2>historique</h2>
 
                 <?php
+                // connexion à la base de donnée
                 $token=(bool)($connexion=mysqli_connect("localhost", "root", "01r1173"));
                 
                     if ($token){
                         $token2=(bool)($bd=mysqli_select_db($connexion, "Utilisateurs"));
-                        #display($connexion);
+
                         if ($token2){
-                            #display($bd);
+
+                            // selection des actions, messages et resultats de l'utilisateur qui fait la simulation
                             $sql="SELECT action, message, resultat FROM crypto_historique WHERE login='".$_SESSION['login']."'";
                             $token3=(bool)($res=mysqli_query($connexion,$sql));
                             if ($token3){
-                                #display($res);
+
                                 echo "<div class='table-aff'>";
+                                // création d'une table. Cela permet de mettre la table avec une taille à 100% ce qui
+                                // a pour effet d'adapter la table à la taille de l'écran et donc les éléments dedans aussi
                                 echo "<table>";
                                 echo "<tr id='first-line'><th>ordre de simulation</th><th>action</th><th>message</th><th>resultat</th></tr>";
                                 
+                                // variable utilisée pour l'ordre des actions faites par l'utilisateurs
                                 $cpt_mdp=0;
+
+                                // parcours et affichage des tuples sélectionnés
                                 while ($ligne=mysqli_fetch_row($res)){
                                     
                                     echo "<tr>";
@@ -103,12 +115,11 @@ else{
         </div>
     </div>
 
+</body>
 
-    </body>
-    
-    <?php
-    include '../html/script_nav_bar.html';
-    ?>
+<?php
+include '../html/script_nav_bar.html';
+?>
 <?php
 }
 ?>
