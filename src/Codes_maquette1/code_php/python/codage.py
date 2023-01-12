@@ -95,7 +95,7 @@ for i in range(2,size+1):
 key=""
 for i in range(size+1,len(sys.argv)):   # Rassemblement des différentes      
     key+=sys.argv[i]                    # parties de la clé
-    if i<size:
+    if i<len(sys.argv):
         key+=" "
         
 
