@@ -44,12 +44,18 @@ if (isset($_SESSION["login"], $_SESSION["access"])){
 				<input type='text' id='email' name='email' placeholder="email" value=''>
 			</div>
 			<div class="form-mdp">
-			<span class="material-symbols-rounded">lock</span>
+				<span class="material-symbols-rounded">lock</span>
 				<input type='password' id='mdp' name='mdp' placeholder="mot de passe" value=''>
+			</div>
+			<div class="captcha">
+				<img src="../images/captcha.png">
+				<input type="text" name="res_captcha" id="res_captcha" placeholder="complétez l'addition" value=''>
 			</div>
 			<input type='submit' id='ok' name='ok' value='Créer un compte'>
 	</form>
-	<a href='page_connexion.php'>retour page connexion</a>
+	<div class="lien">
+		<a href='page_connexion.php'>retour page connexion</a>
+	</div>
 </div>
 <!--Traitement et insertion dans le formulaire-->
 <?php
