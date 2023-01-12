@@ -39,7 +39,7 @@
 |3|Se déconnecter|La session est fermée|OK|
 
 
-**Dossier de test**
+**Dossier de test proba**
 
 |classe|m|σ|t|résultat attendu|résultat obtenu|
  | - | - | - | - | - | - |
@@ -52,3 +52,22 @@
 |p7|0|3|0|0.5|0.5|
 |p8|0|0|0|impossible|impossible|
 |p9|90|-3|87|impossible|impossible
+
+
+
+**Dossier de test crypto**
+
+|classe|clé|message|action|résultat attendu|résultat obtenu|
+ | - | - | - | - | - | - |
+|p1|Key|Plaintext|chiffrer|bbf316e8d940af0ad3|bbf316e8d940af0ad3|
+|p2|Key|bbf316e8d940af0ad3|dechiffrer|Plaintext|Plaintext|
+|p3|Secret|Attack at dawn|chiffrer|45a01f645fc35b383552544b9bf5|45a01f645fc35b383552544b9bf5|
+|p4|Secret|45a01f645fc35b383552544b9bf5|dechiffrer|Attack at dawn|Attack at dawn|
+|p5|Wiki|pedia|chiffrer|1021bf0420|1021bf0420|
+|p6|Wiki|1021bf0420|dechiffrer|pedia|pedia|
+|p7|Key|The Message|chiffrer|bff712a1fa51b901c67e2f|bff712a1fa51b901c67e2f|
+|p8|Key|bff712a1fa51b901c67e2f|dechiffrer|The Message|The Message|
+|p9|The Key|Message|chiffrer|8f2d6a11c68709|8f2d6a11c68709|
+|p10|The Key|8f2d6a11c68709|dechiffrer|Message|Message|
+|p11|The Key|The Message3|chiffrer|96207c42ea851f40b84e57|96207c42ea851f40b84e57|
+|p12|The Key|96207c42ea851f40b84e57|dechiffrer|The Message|The Message|

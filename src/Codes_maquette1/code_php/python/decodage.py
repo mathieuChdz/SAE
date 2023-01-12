@@ -101,7 +101,7 @@ message=toList(str(sys.argv[1]))
 key=""
 for i in range(2,len(sys.argv)):   # Rassemblement des différentes      
     key+=sys.argv[i]                    # parties de la clé
-    if i<len(sys.argv):
+    if i<len(sys.argv)-1:
         key+=" "
 
 
