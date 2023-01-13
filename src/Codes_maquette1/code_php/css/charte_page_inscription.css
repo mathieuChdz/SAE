@@ -74,18 +74,6 @@ form{
     width: 100%;
 }
 
-
-.form-structure a{
-    position: absolute;
-    margin-top: 24em;
-    text-decoration: none;
-    color: blue;
-}
-
-.form-structure a:hover{
-    border-bottom: solid 1px gray;
-}
-
 .material-symbols-rounded{
     margin-right: 10px;
 }
@@ -117,5 +105,30 @@ input[type=submit]:hover{
     transition: all 0.5s;
 }
 
+.captcha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+    width: 100%;
+}
 
+.captcha img{
+    width: 70%;
+}
 
+.captcha input[type=text]{
+    width: 70%;
+}
+
+.lien a{
+    position: absolute;
+    text-decoration: none;
+    color: blue;
+    margin-top: -2em;
+    margin-left: -5em;
+}
+
+.lien a:hover{
+    border-bottom: solid 1px gray;
+}

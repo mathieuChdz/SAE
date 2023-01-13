@@ -28,6 +28,10 @@ if (isset($_SESSION["login"], $_SESSION["access"])){
 					if ($_GET["msg_err"]==1){
 						echo "<h4> Veillez remplir tous les champs !</h4>"; //Affiche le message d'erreur si un ou plusieurs champs ne sont pas remplis
 					}
+
+					else if ($_GET["msg_err"]==2){
+						echo "<h4> Captcha invalide !</h4>"; //Affiche le message d'erreur si le captacha est faux
+					}
 				}
 				?>
 			</div>
@@ -49,7 +53,7 @@ if (isset($_SESSION["login"], $_SESSION["access"])){
 			</div>
 			<div class="captcha">
 				<img src="../images/captcha.png">
-				<input type="text" name="res_captcha" id="res_captcha" placeholder="complétez l'addition" value=''>
+				<input type="text" name="res_captcha" id="res_captcha" placeholder="complétez l'addition" value='' required="">
 			</div>
 			<input type='submit' id='ok' name='ok' value='Créer un compte'>
 	</form>
@@ -59,48 +63,55 @@ if (isset($_SESSION["login"], $_SESSION["access"])){
 </div>
 <!--Traitement et insertion dans le formulaire-->
 <?php
-if (isset($_POST['ok'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['mdp'])){
-    //Création des variables $nom, $prenom, $email et $mdp
-	$flag=true;
-	foreach ($_POST as $k => $v) {
-		$$k = $v;
-		if ($v==null || !$v){
-			$flag=false;
-			break;
-		}
+if (isset($_POST['ok'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['mdp'], $_POST['res_captcha'])){
+
+	if ($_POST["res_captcha"] != 12){
+		header("Location: page_inscription.php?msg_err=2");
 	}
-	
-	if ($flag){
-		foreach ($_POST as $k => $v) {
-		    $$k = $v;
-		}
-        //Insertion d'un nouvel utilisateur dans la table Utilisateurs_inscrit
-		$connexion = mysqli_connect("localhost", "root", "01r1173");
-		$bd = mysqli_select_db($connexion, "Utilisateurs");
-		$ins = "INSERT into Utilisateur_inscrit(login,password,nom,prenom) values(?,?,?,?)";
-		$insp = mysqli_prepare($connexion, $ins);
-		$password_md5 = md5($mdp);
-		mysqli_stmt_bind_param($insp, 'ssss', $email, $password_md5, $nom, $prenom);
-		mysqli_stmt_execute($insp);
-
-        //Insertion d'un utilisateur à l'aide de son login, dans la table users_stats qui vérifie le nombre de fois qu'un utilisateur à utilisé un module
-		$ins2 = "INSERT into users_stats(login,module_1,module_2,module_3) values(?,?,?,?)";
-		$insp2 = mysqli_prepare($connexion, $ins2);
-		$modules_init = 0;
-		mysqli_stmt_bind_param($insp2, 'siii', $email, $modules_init, $modules_init, $modules_init);
-		mysqli_stmt_execute($insp2);
-        //Insertion d'un utilisateur à l'aide de son login et mot de passe, dans la table users_mdp_historique qui donne l'historique des mots de passe d'un utilisateur
-		$ins3 = "INSERT into users_mdp_historique(login,password) values(?,?)";
-		$insp3 = mysqli_prepare($connexion, $ins3);
-		mysqli_stmt_bind_param($insp3, 'ss', $email, $mdp);
-		mysqli_stmt_execute($insp3);
-
-		header("Location: page_connexion.php");
-	}
-
 	else{
-		header("Location: page_inscription.php?msg_err=1");
+		//Création des variables $nom, $prenom, $email et $mdp
+		$flag=true;
+		foreach ($_POST as $k => $v) {
+			$$k = $v;
+			if ($v==null || !$v){
+				$flag=false;
+				break;
+			}
+		}
+
+		if ($flag){
+			foreach ($_POST as $k => $v) {
+				$$k = $v;
+			}
+			//Insertion d'un nouvel utilisateur dans la table Utilisateurs_inscrit
+			$connexion = mysqli_connect("localhost", "root", "01r1173");
+			$bd = mysqli_select_db($connexion, "Utilisateurs");
+			$ins = "INSERT into Utilisateur_inscrit(login,password,nom,prenom) values(?,?,?,?)";
+			$insp = mysqli_prepare($connexion, $ins);
+			$password_md5 = md5($mdp);
+			mysqli_stmt_bind_param($insp, 'ssss', $email, $password_md5, $nom, $prenom);
+			mysqli_stmt_execute($insp);
+
+			//Insertion d'un utilisateur à l'aide de son login, dans la table users_stats qui vérifie le nombre de fois qu'un utilisateur à utilisé un module
+			$ins2 = "INSERT into users_stats(login,module_1,module_2,module_3) values(?,?,?,?)";
+			$insp2 = mysqli_prepare($connexion, $ins2);
+			$modules_init = 0;
+			mysqli_stmt_bind_param($insp2, 'siii', $email, $modules_init, $modules_init, $modules_init);
+			mysqli_stmt_execute($insp2);
+			//Insertion d'un utilisateur à l'aide de son login et mot de passe, dans la table users_mdp_historique qui donne l'historique des mots de passe d'un utilisateur
+			$ins3 = "INSERT into users_mdp_historique(login,password) values(?,?)";
+			$insp3 = mysqli_prepare($connexion, $ins3);
+			mysqli_stmt_bind_param($insp3, 'ss', $email, $mdp);
+			mysqli_stmt_execute($insp3);
+
+			header("Location: page_connexion.php");
+		}
+
+		else{
+			header("Location: page_inscription.php?msg_err=1");
+		}
 	}
+    
 
 }
 ?>
