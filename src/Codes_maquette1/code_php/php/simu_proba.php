@@ -26,6 +26,7 @@ if (!isset($_SESSION["login"], $_SESSION["admin"])){
 
       <tr>
         <td>
+          <!-- titre du module -->
           <div class="simu-titre">
             <h1>Simulation 1 : Calcul d'intégrales</h1>
           </div>
@@ -35,6 +36,7 @@ if (!isset($_SESSION["login"], $_SESSION["admin"])){
       
       <tr>
         <td>
+          <!-- graphiques des diffèrentes méthodes -->
           <div class="methodes-graphique">
             <div class="methodes">
               <label for="méthodes">Représentation graphique des méthodes :</label>
@@ -64,6 +66,7 @@ if (!isset($_SESSION["login"], $_SESSION["admin"])){
 
     <tr>
       <td>
+       <!-- formulaire de saisie  -->
         <div class="saisie">
           <fieldset>
             <form action="traitement_proba.php" method="post">
@@ -105,6 +108,7 @@ if (!isset($_SESSION["login"], $_SESSION["admin"])){
 
             </form>
           </fieldset>
+          <!-- résultat du formulaire  -->
           <div class="resultat">
             <h2>Résultat :</h2>
             <?php
