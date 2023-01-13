@@ -20,6 +20,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
     <header></header>
     
     <body>
+    <!-- formulaire de saisie  -->
     <div class="form-table">
     
         <div class="form-mdp">
@@ -44,11 +45,12 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
     
             </form>
         </div>
-    
+        <!-- historique des actions faites pour chaque utilisateurs -->
         <div class="table-mdp">
             <h2>Historique des mots de passe</h2>
 
             <?php
+            // connexion à la base de donnée
             $token=(bool)($connexion=mysqli_connect("localhost", "root", "01r1173"));
             
                 if ($token){
@@ -56,15 +58,21 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
                     #display($connexion);
                     if ($token2){
                         #display($bd);
+                        // selection des actions, messages et resultats de l'utilisateur qui fait la simulation
                         $sql="SELECT password FROM users_mdp_historique WHERE login='".$_SESSION['login']."'";
                         $token3=(bool)($res=mysqli_query($connexion,$sql));
                         if ($token3){
                             #display($res);
                             echo "<div class='table-aff'>";
+                            // création d'une table. Cela permet de mettre la table avec une taille à 100% ce qui
+                            // a pour effet d'adapter la table à la taille de l'écran et donc les éléments dedans aussi
                             echo "<table>";
                             echo "<tr id='first-line'><th>ordre de changement</th><th>mot de passe</th></tr>";
-                            
+
+                            // variable utilisée pour l'ordre des actions faites par l'utilisateurs
                             $cpt_mdp=0;
+
+                            // parcours et affichage des tuples sélectionnés
                             while ($ligne=mysqli_fetch_row($res)){
                                 
                                 echo "<tr>";
@@ -97,14 +105,14 @@ else{
 }
 
 if (isset($_POST["send"],$_POST["mdp_actu"],$_POST["new_mdp"],$_POST["new_mdp_verif"])){
-
+    //vérifie si le nouveau mot de passe est bien différent de celui actuel de l'utilisateur
     if ($_POST["new_mdp"] != $_POST["mdp_actu"]){
         if ($_POST["new_mdp"] == $_POST["new_mdp_verif"]){
             $select="SELECT login, password FROM Utilisateur_inscrit WHERE login='".$_SESSION['login']."'";
             $res=mysqli_query($connexion, $select);
         
             $ligne = mysqli_fetch_assoc($res);
-
+            //change le mot de passe actuel avec le nouveau mot de passe
             if (md5($_POST["mdp_actu"]) == $ligne["password"]){
                 $ins = "UPDATE utilisateur_inscrit SET password = ? WHERE login='".$_SESSION['login']."'";
                 $insp = mysqli_prepare($connexion, $ins);
@@ -113,6 +121,7 @@ if (isset($_POST["send"],$_POST["mdp_actu"],$_POST["new_mdp"],$_POST["new_mdp_ve
                 mysqli_stmt_bind_param($insp, 's', $new_password_md5);
                 mysqli_stmt_execute($insp);
 
+                //insert le nouveau mot de passe dans la table users_mdp_historique
                 $ins2 = "INSERT into users_mdp_historique(login,password) values(?,?)";
                 $insp2 = mysqli_prepare($connexion, $ins2);
                 $login = $_SESSION['login'];
