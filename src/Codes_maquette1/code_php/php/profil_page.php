@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>pade de profil</title>
     <link rel="stylesheet" href="../css/charte_profil_page.css">
     <link rel="stylesheet" href="../css/charte_nav_bar.css">
 </head>

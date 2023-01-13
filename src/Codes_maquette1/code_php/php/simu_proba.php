@@ -50,7 +50,7 @@ if (!isset($_SESSION["login"], $_SESSION["admin"])){
             </div>
           
             <div id="graph" class="graphique">
-              <img  src="../images/methode_rec_gauche.png">
+              <img  src="../images/methode_rec_gauche.png" alt="image du graphque actuel">
             </div>
           </div>
         </td>

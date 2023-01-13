@@ -121,6 +121,13 @@ input[type=submit]:hover{
     width: 70%;
 }
 
+.captcha-img-audio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 75%;
+}
+
 .lien a{
     position: absolute;
     text-decoration: none;

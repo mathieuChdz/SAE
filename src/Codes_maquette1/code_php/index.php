@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>page d'accueil</title>
     <link rel="stylesheet" href="css/charte_index.css">
 </head>
 
@@ -13,7 +13,7 @@ session_start();
 
 <!-- barre de navigation -->
 <nav class="navBar">
-        <img class="logo" src="images/logo_sans_fond.png">
+        <img class="logo" src="images/logo_sans_fond.png" alt="logo du site">
         <h1>X Simulator</h1>
         <div class="navBar-sim-sub">
             <div class="nav-links">
@@ -93,7 +93,7 @@ session_start();
                     - Le deuxième est un module de calcul de chiffrement et déchiffrement d'un message selon l'algorithme RC4. <br>
                     </p>
                 </div>
-                <img src="images/cercle_explication.png">
+                <img src="images/cercle_explication.png" alt="image explication">
             </div>
 
             <!-- vidéo explicative du site -->
@@ -103,7 +103,7 @@ session_start();
                     <h2>Vidéo de présentation</h2>
                     <a target="_blank" href="https://youtu.be/Z67ZPRCBKlw">Lancer la vidéo</a>
                 </div>
-                <img src="images/cercle_video.png">
+                <img src="images/cercle_video.png" alt="image video">
             </div>
 
         </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>page du module de chiffrementv</title>
     <link rel="stylesheet" href="../css/charte_simu_crypto_page.css">
     <link rel="stylesheet" href="../css/charte_nav_bar.css">
 </head>
@@ -39,11 +39,11 @@ include 'nav_bar.php';
                     </div>
                     <div class="cle">
                         <label for="cle">Clé :</label>
-                        <input type="text" name="cle">
+                        <input type="text" id="cle" name="cle">
                     </div>
                     <div class="message">
                         <label for="message">Message :</label>
-                        <input type="text" name="message">
+                        <input type="text" id="message" name="message">
                     </div>
                     <div class="bouton">
                         <div class="bouton-chiffrer">

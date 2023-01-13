@@ -1,6 +1,6 @@
 <!-- barre de navigation -->
 <nav class="navBar">
-    <img class="logo" src="../images/logo_sans_fond.png">
+    <img class="logo" src="../images/logo_sans_fond.png" alt="logo du site">
     <a href="../index.php"><h1>X Simulator</h1></a>
     <div class="navBar-sim-sub">
         <div class="nav-links">
@@ -16,7 +16,7 @@
                 ?>
                 <li><a href="../php/simu_proba.php">Probabilités</a></li>
                 <li><a href="../php/simu_crypto.php">Chiffrement</a></li>
-                <li><a href="simulation.html">Simulation 3</a></li>
+                <li><a href="error_page.php">Simulation 3</a></li>
                 <li>
                     <?php
                         if (isset($_SESSION['login'])){

@@ -37,22 +37,31 @@ if (isset($_SESSION["login"], $_SESSION["access"])){
 			</div>
 			<div class="form-nom">
 				<span class="material-symbols-rounded">badge</span>
+				<label for="nom" hidden="hidden">nom</label>
 				<input type='text' id='nom' name='nom' placeholder="nom" value=''>
 			</div>
 			<div class="form-prenom">
 				<span class="material-symbols-rounded">badge</span>
+				<label for="prenom" hidden="hidden">prenom</label>
 				<input type='text' id='prenom' name='prenom' placeholder="prénom" value=''>
 			</div>
 			<div class="form-mail">
 				<span class="material-symbols-rounded">mail</span>
+				<label for="email" hidden="hidden">email</label>
 				<input type='text' id='email' name='email' placeholder="email" value=''>
 			</div>
 			<div class="form-mdp">
 				<span class="material-symbols-rounded">lock</span>
+				<label for="mdp" hidden="hidden">mot de passe</label>
 				<input type='password' id='mdp' name='mdp' placeholder="mot de passe" value=''>
 			</div>
 			<div class="captcha">
-				<img src="../images/captcha.png">
+				<audio id="audio" src="../audio/captcha_audio.mp3">audio</audio>
+				<div class="captcha-img-audio">
+					<img src="../images/captcha.png" alt="image du captcha">
+					<input type="button" onClick="document.getElementById('audio').play()" value="audio">
+				</div>
+				<label for="res_captcha" hidden="hidden">resultat captcha</label>
 				<input type="text" name="res_captcha" id="res_captcha" placeholder="complétez l'addition" value='' required="">
 			</div>
 			<input type='submit' id='ok' name='ok' value='Créer un compte'>
@@ -61,6 +70,7 @@ if (isset($_SESSION["login"], $_SESSION["access"])){
 		<a href='page_connexion.php'>retour page connexion</a>
 	</div>
 </div>
+
 <!--Traitement et insertion dans le formulaire-->
 <?php
 if (isset($_POST['ok'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['mdp'], $_POST['res_captcha'])){

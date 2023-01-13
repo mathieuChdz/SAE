@@ -5,7 +5,7 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>page admin</title>
     <link rel="stylesheet" href="../css/charte_admin_page.css">
     <link rel="stylesheet" href="../css/charte_nav_bar.css">
 </head>
@@ -103,6 +103,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
                     <div class='choix-tuple'>
                         <form action='traitement_table.php' method='post'>
                             <input type='hidden' name='table' value='$table'>
+                            <label for='mot' hidden='hidden'>mot de recherches</label>
                             <input type='text' id='mot' name='mot' placeholder='mot de recherche'>
                             <input type='submit' id='send' name='send' value='rechercher'>
                     </div>";
