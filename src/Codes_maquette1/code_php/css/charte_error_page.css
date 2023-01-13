@@ -1,3 +1,11 @@
+html{
+    background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
+}
+
+.table-error table{
+    width: 100%;
+}
+
 .display{
     margin-top: 100px;
     display: flex;
@@ -15,20 +23,10 @@
     align-items: center;
 
 }
-.image {
+.image{
     display: flex;
-
-}
-.image1{
-    margin-left: 100px;
-}
-.image2{
-    margin-right: 100px;
-}
-.imageError{
-    margin-right: 350px;
-    margin-left: 350px;
-
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 .button{
     display: flex;
@@ -46,8 +44,4 @@ input[type=submit] {
     cursor: pointer;
     width: 100%;
     font-size: 25px;
-}
-
-html{
-    background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
 }

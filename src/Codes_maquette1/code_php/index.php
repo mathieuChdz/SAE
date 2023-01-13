@@ -29,7 +29,7 @@ session_start();
                     ?>
                     <li><a href="php/simu_proba.php">Probabilités</a></li>
                     <li><a href="php/simu_crypto.php">Chiffrement</a></li>
-                    <li><a href="simulation.php">Simulation 3</a></li>
+                    <li><a href="php/error_page.php">Simulation 3</a></li>
                     <li>
                     <?php
                         if (isset($_SESSION['login'])){
