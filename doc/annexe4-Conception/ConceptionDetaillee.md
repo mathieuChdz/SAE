@@ -76,7 +76,7 @@ Le module est découpé en 2 fichiers qui contiennent 6 fonctions différentes (
 
 La fonction **ascii** prend en paramètre un message sous forme de chaîne de caractères et renvoie un tableau dont chaque case est le code ascii (chaîne de caractères) de chaque caractère du message. Cette fonction est utilisée par les fonctions perm, codage et decodage.
 
-La fonction **perm**.
+La fonction **perm** permet de générer une liste de longueur 256 avec les caractères convertis en ascii de la clé entrée en paramètre. Cette fonction est utilisée dans les fonctions coder et décoder. 
 
 
 La fonction **codage** est une fonction majeure. Elle prend en paramètre une clé et un message sous forme de chaînes de caractères et renvoie un tableau dont chaque case contient un caractère en hexadécimal du message codé, ces caractères hexadécimaux sont sous formes de chaînes de caractères. Cette fonction sert à chiffrer un message avec le chiffrement RC4.
@@ -85,7 +85,7 @@ La fonction **decodage** est une fonction majeure. Cette fonction sert à déchi
 
 La fonction **affiche_message** prend en paramètre un message qui a été chiffré ou déchiffré à l'aide du chiffrement RC4, ce message est sous forme de tableau. La fonction affiche ce message dans son état actuel sous forme de chaîne de caractères.
 
-La fonction **toList**.
+La fonction **toList**  permet de convertir une chaîne de caractère et retourner une liste, en prenant pour chaque cellule, les éléments de la chaîne de caractères deux par deux. Elle prend en paramètre un message sous forme de chaîne de caractères représentant un code hexadécimal, il peut être le résultat d'un retour de la fonction codage. 
 
 **Serveur et Base de données**
 
