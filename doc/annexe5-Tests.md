@@ -15,6 +15,8 @@
 |9|appuyer sur un bouton “lancer” sur la page d’accueil dans les zones des simulations|Renvoie sur une page vide avec un texte indiquant qu’elle est en cours de développement|OK|
 |10|appuyer sur le bouton non inscrit|renvoie sur la page d’accueil|OK|
 
+***Tableau 1: données de test de la maquette 2***
+
 **Maquette 1 :**
 
 
@@ -29,7 +31,7 @@
 |6|appuyer sur le bouton “mdp oublié” sur la page de connexion|renvoie sur une page d’erreur|OK|
 |7|appuyer sur le bouton “se connecter” de la page de connexion|retour à la page d’accueil|OK|
 |8|appuyer sur le bouton “retour” de la page d’erreur|renvoie à la page d’accueil|OK|
-
+***Tableau 2: données de test de la maquette 1***
 
 
 |N°|Action|Attendu|Résultat|
@@ -37,7 +39,7 @@
 |1|S’inscrire|Les informations sont inscrites dans la base de données|OK|
 |2|Se connecter|Arriver sur la page d’accueil avec une session ouverte|OK|
 |3|Se déconnecter|La session est fermée|OK|
-
+***Tableau 3: données de test des actions des pages***
 
 **Dossier de test proba**
 
@@ -52,6 +54,7 @@
 |p7|0|3|0|0.5|0.5|
 |p8|0|0|0|impossible|impossible|
 |p9|90|-3|87|impossible|impossible
+***Tableau 4: données de test du module de proba***
 
 
 
@@ -71,3 +74,4 @@
 |p10|The Key|8f2d6a11c68709|dechiffrer|Message|Message|
 |p11|The Key|The Message3|chiffrer|96207c42ea851f40b84e57|96207c42ea851f40b84e57|
 |p12|The Key|96207c42ea851f40b84e57|dechiffrer|The Message|The Message|
+***Tableau 5: données de test du module de crypto***
