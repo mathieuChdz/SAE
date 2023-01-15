@@ -5,15 +5,16 @@
 
 **Page d'accueil:**
 
-La page se constitue d'une balise nav qui permet d'accéder aux simulations. Le nav est constitué d'une image img du logo, d'un titre h1, de liens et d'un submit pour se connecter contenus dans une liste non ordonnée ul pour accéder aux simulations.
+La page se constitue d'une balise nav qui permet d'accéder aux simulations. La nav est constitué d'une image img du logo, d'un titre h1, de liens et d'un submit pour se connecter, contenu dans une liste non ordonnée ul pour accéder aux simulations.
 
-Lorsque la page est en fenêtré un menu hamburger apparaît contenant les liens vers les simulations et le bouton se connecter.
+Lorsque la page est en fenêtré un menu hamburger apparaît, contenant les liens vers les simulations et le bouton se connecter.
 
 Si un visiteur se connecte, celui-ci devient un utilisateur et le bouton "se connecter" devient un bouton "se déconnecter".
 
-Ensuite, il y a une balise div qui regroupe un paragraphe qui correspond au texte explicatif ainsi qu'une balise iframe pour la vidéo de démonstration.
+Ensuite, il y a une balise div qui regroupe un paragraphe de balise "p" qui correspond au texte explicatif ainsi qu'une balise "a" pour un lien vers la vidéo de présentation. Ces explications sont visibles quand l'utilisateur passe sa souris dessus.
 
-Un titre h4 est disposé au-dessus de la vidéo pour l'introduire. **Page de connexion:**
+
+**Page de connexion:**
 
 La page possède un formulaire qui permet à une personne de se connecter. Ce formulaire contient:
 
@@ -22,10 +23,10 @@ La page possède un formulaire qui permet à une personne de se connecter. Ce fo
 - un texte pour l'adresse email
 - Une icône mot de passe
 - un texte pour le mot de passe
-- Un lien pour le cas où la personne à oublié son mot de passe
+- Un lien pour le cas où la personne à oublié son mot de passe qui retourne à la page d'erreur
 - Un submit pour se connecter
 - Un lien pour créer un compte
-- Un lien pour retourner à l'accueil
+- Un lien pour retourner à la page d'accueil
 
 **Page d'erreur:**
 
@@ -48,8 +49,11 @@ La page est composée d'un formulaire d'inscription. Ce formulaire contient:
 - Une icône pour l'adresse email
 - Un texte pour le mot de passe
 - Une icône pour le mot de passe
+- Une image pour le captcha
+- Un bouton audio pour le captcha
+- Un texte pour le captcha
 - Un submit pour créer un compte
-- Un lien pour retourner à la page d'accueil
+- Un lien pour retourner à la page de connexion
 
 **Page simulation intégrale:**
 
