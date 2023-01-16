@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>pade de profil</title>
+    <title>page de profil</title>
     <link rel="stylesheet" href="../css/charte_profil_page.css">
     <link rel="stylesheet" href="../css/charte_nav_bar.css">
 </head>
@@ -45,7 +45,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
     
             </form>
         </div>
-        <!-- historique des actions faites pour chaque utilisateurs -->
+        <!-- historique des actions faites pour chaque utilisateur -->
         <div class="table-mdp">
             <h2>Historique des mots de passe</h2>
 
@@ -69,7 +69,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
                             echo "<table>";
                             echo "<tr id='first-line'><th>ordre de changement</th><th>mot de passe</th></tr>";
 
-                            // variable utilisée pour l'ordre des actions faites par l'utilisateurs
+                            // variable utilisée pour l'ordre des actions faites par l'utilisateur
                             $cpt_mdp=0;
 
                             // parcours et affichage des tuples sélectionnés
