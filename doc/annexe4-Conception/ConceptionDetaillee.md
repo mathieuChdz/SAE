@@ -55,10 +55,49 @@ La page est composée d'un formulaire d'inscription. Ce formulaire contient:
 - Un submit pour créer un compte
 - Un lien pour retourner à la page de connexion
 
+**Page de profil:**
+
+La page possède la barre de navigation avec le logo le titre et les liens vers les autres simulations, ainsi qu'un bouton pour se déconnecter. Pour retourner à l'accueil l'utilisateur peut cliquer sur le titre.
+La page contient deux parties :
+
+La première est un formulaire qui contient :
+
+- Un titre h3 'Changer de mot de passe'
+- Un label 'Mot de passe actuel'
+- Un champ de saisie pour rentrer le mot de passe actuel
+- Un label 'Nouveau mot de passe'
+- Un champ de saisie pour rentrer le nouveau mot de passe
+- Un label 'Confirmer le mot de passe'
+- Un champ de saisie pour resaisir le mot de passe
+- Un submit pour enregistrer
+
+La deuxième partie est un historique des mots de passe modifié par l'utilisateur : il y a un titre h2 'Historique des mots de passe', ainsi qu'un tableau avec l'ordre des changements et le mot de passe actuel qui a été précédemment changé.
+
+**Page de l'administrateur (gestionnaire):**
+
+La page possède la barre de navigation avec le logo le titre et les liens vers les autres simulations, ainsi qu'un bouton pour se déconnecter. Pour retourner à l'accueil l'utilisateur peut cliquer sur le titre.
+
+La page contient : 
+- Un titre h2 'Quelle table voulez-vous afficher'
+
+Un formulaire avec :
+- Un submit 'utilisateurs'
+- Un submit 'statistiques'
+- Un submit 'error log'
+
+Un second titre h2 qui affiche le titre de la table choisie.
+
+Une barre de recherche créée à l'aide d'un formulaire avec :
+- Un label 'mot de recherche'
+- Un champ de saisie pour renter la recherche
+- Un submit pour rechercher
+
+Le contenu des différentes tables. 
+
 **Page simulation intégrale:**
 
-La page possède une barre de navigation avec le logo le titre et un bouton pour retourner à l'accueil.
-Le contenu de la page est divisé en deux parties. La première est une représentation graphique des trois méthodes proposées.
+La page possède la barre de navigation avec le logo le titre et les liens vers les autres simulations, ainsi qu'un bouton pour se déconnecter. Pour retourner à l'accueil l'utilisateur peut cliquer sur le titre. Le contenu de la page est divisé en deux parties : 
+La première est une représentation graphique des trois méthodes proposées.
 Il y a cinq boutons et une image qui se met à jour en fonction du bouton sélectionné.
 La deuxième partie est un formulaire pour lancer la simulation. Ce formulaire contient :
 
