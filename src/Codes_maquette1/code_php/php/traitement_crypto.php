@@ -5,7 +5,9 @@ if (!isset($_SESSION["login"])){
 }
 
 if (isset($_POST['message'])){
-    
+
+
+
     // connexion à la base de donnée
     $connexion=mysqli_connect("localhost", "root", "01r1173");
     $bd=mysqli_select_db($connexion, "Utilisateurs");
