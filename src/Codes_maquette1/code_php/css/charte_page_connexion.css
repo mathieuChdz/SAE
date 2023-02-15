@@ -2,9 +2,16 @@ html{
     background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
 }
 
-.text-erreur{
-    color: red;
+.text-erreur-ok{
     font-size: 15px;
+}
+
+.text-msg-ok{
+    color: green;
+}
+
+.text-msg-err{
+    color: red;
 }
 
 .form-structure {

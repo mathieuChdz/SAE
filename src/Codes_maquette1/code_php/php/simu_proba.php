@@ -22,42 +22,6 @@ if (!isset($_SESSION["login"], $_SESSION["admin"])){
 
 <div class="table">
   <table>
-    <div class="simulation">
-
-      <tr>
-        <td>
-          <!-- titre du module -->
-          <div class="simu-titre">
-            <h1>Simulation 1 : Calcul d'intégrales</h1>
-          </div>
-        </td>
-
-      </tr>
-      
-      <tr>
-        <td>
-          <!-- graphiques des diffèrentes méthodes -->
-          <div class="methodes-graphique">
-            <div class="methodes">
-              <label for="méthodes">Représentation graphique des méthodes :</label>
-              <div class="methodes-button">
-                <input type="button" id="mybutton" onclick="grapheGauche()" value="Méthode des rectangles gauches">
-                <input type="button" id="mybutton" onclick="grapheDroit()" value="Méthode des rectangles droits">
-                <input type="button" id="mybutton" onclick="grapheMedians()" value="Méthode des rectangles médians">
-                <input type="button" id="mybutton" onclick="grapheTrapeze()" value="Méthode des trapèzes">
-                <input type="button" id="mybutton" onclick="grapheSimpson()" value="Méthode de Simpson">
-              </div>
-            </div>
-          
-            <div id="graph" class="graphique">
-              <img  src="../images/methode_rec_gauche.png" alt="image du graphque actuel">
-            </div>
-          </div>
-        </td>
-      </tr>
-      
-    </div>
-
     <tr>
       <td>
         <hr>
@@ -121,6 +85,41 @@ if (!isset($_SESSION["login"], $_SESSION["admin"])){
         </div>
       </td>
     </tr>
+      <div class="simulation">
+
+          <tr>
+              <td>
+                  <!-- titre du module -->
+                  <div class="simu-titre">
+                      <h1>Simulation 1 : Calcul d'intégrales</h1>
+                  </div>
+              </td>
+
+          </tr>
+
+          <tr>
+              <td>
+                  <!-- graphiques des diffèrentes méthodes -->
+                  <div class="methodes-graphique">
+                      <div class="methodes">
+                          <label for="méthodes">Représentation graphique des méthodes :</label>
+                          <div class="methodes-button">
+                              <input type="button" id="mybutton" onclick="grapheGauche()" value="Méthode des rectangles gauches">
+                              <input type="button" id="mybutton" onclick="grapheDroit()" value="Méthode des rectangles droits">
+                              <input type="button" id="mybutton" onclick="grapheMedians()" value="Méthode des rectangles médians">
+                              <input type="button" id="mybutton" onclick="grapheTrapeze()" value="Méthode des trapèzes">
+                              <input type="button" id="mybutton" onclick="grapheSimpson()" value="Méthode de Simpson">
+                          </div>
+                      </div>
+
+                      <div id="graph" class="graphique">
+                          <img  src="../images/methode_rec_gauche.png" alt="image du graphque actuel">
+                      </div>
+                  </div>
+              </td>
+          </tr>
+
+      </div>
     
     
   </table>
@@ -133,3 +132,4 @@ include '../html/script_nav_bar.html';
 ?>
 
 </html>
+

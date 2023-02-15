@@ -114,7 +114,7 @@ if (isset($_POST['ok'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST
 			mysqli_stmt_bind_param($insp3, 'ss', $email, $mdp);
 			mysqli_stmt_execute($insp3);
 
-			header("Location: page_connexion.php");
+			header("Location: page_connexion.php?msg_ok=1");
 		}
 
 		else{

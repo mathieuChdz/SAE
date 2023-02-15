@@ -24,14 +24,27 @@ include("ip_user.php");
 <div class="form-structure">
 	<form action=''method='post'>
 			<h1>Connexion</h1>
-			<div class="text-erreur">
+			<div class="text-erreur-ok">
 				<?php
-				if (isset($_GET["msg_err"])){
+				if (isset($_GET["msg_ok"])){
+					if ($_GET["msg_ok"]==1){
+						echo "<div class='text-msg-ok'>
+						<h4> Inscription enregistrée !</h4> 
+						</div>"; //Affiche le message d'erreur si l'adresse email ou le mot de passe renseigné est incorrect
+					}
+				}
+
+				else if (isset($_GET["msg_err"])){
 					if ($_GET["msg_err"]==1){
-						echo "<h4> email ou mot de passe incorrect !</h4>"; //Affiche le message d'erreur si l'adresse email ou le mot de passe renseigné est incorrect
+						echo "<div class='text-msg-err'>
+						<h4> email ou mot de passe incorrect !</h4> 
+						</div>"; //Affiche le message d'erreur si l'adresse email ou le mot de passe renseigné est incorrect
 					}
 					elseif ($_GET["msg_err"]==2){
-						echo "<h4> Veillez remplir tous les champs!</h4>"; //Affiche le message d'erreur si un ou plusieurs champs ne sont pas remplis
+
+						echo "<div class='text-msg_err'>
+						<h4> Veillez remplir tous les champs !</h4> 
+						</div>"; //Affiche le message d'erreur si un ou plusieurs champs ne sont pas remplis
 					}
 				}
 				?>
@@ -83,6 +96,8 @@ if (isset($_POST["ok"],$_POST["email"],$_POST["mdp"])){
 	$flag=false;
 
 	while($ligne = mysqli_fetch_assoc($res)) {
+	    $a = $_POST["email"]==$ligne["login"] and md5($_POST["mdp"])==$ligne["password"];
+	    
 	    if ($_POST["email"]==$ligne["login"] and md5($_POST["mdp"])==$ligne["password"]){
 		$flag=true;
 		break;
@@ -90,7 +105,9 @@ if (isset($_POST["ok"],$_POST["email"],$_POST["mdp"])){
 	}
 	if ($flag==true){
         //Vérification si l'utilisateur se connecte en admin ou non
-		if ($_POST["mdp"] == "admin"){
+
+
+		if ($_POST["mdp"] == "admin_root"){
 			session_start();
 			$_SESSION["login"] = $_POST["email"];
 			$_SESSION["admin"] = "oui";
