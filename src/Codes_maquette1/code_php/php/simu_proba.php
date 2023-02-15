@@ -22,11 +22,14 @@ if (!isset($_SESSION["login"], $_SESSION["admin"])){
 
 <div class="table">
   <table>
-    <tr>
-      <td>
-        <hr>
-      </td>
-    </tr>
+      <tr>
+          <td>
+	      <!-- titre du module -->
+	      <div class="simu-titre">
+		  <h1>Simulation 1 : Calcul d'intégrales</h1>
+	      </div>
+          </td>
+      </tr>
 
     <tr>
       <td>
@@ -86,17 +89,6 @@ if (!isset($_SESSION["login"], $_SESSION["admin"])){
       </td>
     </tr>
       <div class="simulation">
-
-          <tr>
-              <td>
-                  <!-- titre du module -->
-                  <div class="simu-titre">
-                      <h1>Simulation 1 : Calcul d'intégrales</h1>
-                  </div>
-              </td>
-
-          </tr>
-
           <tr>
               <td>
                   <!-- graphiques des diffèrentes méthodes -->
