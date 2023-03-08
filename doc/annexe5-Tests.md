@@ -72,6 +72,6 @@
 |p8|Key|bff712a1fa51b901c67e2f|dechiffrer|The Message|The Message|
 |p9|The Key|Message|chiffrer|8f2d6a11c68709|8f2d6a11c68709|
 |p10|The Key|8f2d6a11c68709|dechiffrer|Message|Message|
-|p11|The Key|The Message3|chiffrer|96207c42ea851f40b84e57|96207c42ea851f40b84e57|
-|p12|The Key|96207c42ea851f40b84e57|dechiffrer|The Message|The Message|
+|p11|The Key|The Message3|chiffrer|96207c42ea851f40b84e57ef|96207c42ea851f40b84e57ef|
+|p12|The Key|96207c42ea851f40b84e57ef|dechiffrer|The Message3|The Message3|
 ***Tableau 5: données de test du module de crypto***
