@@ -13,7 +13,7 @@ session_start();
 
 <!-- barre de navigation -->
 <nav class="navBar">
-        <img class="logo" src="images/logo_sans_fond.png" alt="logo du site">
+        <img class="logo" src="images/logo_sans_fond_sans_titre.png" alt="logo du site">
         <h1>X Simulator</h1>
         <div class="navBar-sim-sub">
             <div class="nav-links">

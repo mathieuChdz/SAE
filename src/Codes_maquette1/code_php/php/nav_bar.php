@@ -1,6 +1,6 @@
 <!-- barre de navigation -->
 <nav class="navBar">
-    <img class="logo" src="../images/logo_sans_fond.png" alt="logo du site">
+    <img class="logo" src="../images/logo_sans_fond_sans_titre.png" alt="logo du site">
     <a href="../index.php"><h1>X Simulator</h1></a>
     <div class="navBar-sim-sub">
         <div class="nav-links">

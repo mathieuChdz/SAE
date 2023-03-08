@@ -4,9 +4,11 @@
     justify-content: space-between;
     width: 100%;
     box-sizing: border-box;
-    background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
-    padding: 20px;
-    border-bottom: 2px solid #6b7d7dff;
+    /* background: linear-gradient(90deg, rgba(99,200,238,1) 0%, rgba(140,217,246,1) 100%); */
+    background: linear-gradient(90deg, #e17d04, #ecac5e);
+    padding: 5px;
+    /* border-bottom: 2px solid #8e4e00; */
+    box-shadow: 0 2px 4px 0 #8e4e00;
 }
 .navBar .logo{
     width: 80px;
@@ -21,11 +23,24 @@
     color: black;
 }
 .navBar li a:hover {
-    background: #b9cddaff;
+    background: #ecac5e;
     transition: 0.3s;
     border-radius: 3px;
     padding: 12px;
-    border: 1px solid black;
+    border: 1px solid #e17d04;
+}
+
+.navBar input[type="submit"]{
+    border: 1px solid transparent;
+    padding: 2px;
+    background-color: transparent;
+}
+
+.navBar input[type="submit"]:hover{
+    background: #ecac5e;
+    transition: 0.3s;
+    border-radius: 3px;
+    border: 1px solid #e17d04;
 }
 
 .navBar .nav-links ul {
@@ -38,7 +53,7 @@
 .navBar .menu-hamburger{
     display: none;
     position: absolute;
-    top: 50px;
+    top: 30px;
     right: 50px;
     width: 35px;
 }
@@ -55,7 +70,7 @@
         justify-content: space-between;
         width: 100%;
         padding: 0;
-        background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
+        background: linear-gradient(90deg, #e17d04, #ecac5e);
         border-bottom: 2px solid black;
     }
     .navBar .logo{

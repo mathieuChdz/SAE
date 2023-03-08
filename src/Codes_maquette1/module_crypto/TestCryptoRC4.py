@@ -30,3 +30,4 @@ class Test_RC4(TestCase):
 
 if __name__ == '__main__':
     main()
+    

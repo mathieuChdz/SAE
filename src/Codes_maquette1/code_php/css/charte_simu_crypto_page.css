@@ -6,7 +6,6 @@
 }
 
 html{
-    background: rgb(204, 205, 230);
     font-family: sans-serif;
 }
 
@@ -25,10 +24,13 @@ body {
 }
 
 fieldset{
-    border-radius: 5%;
-    background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
     margin: 100px;
     padding: 50px;
+    border-radius: 10px;
+    border: solid 1px #e17d04;
+    background-color: rgba(225, 125, 4, 0.1);
+    outline: none;
+    margin-right: 2em;
 }
 
 .simu-titre h1 {
@@ -39,9 +41,8 @@ fieldset{
 .saisie {
     display: flex;
     flex-direction: row;
-    padding: 1px;
     justify-content: space-evenly;
-
+    margin-top: 35px;
 }
 
 .saisie label {
@@ -92,7 +93,7 @@ fieldset{
 } 
 
 .table-crypto {
-    margin-top: 20vh;
+    margin-top: 12vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -110,24 +111,24 @@ table{
 td, th{
     border-collapse: collapse ;
     padding: 10px;
-    border: solid 1px #6b7d7dff;
+    border: solid 1px #e17d04;
     text-align: center;
 }
 
-tr:nth-child(even){
-    background-color: #B5DEEF;
+tr{
+    background-color: #faeee2;
 }
 
-tr:nth-child(odd){
-    background-color: #A9DFF5;
+#first-line{
+    background-color: #e5984c;
 }
+
 
 .table-aff{
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 1em;
-    padding: 2em;
 }
 
 @media screen and (max-width: 1120px){

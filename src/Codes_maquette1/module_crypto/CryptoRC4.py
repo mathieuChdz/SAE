@@ -1,5 +1,5 @@
 def ascii(message: str) -> list:
-    """Transforme une chaine de caracteres en un tableau contenant les codes ascii correspondant a chauqe caractere.
+    """Transforme une chaine de caracteres en un tableau contenant les codes ascii correspondant a chaque caractere.
     Entree :
         message (str) -> un mot ou une phrase sous forme de chaine de caracteres.
     Sortie :
@@ -13,7 +13,7 @@ def ascii(message: str) -> list:
     return tab
 
 
-print(ascii('Secret'))
+# print(ascii('Secret'))
 
 
 def perm(key: str) -> list:
@@ -34,7 +34,7 @@ def perm(key: str) -> list:
         
     return S
 
-print(perm('Secret'))
+# print(perm('Secret'))
 
 
 def codage(key: str, message: str) -> list:
@@ -64,7 +64,7 @@ def codage(key: str, message: str) -> list:
     return code
 
 
-print(codage('Secret', 'Attack at dawn'))
+# print(codage('Secret', 'Attack at dawn'))
 
 
 def decodage(key: str, message: list) -> str:
@@ -106,4 +106,4 @@ def affiche_message(message : list):
         message_code += message[i]
     print(message_code)
 
-print(decodage('Secret', codage('Secret', 'Attack at dawn')))
+# print(decodage('Secret', codage('Secret', 'Attack at dawn')))

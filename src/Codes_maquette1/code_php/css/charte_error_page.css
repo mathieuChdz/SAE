@@ -1,5 +1,5 @@
 html{
-    background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
+    background: rgba(236, 172, 94, 0.3);
 }
 
 .table-error table{
@@ -36,12 +36,19 @@ html{
 }
 
 input[type=submit] {
-    background-color: rgb(65, 180, 220);
-    color: white;
+    background-color: rgba(225, 125, 4, 0.1);
+    border-radius: 10px;
+    border: solid 1px #e17d04;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 100%;
     font-size: 25px;
+}
+
+input[type=submit]:hover{
+    background: rgba(225, 125, 4, 0.4);
+    color: black;
+    transition: all 0.5s;
 }

@@ -1,10 +1,17 @@
 html{
-    background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
+    background: none
 }
 
-.text-erreur{
-    color: red;
+.text-erreur-ok{
     font-size: 15px;
+}
+
+.text-msg-ok{
+    color: green;
+}
+
+.text-msg-err{
+    color: red;
 }
 
 .form-structure {
@@ -18,7 +25,8 @@ html{
 }
 
 form{
-    background: rgba(255, 255, 255, 0.5);
+    background-color: rgba(225, 125, 4, 0.3);
+    border: solid 1px #e17d04;
     border-radius: 10px;
     padding: 40px;
 }
@@ -71,24 +79,29 @@ input[type=text], input[type=password] {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border-radius: 10px;
+    border: 1px solid #e17d04;
     box-sizing: border-box;
 }
 
 input[type=submit] {
-    background-color: rgba(145, 144, 144, 0.5);
+    background-color: rgba(225, 125, 4, 0.1);
     color: white;
     padding: 10px 20px;
     margin: 8px 0;
     border-color: #b9cddaff;
     cursor: pointer;
-    width: 100%;
+    width: 75%;
     font-size: 25px;
     border-radius: 10px;
+    border: solid 1px #e17d04;
+    outline: none;
+    letter-spacing: 1px;
 }
 
+
 input[type=submit]:hover{
-    background: linear-gradient(90deg, #b9cddaff, #a6d8d4ff);
+    background: rgba(225, 125, 4, 0.4);
     color: black;
     transition: all 0.5s;
 }
@@ -98,7 +111,7 @@ form a {
     color: blue;
 }
 form a:visited{
-    color: purple;
+    color: rgb(41, 22, 124);
 }
 
 form a:hover{
