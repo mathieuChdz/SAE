@@ -166,6 +166,12 @@ header {
     padding-bottom: 1em;
 }
 
+.text-welcome h1:hover {
+    font-variation-settings: "wght" 582; 
+    letter-spacing: 1px;
+    transition: 1s;
+  }
+
 .video{
     display: flex;
     flex-direction: column;
