@@ -25,6 +25,8 @@ def rectangleG(n,a,b,m,s):
         s (int) -> l'ecart type 
     Sortie :
         Résultat du calcul de probabilité pour les parametres renseignés."""
+    if s<=0:
+        return "valeur interdite"
     somme=0
     for i in range (n):                   # Calcul de la probabilité 
         somme+=norm(m,s,(a+i*((b-a)/n)))  # pour le point en cours
@@ -42,6 +44,8 @@ def rectangleD(n,a,b,m,s):
         s (int) -> l'ecart type 
     Sortie :
         Résultat du calcul de probabilité pour les parametres renseignés."""
+    if s<=0:
+        return "valeur interdite"
     somme=0
     for i in range (1,n+1):              # Calcul de la probabilité
         somme+=norm(m,s,(a+i*((b-a)/n))) # pour le point en cours
@@ -59,6 +63,8 @@ def rectangleM(n,a,b,m,s):
         s (int) -> l'ecart type 
     Sortie :
         Résultat du calcul de probabilité pour les parametres renseignés."""
+    if s<=0:
+        return "valeur interdite"
     somme=0
     for i in range (n):                                            # Calcul de la probabilité
         somme+=norm(m,s,(((a+i*((b-a)/n))+(a+(i+1)*((b-a)/n)))/2)) # pour le point en cours
@@ -76,6 +82,8 @@ def trapeze(n,a,b,m,s):
         s (int) -> l'ecart type 
     Sortie :
         Résultat du calcul de probabilité pour les parametres renseignés."""
+    if s<=0:
+        return "valeur interdite"
     somme=0
     # La forule est séaprée en plusieurs parties 
     pre=(b-a)/(2*n) # Le facteur commun
@@ -98,6 +106,8 @@ def simpson(n,a,b,m,s):
         s (int) -> l'ecart type 
     Sortie :
         Résultat du calcul de probabilité pour les parametres renseignés."""
+    if s<=0:
+        return "valeur interdite"
 
     somme1=0                            # Somme initialisée avec 'un tour' d'avance 
     somme2=norm(m,s,(a+((0*(b-a))/n)))  # pour faire évoluer les deux en même temps 

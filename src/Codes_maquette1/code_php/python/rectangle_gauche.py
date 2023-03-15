@@ -25,6 +25,8 @@ def rectangleG(n,a,b,m,s):
         s (int) -> l'ecart type 
     Sortie :
         Résultat du calcul de probabilité pour les parametres renseignés."""
+    if s<=0:
+        return "valeur interdite"
     somme=0
     for i in range (n):                    # Calcul de la probabilité
         somme+=norm(m,s,(a+i*((b-a)/n)))  # pour le point en cours

@@ -25,6 +25,8 @@ def simpson(n,a,b,m,s):
         s (int) -> l'ecart type 
     Sortie :
         Résultat du calcul de probabilité pour les parametres renseignés."""
+    if s<=0:
+        return "valeur interdite"
 
     somme1=0  # Somme initialisée avec 'un tour' d'avance  
     somme2=norm(m,s,(a+((0*(b-a))/n)))  # pour faire évoluer les deux en même temps 

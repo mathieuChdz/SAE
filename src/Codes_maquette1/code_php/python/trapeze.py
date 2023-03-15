@@ -25,6 +25,8 @@ def trapeze(n,a,b,m,s):
         s (int) -> l'ecart type 
     Sortie :
         Résultat du calcul de probabilité pour les parametres renseignés."""
+    if s<=0:
+        return "valeur interdite"
     somme=0  
     # La forule est séaprée en plusieurs parties 
     pre=(b-a)/(2*n) # Le facteur commun
