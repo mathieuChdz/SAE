@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>page d'accueil</title>
     <link rel="stylesheet" href="css/charte_index.css">
+    <link rel="stylesheet" href="css/charte_footer.css">
 </head>
 
 
@@ -108,6 +109,10 @@ session_start();
 
         </div>
     </div>
+
+    <?php
+    include 'php/footer.php';
+    ?>
 
 </body>
 

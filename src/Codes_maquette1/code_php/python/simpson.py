@@ -45,5 +45,5 @@ b = int(sys.argv[1])
 m = int(sys.argv[2])
 s = int(sys.argv[3])
 
-print("méthode de simpson : ",simpson(100000,-1000, b, m, s))
+print(round(simpson(100000,-1000, b, m, s),5))
 
