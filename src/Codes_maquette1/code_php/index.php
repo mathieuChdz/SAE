@@ -24,18 +24,18 @@ session_start();
                         if (isset($_SESSION['login'])){
                             // Ajout d'un lien vers la page admin si l'utilisateur est admin
                             if ($_SESSION["admin"]=="oui"){
-                                echo "<li><a href='php/admin_page.php'>admin page</a></li>";
+                                echo "<li><a href='php/admin_page.php'>Admin Page</a></li>";
                             }
                         }
                     ?>
                     <li><a href="php/simu_proba.php">Probabilités</a></li>
                     <li><a href="php/simu_crypto.php">Chiffrement</a></li>
-                    <li><a href="php/error_page.php">Simulation 3</a></li>
+                    <li><a href="php/page_machine_learning.php">Machine Learning</a></li>
                     <li>
                     <?php
                         if (isset($_SESSION['login'])){
                             // Ajout d'un lien vers la page profil si l'utilisateur est connecté
-                            echo "<a href='php/profil_page.php'>profil</a>";
+                            echo "<a href='php/profil_page.php'>Profil</a>";
                         }
                     ?>
                     </li>
