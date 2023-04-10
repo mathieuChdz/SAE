@@ -6,3 +6,8 @@
     text-decoration: none;
     list-style: none;
 }
+
+.table-container {
+    height: 300px;
+    overflow: scroll;
+}
