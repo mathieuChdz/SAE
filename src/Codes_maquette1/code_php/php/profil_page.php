@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>page de profil</title>
@@ -25,6 +25,30 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
     
         <div class="form-mdp">
             <form action="" method="post">
+                <div class="text-ok-erreur">
+                    <?php
+                    if (isset($_GET["msg_ok"])){
+                        if ($_GET["msg_ok"]==1) {
+                            echo "<div class='text-ok-h4'>
+                                <h4> Le mot de passe a bien été changé !</h4> 
+                            </div>";//Affiche le message d'erreur si l'adresse email ou le mot de passe renseigné est incorrect
+                        }
+                    }
+                    else if (isset($_GET["msg_err"])){
+                        if ($_GET["msg_err"]==1){
+                            echo "<div class='text-ok-h4'>
+                                <h4 class='text-err-h4'> email ou mot de passe incorrect !</h4> 
+                            </div>";//Affiche le message d'erreur si l'adresse email ou le mot de passe renseigné est incorrect
+                        }
+                        elseif ($_GET["msg_err"]==2){
+                            echo "<div class='text-ok-h4'>
+                                <h4 class='text-err-h4'> email ou mot de passe incorrect !</h4> 
+                            </div>";//Affiche le message d'erreur si un ou plusieurs champs ne sont pas remplis
+
+                        }
+                    }
+                    ?>
+                </div>
                 <h3>Changer de mot de passe</h3>
                 <div class="form-mdp-mdp1">
                     <label for="mdp_actu">Mot de passe actuel</label>
@@ -45,52 +69,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
     
             </form>
         </div>
-        <!-- historique des actions faites pour chaque utilisateur -->
-        <div class="table-mdp">
-            <h2>Historique des mots de passe</h2>
 
-            <?php
-            // connexion à la base de donnée
-            $token=(bool)($connexion=mysqli_connect("localhost", "root", "01r1173"));
-            
-                if ($token){
-                    $token2=(bool)($bd=mysqli_select_db($connexion, "Utilisateurs"));
-                    #display($connexion);
-                    if ($token2){
-                        #display($bd);
-                        // selection des actions, messages et resultats de l'utilisateur qui fait la simulation
-                        $sql="SELECT password FROM users_mdp_historique WHERE login='".$_SESSION['login']."'";
-                        $token3=(bool)($res=mysqli_query($connexion,$sql));
-                        if ($token3){
-                            #display($res);
-                            echo "<div class='table-aff'>";
-                            // création d'une table. Cela permet de mettre la table avec une taille à 100% ce qui
-                            // a pour effet d'adapter la table à la taille de l'écran et donc les éléments dedans aussi
-                            echo "<table>";
-                            echo "<tr id='first-line'><th>ordre de changement</th><th>mot de passe</th></tr>";
-
-                            // variable utilisée pour l'ordre des actions faites par l'utilisateur
-                            $cpt_mdp=0;
-
-                            // parcours et affichage des tuples sélectionnés
-                            while ($ligne=mysqli_fetch_row($res)){
-                                
-                                echo "<tr>";
-                                foreach ($ligne as $v){
-                                    $cpt_mdp++;
-                                    echo "<td>".$cpt_mdp."</td>";
-                                    echo "<td>".$v."</td>";
-                                }
-                                echo "</tr>";
-                            }
-                            echo "</table>";
-                            echo "</div>";
-                        }
-                    }
-                }
-            
-            ?>
-        </div>
     </div>
     
     </body>
@@ -108,9 +87,11 @@ if (isset($_POST["send"],$_POST["mdp_actu"],$_POST["new_mdp"],$_POST["new_mdp_ve
     //vérifie si le nouveau mot de passe est bien différent de celui actuel de l'utilisateur
     if ($_POST["new_mdp"] != $_POST["mdp_actu"]){
         if ($_POST["new_mdp"] == $_POST["new_mdp_verif"]){
+            $connexion=mysqli_connect("localhost", "root", "01r1173");
+            $bd=mysqli_select_db($connexion, "Utilisateurs");
             $select="SELECT login, password FROM Utilisateur_inscrit WHERE login='".$_SESSION['login']."'";
             $res=mysqli_query($connexion, $select);
-        
+
             $ligne = mysqli_fetch_assoc($res);
             //change le mot de passe actuel avec le nouveau mot de passe
             if (md5($_POST["mdp_actu"]) == $ligne["password"]){
@@ -120,25 +101,18 @@ if (isset($_POST["send"],$_POST["mdp_actu"],$_POST["new_mdp"],$_POST["new_mdp_ve
                 $new_password_md5 = md5($new_password);
                 mysqli_stmt_bind_param($insp, 's', $new_password_md5);
                 mysqli_stmt_execute($insp);
-
-                //insert le nouveau mot de passe dans la table users_mdp_historique
-                $ins2 = "INSERT into users_mdp_historique(login,password) values(?,?)";
-                $insp2 = mysqli_prepare($connexion, $ins2);
-                $login = $_SESSION['login'];
-                mysqli_stmt_bind_param($insp2, 'ss', $login, $new_password);
-                mysqli_stmt_execute($insp2);
-                header("Location: ../index.php");
+                header("Location: profil_page.php?msg_ok=1");
             }
             else{
-                header("Location: profil_page.php");
+                header("Location: profil_page.php?msg_err=1");
             }
         }
         else{
-            header("Location: profil_page.php");
+            header("Location: profil_page.php?msg_err=2");
         }
     }
     else{
-        header("Location: profil_page.php");
+        header("Location: profil_page.php?msg_err=3");
     }
 
 

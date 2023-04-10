@@ -74,8 +74,20 @@ if (!isset($_SESSION["login"], $_SESSION["admin"])){
             <div class="resultat">
                 <h2>Résultat :</h2>
                 <?php
-                if (isset($_GET["res"])){
-                    echo "<p>".$_GET["res"]."</p>";
+                if (isset($_GET["res"], $_GET["methode"])){
+                    if ($_GET["methode"] == 1){
+                        echo "Méthodes des rectangles médians";
+                    }
+
+                    else if($_GET["methode"] == 2){
+                        echo "Méthodes des trapèzes";
+                    }
+
+                    else if($_GET["methode"] == 3){
+                        echo "Méthodes de Simpson";
+                    }
+
+                    echo "<p id='res'>".$_GET["res"]."</p>";
                 }
                 ?>
             </div>

@@ -15,17 +15,17 @@ if (isset($_POST['ok'], $_POST['e_t'], $_POST['t'], $_POST['m'], $_POST['methode
     // selection de la méthode choisie, execution du script python et renvoie du résultat
     if ($_POST['methodes'] == "mrm"){
       $res = exec("python ../python/rectangle_medians.py $arg1 $arg2 $arg3");
-      header("Location: simu_proba.php?res=$res");
+      header("Location: simu_proba.php?res=$res&methode=1");
 
     }
     if ($_POST['methodes'] == "mdt"){
       $res = exec("python ../python/trapeze.py $arg1 $arg2 $arg3");
-      header("Location: simu_proba.php?res=$res");
+      header("Location: simu_proba.php?res=$res&methode=2");
     }
 
     if ($_POST['methodes'] == "mds"){
       $res = exec("python ../python/simpson.py $arg1 $arg2 $arg3");
-      header("Location: simu_proba.php?res=$res");
+      header("Location: simu_proba.php?res=$res&methode=3");
     }
 
     // vide les valeurs du formulaire

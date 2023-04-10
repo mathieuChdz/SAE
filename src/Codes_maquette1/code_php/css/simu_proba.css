@@ -220,6 +220,11 @@ body {
     margin-bottom: 3em;
 }
 
+.form-res #res{
+    font-size:x-large;
+    font-weight: bold;
+}
+
 
 
 

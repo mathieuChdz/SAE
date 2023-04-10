@@ -162,9 +162,15 @@ header {
 
 .text-welcome{
     text-align: center;
-    padding-top: 2em;
-    padding-bottom: 1em;
+    padding-top: 5em;
+    padding-bottom: 5em;
 }
+
+.text-welcome h1:hover {
+    font-variation-settings: "wght" 582; 
+    letter-spacing: 1px;
+    transition: 1s;
+  }
 
 .video{
     display: flex;
@@ -189,7 +195,7 @@ header {
 .card {
     position: relative;
     width: 600px;
-    height: 550px;
+    height: 440px;
     border-radius: 20px;
     display: flex;
     align-items: center;

@@ -135,7 +135,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
                                         ?>
                                         <td>                                        
                                             <form action="traitement_table.php" method="post">
-                                                <input type="submit" id="<?php echo $ligne[0]?>" name="send2" value="<?php echo $ligne[0]?>">
+                                                supprimer : <input type="submit" id="<?php echo $ligne[0]?>" name="send2" value="<?php echo $ligne[0]?>">
                                             </form>
                                         </td>
                                         <?php
