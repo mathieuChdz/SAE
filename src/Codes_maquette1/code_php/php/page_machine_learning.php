@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+if (!isset($_SESSION["login"], $_SESSION["admin"])){
+    header("Location: page_connexion.php");
+}
 ?>
 
 <!doctype html>
@@ -22,7 +26,7 @@ include 'nav_bar.php';
     <h2>Machine learning</h2>
 </div>
 
-<div>
+<div class="form-ml-start">
     <form action="traitement_ml.php" method="post">
         <input type="submit" name="start" value="Executer la simulation">
     </form>
@@ -37,27 +41,35 @@ include 'nav_bar.php';
 
         $phrases = $res[0];
         $sentiments = $res[1];
-    }
-    echo "<div class='table-container'>
+
+        echo "<div class='first-line'>
+                  <table>
+                      <tr>
+                        <th id='column-one'>Phrase</th>
+                        <th>Sentiment</th>
+                      </tr>
+                    </table>
+                  
+                </div>";
+        echo "<div class='table-container'>
       <table>
-        <thead>
-          <tr>
-            <th>Phrase</th>
-            <th>Sentiment</th>
-          </tr>
-        </thead>
         <tbody>";
         // boucle pour afficher les données du tableau
         for ($i = 0; $i < count($phrases); $i++) {
-          echo "<tr>";
-          echo "<td>".$phrases[$i]."</td>";
-          echo "<td>".$sentiments[$i]."</td>";
-          echo "</tr>";
+            echo "<tr>";
+            echo "<td id='column-one'>".$phrases[$i]."</td>";
+            echo "<td id='column-two'>".$sentiments[$i]."</td>";
+            echo "</tr>";
         }
-          echo "
+        echo "
         </tbody>
         </table>
     </div>";
+    }
+    else{
+        echo "<p>Veuillez lancer la simulation</p>";
+    }
+
     ?>
 </div>
 

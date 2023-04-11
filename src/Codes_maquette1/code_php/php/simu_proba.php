@@ -34,7 +34,7 @@ if (!isset($_SESSION["login"], $_SESSION["admin"])){
                 <form action="traitement_proba.php" method="post">
                     <div class="form-structure">
                         <div  class="methodes-param_1">
-                            <label for="methodes_selection"></label>
+                            <label for="methodes_selection" hidden="hidden">méthodes :</label>
                             <select name="methodes" id="methodes_selection" required="required">
                                 <option value="">--Choississez une méthode--</option>
                                 <option value="mrm">méthode des rectangles médians</option>
@@ -46,17 +46,17 @@ if (!isset($_SESSION["login"], $_SESSION["admin"])){
                         <div class="methodes-param_2">
                             <h3>Saisissez les valeurs suivantes :</h3>
                             <div class="methodes-param_2_1">
-                                <label for="m"></label>
+                                <label for="m" hidden="hidden">m</label>
                                 <input type="text" id="m" name="m" placeholder="valeur de m" required="required">
                             </div>
 
                             <div class="methodes-param_2_2">
-                                <label for="e_t"></label>
+                                <label for="e_t" hidden="hidden">e_t</label>
                                 <input type="text" id="e_t" name="e_t" placeholder="valeur de σ" required="required">
                             </div>
 
                             <div class="methodes-param_2_3">
-                                <label for="t"></label>
+                                <label for="t" hidden="hidden">t</label>
                                 <input type="text" id="t" name="t" placeholder="valeur de t" required="required">
                             </div>
 
@@ -106,7 +106,7 @@ if (!isset($_SESSION["login"], $_SESSION["admin"])){
 
     <div id="myModal" class="modal">
         <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
+        <img class="modal-content" id="img01" alt="image">
         <div id="caption"></div>
     </div>
 </div>

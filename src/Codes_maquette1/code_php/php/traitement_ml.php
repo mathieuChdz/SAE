@@ -6,7 +6,7 @@ if (!isset($_SESSION["login"])){
 }
 
 if (isset($_POST['start'])){
-            $res = exec("python ../machineLearning/notebook/moduleML.py");
+            $res = exec("python /var/www/html/machineLearning/notebook/moduleML.py");
 
             header("Location: page_machine_learning.php?res=$res");
 }

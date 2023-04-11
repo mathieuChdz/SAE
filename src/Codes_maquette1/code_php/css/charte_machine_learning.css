@@ -7,7 +7,77 @@
     list-style: none;
 }
 
+.ml-titre{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.form-ml-start{
+    display: flex;
+    padding-top: 2em;
+    justify-content: center;
+}
+
+.form-ml-start form input[type="submit"]{
+    margin-top: 1em;
+    border: solid 1px #e17d04;
+    outline: none;
+    padding: 0.5rem 3em;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #faeee2;
+}
+
+.form-ml-start input[type="submit"]:hover{
+    color: #000;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.resultat h2, .resultat p{
+    padding-top: 2em;
+    padding-bottom: 2em;
+    text-align: center;
+}
+
 .table-container {
     height: 300px;
-    overflow: scroll;
+    overflow-y: scroll;
+    width: 90%;
+    padding-left: 10%;
+}
+
+.table-container table, .first-line table{
+    border-collapse: collapse ;
+    width: 100%;
+}
+
+.table-container td, th{
+    border-collapse: collapse ;
+    padding: 10px;
+    border: solid 1px #e17d04;
+    text-align: center;
+}
+
+.table-container tr{
+    background-color: #faeee2;
+}
+
+.first-line{
+    width: 90%;
+    padding-left: 10%;
+    padding-right: 17px;
+}
+
+.first-line th{
+    border-collapse: collapse ;
+    padding: 10px;
+    border: solid 1px #e17d04;
+    text-align: center;
+    background-color: #e5984c;
+}
+
+#column-one{
+    width: 80%;
 }

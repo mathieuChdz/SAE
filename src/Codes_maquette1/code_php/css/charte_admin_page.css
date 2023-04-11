@@ -52,8 +52,8 @@ body {
 }
 
 .choix-tuple form{
-    display: flex;
-    flex-direction: row;    
+ display: flex;
+    flex-direction: row;
     padding-bottom: 1em;
 }
 
@@ -98,8 +98,6 @@ tr{
     background-color: #e5984c;
 }
 
-
-
 .table-aff{
     display: flex;
     flex-direction: column;
@@ -120,9 +118,8 @@ tr{
 
 @media screen and (max-width: 1120px){
 
-	.choix-tuple input[type="submit"]{
-	    width: 20%;
-	}
+        .choix-tuple input[type="submit"]{
+            width: 20%;
+        }
 
 }
-

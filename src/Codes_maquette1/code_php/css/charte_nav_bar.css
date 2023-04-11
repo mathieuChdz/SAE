@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 .navBar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
     /* background: linear-gradient(90deg, rgba(99,200,238,1) 0%, rgba(140,217,246,1) 100%); */
     background: linear-gradient(90deg, #e17d04, #ecac5e);
     padding: 5px;

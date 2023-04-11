@@ -64,9 +64,55 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
 
             // selection de la table 3 (error_log)
             elseif ($_GET["table"]==3){
-                $table = 'users_log';
-                $titre = 'liste des tentatives ratées';
-                $requete = "SELECT * FROM $table";
+			  $titre="Liste des erreurs log";
+			  $table=null;
+
+	 		  echo "<div class='table-aff'>";
+                    echo "<h2>$titre</h2>";
+                    // création de la barre de recherche
+                    echo "
+                    <div class='choix-tuple'>
+                        <form action='traitement_log.php' method='post'>
+                            <input type='hidden' name='table' value='3'>
+                            <label for='mot' hidden='hidden'>mot de recherches</label>
+                            <input type='text' id='mot' name='mot' placeholder='mot de recherche'>
+                            <input type='submit' id='send' name='send' value='rechercher'>
+                    </div>";
+                $contenu = file_get_contents('logs.txt');
+		    $lignes = explode("\n", $contenu);
+			
+
+				$mot="";
+			if (isset($_GET['mot'])) {
+  				$mot = $_GET['mot'];
+				}
+			
+			echo"
+			<table border=1>
+       		<tr id='first-line'>
+            		<th>Login</th>
+            		<th>Password</th>
+				<th>Date</th>
+        		</tr>";
+        	
+        		foreach ($lignes as $ligne) {
+				$info = explode(" ", $ligne);
+				
+				if (substr($info[0],0,strlen(trim($mot)))== trim($mot)){
+            			echo"<tr>
+                			<td>$info[0]</td>
+                			<td>$info[1]</td>
+					<td>$info[2]</td>
+            			</tr>";
+				}}
+
+				
+
+				
+            		
+        		
+    		echo"</table>
+		</div>";
             }
 
             // selection d'un table choisie avec un motif
@@ -87,7 +133,7 @@ if (isset($_SESSION['login'], $_SESSION['admin'])){
         // connexion à la base de donnée
         $token=(bool)($connexion=mysqli_connect("localhost", "root", "01r1173"));
         
-        if ($token){
+        if ($token && $table!=null){
             $token2=(bool)($bd=mysqli_select_db($connexion, "Utilisateurs"));
 
             if ($token2){

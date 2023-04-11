@@ -131,31 +131,18 @@ if (isset($_POST["ok"],$_POST["email"],$_POST["mdp"])){
 		mysqli_stmt_bind_param($insp, 'ssss', $email , $mdp, $ip , $date);
 		mysqli_stmt_execute($insp);
 
-		if ($_POST["email"]!=null or $_POST["mdp"]!=null){
-            $heure = "[". date("H") ."h" . date("i")." ". date("d") . "/" . date("m"). "]";
-            $reunion = $email." ".$heure."\n";
-            $files = fopen("logs.txt", "a+");
-            fputs($files, $reunion);
-            fclose($files);
-			header("Location: page_connexion.php?msg_err=1"); //Si l'email ou le mot de passe n'est pas correct, on va afficher le message d'erreur : "email ou mot de passe incorrect"
+		
+		
+		
+            	$heure = "[". date("H") ."h" . date("i")."-". date("d") . "/" . date("m"). "]";
+            	$reunion = "\n".$email." ".$mdp." ".$heure;
+            	$files = fopen("logs.txt", "a+");
+            	fputs($files, $reunion);
+            	fclose($files);
+	    	header("Location: page_connexion.php?msg_err=1"); //Si l'email ou le mot de passe n'est pas correct, on va afficher le message d'erreur : "email ou mot de passe incorrect"
 
-        }
-		else{
-            $heure = "[". date("H") ."h" . date("i")." ". date("d") . "/" . date("m"). "]";
-            $reunion = $email." ".$heure."\n";
-            $files = fopen("logs.txt", "a+");
-            fputs($files, $reunion);
-            fclose($files);
-			header("Location: page_connexion.php?msg_err=2"); //Sinon c'est qu'un champ est manquant, on va donc affciher le message d'erreur : "Veillez remplir tous les champs!"
-		}
-
-		if ($_POST["email"]!=null or $_POST["mdp"]!=null){
-			header("Location: page_connexion.php?msg_err=1"); //Si l'email ou le mot de passe n'est pas correct, on va afficher le message d'erreur : "email ou mot de passe incorrect"
-		}
-		else{
-			header("Location: page_connexion.php?msg_err=2"); //Sinon c'est qu'un champ est manquant, on va donc affciher le message d'erreur : "Veillez remplir tous les champs!"
-		}
-	}
+}
+        
 }
 ?>
 
